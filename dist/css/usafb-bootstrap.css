@@ -11003,7 +11003,7 @@ thead.cpl th .th-inner {
   fill: #fff;
 }
 
-span.loading-icon {
+.loading-icon {
   display: inline-block;
   width: 24px;
   height: 100px;
@@ -11016,8 +11016,8 @@ span.loading-icon {
   background: url("data:image/svg+xml;charset=utf8,%3Cdiv class='loader loader--style7' title='6'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='24px' height='30px' viewBox='0 0 24 30' style='enable-background:new 0 0 50 50;' xml:space='preserve'%3E%3Crect x='0' y='0' width='4' height='20' fill='#333'%3E%3Canimate attributeName='opacity' attributeType='XML' values='1; .2; 1'  begin='0s' dur='0.6s' repeatCount='indefinite' /%3E%3C/rect%3E%3Crect x='7' y='0' width='4' height='20' fill='#333'%3E%3Canimate attributeName='opacity' attributeType='XML' values='1; .2; 1' begin='0.2s' dur='0.6s' repeatCount='indefinite' /%3E%3C/rect%3E %3Crect x='14' y='0' width='4' height='20' fill='#333'%3E%3Canimate attributeName='opacity' attributeType='XML' values='1; .2; 1' begin='0.4s' dur='0.6s' repeatCount='indefinite' /%3E%3C/rect%3E%3C/svg%3E%3C/div%3E");
 }
 
-span.loading-icon svg path,
-span.loading-icon svg rect {
+.loading-icon svg path,
+.loading-icon svg rect {
   fill: #09254a;
 }
 
@@ -11087,6 +11087,23 @@ span.loading-icon svg rect {
 .flip-horz {
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
+}
+
+.sideBar-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  padding: 0;
+  margin: -44px 0 0 0;
+}
+
+.sideBar {
+  -ms-flex: 1 auto;
+      flex: 1 auto;
+  width: 200px;
+  color: #fff;
+  background: #09254a;
 }
 
 body.scaff .row > [class^="col-"],

@@ -10721,6 +10721,10 @@ thead.cpl th .th-inner {
   margin-left: 0.625rem;
 }
 
+.form-horizontal .form-control {
+  width: 100% !important;
+}
+
 #multiSorter .modal-body .container-fluid .bootstrap-table {
   opacity: 1;
 }

@@ -1907,6 +1907,9 @@ thead.cpl {
 
 .form-horizontal {
     margin-left: rem(10px);
+    .form-control {
+        width: 100% !important;
+    }
 }
 
 #multiSorter .modal-body .container-fluid {

@@ -50,12 +50,16 @@ display helpers, sizing, visibility, etc go here
 ## project structure
 this project works side by side with the npdb-usafb-template website. When compiling the necessary files are ported to the template website. This can be edited in package.json to be copied to dist if need be.
 
+Create a workspace project folder
+
 simple structure:
 
 # USAFB
-## npdb-usafb-templates > css (compiled files end up here)
-## bootstrap.4.0.0-dev
-
+this is the workspace directory
+## npdb-usafb-templates
+working template website (you need to clone this into your workspace 
+## npdb-usafb-sass
+this is the global sass project
 
 ## build it
 look for css-compile in the build task menu. This will check for errors compile and prefix your classes. below is the script.

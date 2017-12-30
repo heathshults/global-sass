@@ -23,18 +23,31 @@ _mixins.scss, _utilities.css are files that import mixins and utilities into one
 the scss files at the bottom of the list pull the respective files into their proper compilation space.
 Ex: bootstrap.scss 
 @import 'functions';
+
 @import 'variables';
+
 @import 'mixins';
+
 @import 'fonts';
+
 @import 'print';
+
 @import 'reboot';
+
 @import 'type';
+
 @import 'images';
+
 @import 'code';
+
 @import 'grid';
+
 @import 'tables';
+
 @import 'forms';
+
 @import 'buttons';
+
 @import 'transitions';
 
 if you create a new mixin/utility file make sure to add it to this file or it will not make it in the final compilation.

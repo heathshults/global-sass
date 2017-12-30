@@ -1,0 +1,94 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "gulp",
+      "task": "gulp-autoprefixThis",
+      "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "css-package-up",
+      "problemMatcher": [
+        "$eslint-stylish"
+      ]
+    },
+    {
+      "type": "npm",
+      "script": "css-main",
+      "problemMatcher": [
+        "$eslint-stylish"
+      ]
+    },
+    {
+      "type": "gulp",
+      "task": "autoprefixme",
+      "problemMatcher": []
+    },
+    {
+      "type": "gulp",
+      "task": "stylefmt",
+      "problemMatcher": [
+        "$eslint-stylish"
+      ]
+    },
+    {
+      "type": "gulp",
+      "task": "sass"
+    },
+    {
+      "type": "gulp",
+      "task": "sass:watch"
+    },
+    {
+      "type": "npm",
+      "script": "css-prefix"
+    },
+    {
+      "type": "npm",
+      "script": "heathenscript",
+      "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "css-compile",
+      "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "css-lint",
+      "problemMatcher": []
+    },
+    {
+      "type": "gulp",
+      "task": "browserSync",
+      "problemMatcher":"$gulp-tsc"
+    },
+    {
+      "type": "gulp",
+      "task": "watch-all",
+      "problemMatcher": [
+        "$eslint-stylish"
+      ]
+    },
+    {
+      "type": "gulp",
+      "task": "clean",
+      "problemMatcher": [
+        "$eslint-stylish"
+      ]
+    },
+    {
+      "type": "npm",
+      "script": "css-compile-themes",
+      "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "css-compile-v2",
+      "problemMatcher": []
+    }
+  ]
+}

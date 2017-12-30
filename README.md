@@ -61,6 +61,8 @@ working template website (you need to clone this into your workspace
 ## npdb-usafb-sass
 this is the global sass project
 
+## branch to use
+develop is where we merge to. create your branch from there.
 ## build it
 look for css-compile in the build task menu. This will check for errors compile and prefix your classes. below is the script.
 

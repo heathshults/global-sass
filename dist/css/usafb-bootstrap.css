@@ -2908,7 +2908,6 @@ tbody.collapse.show {
   position: relative;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
 }
 
 .input-group .form-control {
@@ -11106,8 +11105,9 @@ thead.cpl th .th-inner {
   -ms-flex: 1 auto;
       flex: 1 auto;
   width: 200px;
+  margin-bottom: 16px;
   color: #fff;
-  background: #09254a;
+  background: #d8d8d8;
 }
 
 body.scaff .row > [class^="col-"],

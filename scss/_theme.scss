@@ -2359,8 +2359,9 @@ thead.cpl {
 .sideBar {
     flex: 1 auto;
     width: 200px;
+    margin-bottom: 16px;
     color: $white;
-    background: $blue;
+    background: $gray-10;
 }
 
 // ----------------- nothing below the following class --------------//

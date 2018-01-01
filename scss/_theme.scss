@@ -976,9 +976,14 @@ button:hover {
 .table-link {
     padding: 4px 20px 4px 6px;
     text-decoration: none;
-    border: 2 solid transparent;
+    border: 2px solid transparent;
     border-top-right-radius: 500px;
     border-bottom-right-radius: 500px;
+    &:hover {
+        color: $white;
+        background: $blue-450;
+        border: 2px solid $white;
+    }
 }
 
 .table-hover {
@@ -988,7 +993,7 @@ button:hover {
             .table-link {
                 color: $white;
                 background: $blue-400;
-                border-color: $blue-375;
+                border: 2px solid $white;
             }
         }
     }
@@ -2353,14 +2358,34 @@ thead.cpl {
     flex-flow: row wrap;
     padding: 0;
     margin: -44px 0 0 0;
-}
-
-.sideBar {
-    flex: 1 auto;
-    width: 200px;
-    margin-bottom: 16px;
-    color: $white;
-    background: $gray-10;
+    .sideBar {
+        flex: 1 auto;
+        width: 100%;
+        min-width: 200px;
+        margin-bottom: 16px;
+        color: $white;
+        background: $gray-10;
+        .sideBarContent1 {
+            width: 100%;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #bababa;
+        }
+        .sideBarContent2 {
+            display: none;
+            width: 100%;
+            padding: 10px;
+            border-top: 1px solid #d4d7db;
+        }
+        .bss-btn {
+            width: 100%;
+        }
+        .fa-caret-right {
+            &::after {
+                width: 100%;
+                text-align: right;
+            }
+        }
+    }
 }
 
 // ----------------- nothing below the following class --------------//

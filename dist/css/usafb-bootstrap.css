@@ -9790,9 +9790,15 @@ button:hover {
 .table-link {
   padding: 4px 20px 4px 6px;
   text-decoration: none;
-  border: 2 solid transparent;
+  border: 2px solid transparent;
   border-top-right-radius: 500px;
   border-bottom-right-radius: 500px;
+}
+
+.table-link:hover {
+  color: #fff;
+  background: #4990e2;
+  border: 2px solid #fff;
 }
 
 .table-hover tbody tr:hover {
@@ -9802,7 +9808,7 @@ button:hover {
 .table-hover tbody tr:hover .table-link {
   color: #fff;
   background: #2e69a3;
-  border-color: #26579C;
+  border: 2px solid #fff;
 }
 
 .fixed-table-pagination .pagination a {
@@ -11097,13 +11103,36 @@ thead.cpl th .th-inner {
   margin: -44px 0 0 0;
 }
 
-.sideBar {
+.sideBar-container .sideBar {
   -ms-flex: 1 auto;
       flex: 1 auto;
-  width: 200px;
+  width: 100%;
+  min-width: 200px;
   margin-bottom: 16px;
   color: #fff;
   background: #d8d8d8;
+}
+
+.sideBar-container .sideBar .sideBarContent1 {
+  width: 100%;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #bababa;
+}
+
+.sideBar-container .sideBar .sideBarContent2 {
+  display: none;
+  width: 100%;
+  padding: 10px;
+  border-top: 1px solid #d4d7db;
+}
+
+.sideBar-container .sideBar .bss-btn {
+  width: 100%;
+}
+
+.sideBar-container .sideBar .fa-caret-right::after {
+  width: 100%;
+  text-align: right;
 }
 
 body.scaff .row > [class^="col-"],

@@ -10716,10 +10716,6 @@ thead.cpl th .th-inner {
   border-left: 2px solid transparent !important;
 }
 
-.form-horizontal {
-  margin-left: 0.625rem;
-}
-
 .form-horizontal .form-control {
   width: 100% !important;
 }

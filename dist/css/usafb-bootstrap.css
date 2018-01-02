@@ -9868,10 +9868,22 @@ button:hover {
       align-self: stretch;
   height: 100vh;
   padding: 0;
-  background: #0d2240;
-  background-image: url("images/bg/USAF_introscreen-HeroBoy2.png");
+  background-image: url("images/bg/sign-in/bg-sign-in-1.jpg");
   background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+}
+
+.player {
+  background: url("images/bg/sign-in/bg-sign-in-player-bg.png");
+  background-repeat: no-repeat;
+  background-position: top left;
   background-size: 100%;
+}
+
+.page-title {
+  font-size: 1.3125rem;
+  margin-bottom: 56px;
 }
 
 .header-container {
@@ -10270,15 +10282,30 @@ option {
   height: 100%;
 }
 
-.sign-in-page-logo {
-  width: 23.38rem;
+.sign-in-form-container {
+  width: 24.875rem;
+  margin: 20px 20px 20px 109px;
+}
+
+.sign-in-form-container .sign-in-page-logo {
+  width: 15.1875rem;
+  margin: 20px 18px;
 }
 
 .width-si-form {
-  width: 23.75rem;
+  width: 398.9px;
+  height: 344px;
+  padding-top: 29px;
+  background-color: rgba(255, 255, 255, 0.33);
+  border: 1px solid #fff;
+  border-radius: 20px;
+  box-shadow: 11px 11px 11px 0 rgba(0, 0, 0, 0.32);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
 }
 
 .sign-in-form {
+  padding-top: 39px;
   margin-top: 1.875rem;
   color: #fff;
 }

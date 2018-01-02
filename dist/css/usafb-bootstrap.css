@@ -9841,10 +9841,15 @@ button:hover {
   background-attachment: fixed;
   background-size: cover;
   background-blend-mode: multiply;
-  object-fit: contain;
+  object-fit: 100%;
 }
 
 .bg-pages-blue {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   height: 100%;
   background: rgba(9, 48, 90, 0.93) url("images/bg/usa-fb-bg.jpg");
   background-repeat: no-repeat;
@@ -9875,6 +9880,8 @@ button:hover {
 }
 
 .player {
+  width: 927px;
+  height: 336px;
   background: url("images/bg/sign-in/bg-sign-in-player-bg.png");
   background-repeat: no-repeat;
   background-position: top left;
@@ -9882,16 +9889,17 @@ button:hover {
 }
 
 .page-title {
-  font-size: 1.3125rem;
   margin-bottom: 56px;
+  font-size: 1.3125rem;
 }
 
 .header-container {
+  z-index: 10;
   display: -ms-flexbox;
   display: flex;
-  color: #8AB8E4;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 12%, rgba(0, 0, 0, 0.15) 33%, transparent 100%);
   height: 112px;
+  color: #8AB8E4;
+  background: #09254a;
 }
 
 .brand-container {
@@ -9973,6 +9981,7 @@ button:hover {
   margin: 0 40px;
   color: #fff;
   background: #fff;
+  box-shadow: -1px -1px 20px 6px rgba(0, 0, 0, 0.2);
 }
 
 .red-skew-bar {
@@ -10009,14 +10018,6 @@ button:hover {
   background: linear-gradient(180deg, #113f69, #0d3353);
   -webkit-transform: skewX(-45deg);
           transform: skewX(-45deg);
-}
-
-.nav-container {
-  max-width: calc(100% - 360px);
-}
-
-.bss .dropdown-menu {
-  width: 180px;
 }
 
 .alertPane {
@@ -10222,6 +10223,43 @@ option {
 .nav-link {
   display: block;
   padding: .5rem 0;
+  font-size: 1rem;
+}
+
+.nav-link.dropdown-item {
+  font-size: 0.875rem;
+  text-transform: none;
+}
+
+.nav-item.last.dropdown {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding-right: 20px;
+  margin-right: 20px;
+  border-right: 1px solid #2e69a3;
+}
+
+.bss.dropdown-menu {
+  width: 180px;
+  font-size: 0.875rem;
+}
+
+.control-label {
+  -ms-flex: 0 100%;
+      flex: 0 100%;
+}
+
+.signout-link {
+  background: transparent;
+}
+
+.signout-link + .signout-link:visited {
+  color: #fff;
+  background: transparent;
+}
+
+.signout-link + .signout-link:hover {
+  color: #fff;
 }
 
 .divider-arrow {
@@ -11130,6 +11168,7 @@ thead.cpl th .th-inner {
   display: flex;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
+  min-height: 200px;
   padding: 0;
   margin: -44px 0 0 0;
   background: #d4d7db;

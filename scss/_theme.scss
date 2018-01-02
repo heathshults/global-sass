@@ -1031,10 +1031,15 @@ button:hover {
     background-attachment: fixed;
     background-size: cover;
     background-blend-mode: multiply;
-    object-fit: contain;
+    object-fit: 100%;
 }
 
 .bg-pages-blue {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     height: 100%;
     background: $blue-450-50 url("images/bg/usa-fb-bg.jpg");
     background-repeat: no-repeat;
@@ -1061,21 +1066,25 @@ button:hover {
     background-size: cover;
 }
 .player {
+    width: 927px;
+    height: 336px;
     background: url("images/bg/sign-in/bg-sign-in-player-bg.png");
     background-repeat: no-repeat;
     background-position: top left;
     background-size: 100%;
 }
+
 .page-title {
-    font-size: rem(21px);
     margin-bottom: 56px;
+    font-size: rem(21px);
 }
 
 .header-container {
+    z-index: 10;
     display: flex; //background-image: linear-gradient(to bottom, $blue, $blue-400);
-    color: $blue-500;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 12%, rgba(0, 0, 0, 0.15) 33%, transparent 100%);
     height: 112px;
+    color: $blue-500;
+    background: $blue;
 }
 
 .brand-container {
@@ -1144,6 +1153,7 @@ button:hover {
     margin: 0 40px;
     color: $white;
     background: $white;
+    box-shadow: -1px -1px 20px 6px rgba(0, 0, 0, .2);
 }
 
 .red-skew-bar {
@@ -1176,13 +1186,9 @@ button:hover {
     transform: skewX(-45deg);
 }
 
-.nav-container {
-    max-width: calc(100% - 360px);
-}
-
-.bss .dropdown-menu {
-    width: 180px;
-}
+// .nav-container {
+//     max-width: calc(100% - 360px);
+// }
 
 .alertPane {
     height: rem(76px);
@@ -1388,6 +1394,42 @@ option {
 .nav-link {
     display: block;
     padding: .5rem 0;
+    font-size: $font-size-base;
+}
+
+.nav-link.dropdown-item {
+    font-size: $font-size-sm;
+    text-transform: none;
+}
+.nav-item.last.dropdown{
+    display: inline-flex;
+    padding-right: 20px;
+    margin-right: 20px;
+    border-right: 1px solid $blue-400;
+}
+
+.bss.dropdown-menu {
+    width: 180px;
+    font-size: $font-size-sm;
+}
+
+.control-label {
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+.signout-link, {
+    background: transparent;
+    + .signout-link {
+        &:visited {
+            color: $white;
+            background: transparent;
+        }
+        &:hover {
+            color: $white;
+        }
+    }
 }
 
 .divider-arrow {
@@ -2388,6 +2430,7 @@ thead.cpl {
 .sideBar-container {
     display: flex;
     flex-flow: row wrap;
+    min-height: 200px;
     padding: 0;
     margin: -44px 0 0 0;
     background: #d4d7db;

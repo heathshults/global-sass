@@ -9787,6 +9787,10 @@ button:hover {
   background-color: #adb5bd;
 }
 
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #fff;
+}
+
 .table-link {
   padding: 4px 20px 4px 6px;
   text-decoration: none;
@@ -9990,7 +9994,7 @@ button:hover {
   height: 16px;
   margin-right: -40px;
   overflow: hidden;
-  background: linear-gradient(219deg, #113f69, #0d3353);
+  background: linear-gradient(180deg, #113f69, #0d3353);
   -webkit-transform: skewX(-45deg);
           transform: skewX(-45deg);
 }
@@ -11101,6 +11105,7 @@ thead.cpl th .th-inner {
       flex-flow: row wrap;
   padding: 0;
   margin: -44px 0 0 0;
+  background: #d4d7db;
 }
 
 .sideBar-container .sideBar {

@@ -973,6 +973,10 @@ button:hover {
     background-color: $gray-500;
 }
 
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: $white;
+}
+
 .table-link {
     padding: 4px 20px 4px 6px;
     text-decoration: none;
@@ -2358,6 +2362,7 @@ thead.cpl {
     flex-flow: row wrap;
     padding: 0;
     margin: -44px 0 0 0;
+    background: #d4d7db;
     .sideBar {
         flex: 1 auto;
         width: 100%;

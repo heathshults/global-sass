@@ -729,7 +729,7 @@
 .red-theme .btn-primary-03:hover, .red-theme .btn-primary-03:active, .red-theme .btn-primary-03:focus {
   color: white;
   background: #2e69a3;
-  border: 0.1875rem solid #26579C !important;
+  border: 0.1875rem solid #26579c !important;
   cursor: pointer;
 }
 
@@ -754,7 +754,7 @@
 .red-theme .btn-primary-03-sm:hover, .red-theme .btn-primary-03-sm:active, .red-theme .btn-primary-03-sm:focus {
   color: white;
   background: #2e69a3;
-  border: 0.1875rem solid #26579C !important;
+  border: 0.1875rem solid #26579c !important;
   transition: all 0.15s ease-in;
   cursor: pointer;
 }

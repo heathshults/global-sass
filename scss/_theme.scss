@@ -639,7 +639,7 @@ button:hover {
 }
 
 .bg-pages-blue {
-    position: relative;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
@@ -651,6 +651,39 @@ button:hover {
     background-size: cover;
     background-blend-mode: multiply;
     object-fit: contain;
+    .page-title-container {
+        display: flex;
+        flex-flow: row wrap;
+        height: 86px;
+        vertical-align: middle;
+        .page-title {
+            flex: 1 auto;
+            font-size: $h4-font-size;
+            font-weight: 300;
+            color: $white;
+            letter-spacing: 3px;
+            vertical-align: middle;
+            .fa {
+                margin: $page-title-fa-margin;
+                color: $page-title-fa-color; //font-size: ($font-size-lg / $font-size-base + .5rem);
+                vertical-align: middle;
+            }
+            .form-control {
+                flex: 0 1 auto;
+                max-width: 80%;
+                height: 35px;
+                border: 0;
+                border-radius: 0;
+            }
+        }
+        .title-bar {
+            position: absolute;
+            top: 12rem;
+            display: flex;
+            margin-left: 5px;
+            color: $white;
+        }
+    }
 }
 
 .full-screen-container {
@@ -720,38 +753,7 @@ button:hover {
     letter-spacing: 2px;
 }
 
-.page-title-container {
-    display: flex;
-    flex-flow: row wrap;
-    vertical-align: middle;
-    .page-title {
-        flex: 1 auto;
-        font-size: $h4-font-size;
-        font-weight: 300;
-        color: $white;
-        letter-spacing: 3px;
-        vertical-align: middle;
-        .fa {
-            margin: $page-title-fa-margin;
-            color: $page-title-fa-color; //font-size: ($font-size-lg / $font-size-base + .5rem);
-            vertical-align: middle;
-        }
-        .form-control {
-            flex: 0 1 auto;
-            max-width: 80%;
-            height: 35px;
-            border: 0;
-            border-radius: 0;
-        }
-    }
-    .title-bar {
-        position: absolute;
-        top: 12rem;
-        display: flex;
-        margin-left: 5px;
-        color: $white;
-    }
-}
+
 
 .header-content-divider {
     width: 100%;

@@ -10428,7 +10428,7 @@ button:hover {
 }
 
 .bg-pages-blue {
-  position: relative;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
@@ -10440,6 +10440,49 @@ button:hover {
   background-size: cover;
   background-blend-mode: multiply;
   object-fit: contain;
+}
+
+.bg-pages-blue .page-title-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  max-height: 86px;
+  vertical-align: middle;
+}
+
+.bg-pages-blue .page-title-container .page-title {
+  -ms-flex: 1 auto;
+      flex: 1 auto;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 3px;
+  vertical-align: middle;
+}
+
+.bg-pages-blue .page-title-container .page-title .fa {
+  margin: 0 4px 0 0;
+  color: #083660;
+  vertical-align: middle;
+}
+
+.bg-pages-blue .page-title-container .page-title .form-control {
+  -ms-flex: 0 1 auto;
+      flex: 0 1 auto;
+  max-width: 80%;
+  height: 35px;
+  border: 0;
+  border-radius: 0;
+}
+
+.bg-pages-blue .page-title-container .title-bar {
+  position: absolute;
+  top: 12rem;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 5px;
+  color: #fff;
 }
 
 .full-screen-container {
@@ -10514,48 +10557,6 @@ button:hover {
   margin-bottom: 29px;
   font-size: 1.3125rem;
   letter-spacing: 2px;
-}
-
-.page-title-container {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
-  vertical-align: middle;
-}
-
-.page-title-container .page-title {
-  -ms-flex: 1 auto;
-      flex: 1 auto;
-  font-size: 1.25rem;
-  font-weight: 300;
-  color: #fff;
-  letter-spacing: 3px;
-  vertical-align: middle;
-}
-
-.page-title-container .page-title .fa {
-  margin: 0 4px 0 0;
-  color: #083660;
-  vertical-align: middle;
-}
-
-.page-title-container .page-title .form-control {
-  -ms-flex: 0 1 auto;
-      flex: 0 1 auto;
-  max-width: 80%;
-  height: 35px;
-  border: 0;
-  border-radius: 0;
-}
-
-.page-title-container .title-bar {
-  position: absolute;
-  top: 12rem;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: 5px;
-  color: #fff;
 }
 
 .header-content-divider {

@@ -206,6 +206,7 @@ table.table {
 }
 
 .fixed-table-header {
+    width: 100%;
     overflow: hidden;
     >table {
         display: none;

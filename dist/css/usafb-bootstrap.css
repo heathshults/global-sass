@@ -8906,12 +8906,9 @@ a.text-dark:focus, a.text-dark:hover {
   margin: 0 auto;
 }
 
-table.table th {
-  padding: 0.55rem;
-}
-
+table.table th,
 table.table td {
-  padding: 0.55rem;
+  padding: 6px 20px;
 }
 
 .fixed-table-body {
@@ -8958,7 +8955,8 @@ table.table td {
 
 .table td {
   font-size: 0.875rem;
-  vertical-align: middle;
+  vertical-align: top;
+  border-top: .0625rem solid #e9ecef;
 }
 
 .fixed-table-container {
@@ -9124,7 +9122,7 @@ table.table td {
   display: inline-flex;
   margin: 0 auto;
   text-align: center;
-  background: lavender;
+  background: #e6e6fa;
 }
 
 .fixed-table-loading[style] {
@@ -9134,7 +9132,7 @@ table.table td {
   display: -ms-inline-flexbox;
   display: inline-flex;
   margin: 0 auto;
-  background: lavender;
+  background: #e6e6fa;
   text-align: center;
 }
 
@@ -10215,9 +10213,16 @@ button:hover {
 .btn-blue-grad-pill {
   width: 136.5px;
   height: 41px;
-  background: linear-gradient(to bottom, #45517e, #09254a);
+  color: #fff;
+  background: #404e78 linear-gradient(to bottom, #45517e, #09254a);
+  border: 2px solid #404e78;
   border-radius: 100px;
   box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.32);
+  transition: all .25s ease-in-out;
+}
+
+.btn-blue-grad-pill:hover {
+  background: #404e78;
 }
 
 .bss-btn {
@@ -10528,19 +10533,23 @@ button:hover {
   padding: 0;
   background-image: url("images/bg/sign-in/bg-sign-in-1.jpg");
   background-repeat: no-repeat;
-  background-position: top left;
-  background-size: cover;
+  background-position: center;
+  background-size: 2800px;
+}
+
+.player-container {
+  position: relative;
+  height: 100vh;
 }
 
 .player {
   width: 927px;
-  height: 336px;
-  background: url("images/bg/sign-in/bg-sign-in-player-bg.png");
+  height: 100vh;
+  background: url("images/bg/sign-in/bg-sign-in-player-bg-01.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100%;
-  background-blend-mode: difference;
-  object-fit: 100%;
+  background-position: bottom;
+  background-size: 35%;
 }
 
 .header-container {
@@ -10956,6 +10965,7 @@ option {
 
 .bss.form-group .form-control.form-control-theme {
   width: 100%;
+  padding-left: 20px;
   margin-bottom: 0;
   font-size: 0.875rem;
   font-stretch: condensed;
@@ -10970,11 +10980,11 @@ option {
   width: 398.9px;
   height: 344px;
   padding: 29px 20px;
-  background: rgba(255, 255, 255, 0.25);
-  border: 1px solid linear-gradient(to top, rgba(255, 255, 255, 0.1), white);
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  border-radius: 20px;
   border-image-source: linear-gradient(to top, rgba(255, 255, 255, 0.1), white);
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
@@ -10982,28 +10992,40 @@ option {
   color: #fff;
 }
 
+.sign-in-form::before {
+  width: 398.9px;
+  height: 344px;
+  padding: 29px 20px;
+}
+
 .sign-in-form .input-wrapper {
   -ms-flex-positive: 1 0 100%;
       flex-grow: 1 0 100%;
+  padding-right: 0;
+  padding-left: 35px;
   white-space: nowrap;
-  border: solid 3px #9e0a0f;
+  background: rgba(0, 0, 0, 0.15);
+  border: solid 3px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  box-shadow: -1px -1px 20px 6px rgba(0, 0, 0, 0.2);
   /* stylelint-disable */
   /* stylelint-enable */
 }
 
+.sign-in-form .input-wrapper .input-icon-wrapper {
+  width: 35px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
 .sign-in-form .input-wrapper .checkbox-theme {
-  border: solid 3px #9e0a0f;
+  border: solid 3px rgba(0, 0, 0, 0.25);
 }
 
 .sign-in-form .input-wrapper input[type="password"],
-.sign-in-form .input-wrapper input[type="text"] {
+.sign-in-form .input-wrapper input[type="email"] {
   width: 294.2px;
   height: 47.1px;
-  opacity: .1;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid #fff;
+  padding-left: 50px;
   border-radius: 10px;
 }
 
@@ -11018,18 +11040,23 @@ option {
 
 .sign-in-form .input-wrapper .fa-envelope {
   position: absolute;
-  top: .4375rem;
+  top: .9rem;
   left: .25rem;
 }
 
 .sign-in-form .input-wrapper .fa-lock {
   position: absolute;
-  top: .4375rem;
+  top: .8rem;
   left: .4rem;
 }
 
 .sign-in-form .input-wrapper .row > [class^="col-"] {
   padding-bottom: 0;
+}
+
+.sign-in-form .input-wrapper .form-control:focus {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(0, 0, 0, 0.16) !important;
 }
 
 .sign-in-form .form-control-theme {

@@ -23,10 +23,12 @@ body {
     }
 }
 
+
 /*
 < ---- utilities ----- >
   ------ FLEX ------
 */
+
 .container-flexi-fluid {
     display: flex;
     flex-flow: row wrap;
@@ -53,6 +55,7 @@ body {
 .flexi-item {
     flex: 1 auto;
 }
+
 // gs = grow & shrink
 .flexi-item-gs-sm {
     flex: .25 auto;
@@ -76,9 +79,11 @@ body {
     flex-shrink: 0;
 }
 
+
 /*
 < ----------- TEXTUAL ----------- >
 */
+
 .font-weight-light {
     font-weight: 300;
 }
@@ -119,6 +124,7 @@ body {
     color: $gray-500;
 }
 
+
 /*
 < ----------- NEXT ----------- >
 */
@@ -143,20 +149,20 @@ small {
     font-weight: 300;
 }
 
+
 /*
 < ----------- ANIMATED CHECKBOX ----------- >
 */
+
 .animate-checkbox {
     .tg-list {
         display: flex;
         align-items: center;
         text-align: center;
     }
-
     .tg-list-item {
         margin: 0 2em;
     }
-
     .tgl {
         display: none; // add default box-sizing for this scope
         &::after,
@@ -164,13 +170,13 @@ small {
         & *,
         & *::after,
         & *::before,
-        & + .tgl-btn {
+        &+.tgl-btn {
             box-sizing: border-box;
             &::selection {
                 background: none;
             }
         }
-        + .tgl-btn {
+        +.tgl-btn {
             position: relative;
             display: inline-block;
             width: 7rem;
@@ -193,13 +199,12 @@ small {
                 display: none;
             }
         }
-        &:checked + .tgl-btn::after {
+        &:checked+.tgl-btn::after {
             left: 50%;
         }
     }
-
     .tgl-skewed {
-        + .tgl-btn {
+        +.tgl-btn {
             overflow: hidden;
             font-family: "Roboto Light", sans-serif;
             background: $green;
@@ -234,7 +239,7 @@ small {
                 }
             }
         }
-        &:checked + .tgl-btn {
+        &:checked+.tgl-btn {
             background: #888;
             &::before {
                 left: -100%;
@@ -249,9 +254,11 @@ small {
     }
 }
 
+
 /*
 < ----------- ASPECT RATIO ----------- >
 */
+
 .are-21by9 {
     &::before {
         padding-top: percentage(9 / 21);
@@ -276,9 +283,11 @@ small {
     }
 }
 
+
 /*
 < ----------- ICONS ----------- >
 */
+
 .icon-chevron-down {
     color: $btn-primary-02-color;
     &::after {
@@ -316,9 +325,11 @@ small {
     }
 }
 
+
 /*
 < ----------- CALLOUTS ----------- >
 */
+
 .callout {
     position: relative;
     padding: 18px 20px;
@@ -446,8 +457,7 @@ button:hover {
     &:active,
     &.active {
         background-image: none;
-        @include box-shadow($btn-focus-box-shadow,
-        $btn-active-box-shadow);
+        @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
     }
 }
 
@@ -623,9 +633,11 @@ button:hover {
     display: flex;
 }
 
+
 /*
 < --------- BACKGROUNDS --------- >
 */
+
 .full-screen-bg-landing-page {
     width: 100vw;
     height: 100vh;
@@ -644,45 +656,56 @@ button:hover {
     right: 0;
     bottom: 0;
     left: 0;
-    height: 100%;
+    height: calc(100vh - 112px);
     background: $blue-450-50 url("images/bg/usa-fb-bg.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-blend-mode: multiply;
     object-fit: contain;
-    .page-title-container {
-        display: flex;
-        flex-flow: row wrap;
-        height: 86px;
+    .bss-btn.btn-primary-02 {
+        padding: 6px 10px;
+    }
+    .row-lift {
+        // position: absolute;
+        // top: 186px;
+    }
+    .data-table {
+        position: relative;
+    }
+}
+
+.page-title-container {
+    display: flex;
+    flex-flow: row wrap;
+    height: 86px;
+    vertical-align: middle;
+    .page-title {
+        flex: 1 auto;
+        font-size: $h4-font-size;
+        font-weight: 300;
+        color: $white;
+        letter-spacing: 3px;
         vertical-align: middle;
-        .page-title {
-            flex: 1 auto;
-            font-size: $h4-font-size;
-            font-weight: 300;
-            color: $white;
-            letter-spacing: 3px;
+        .fa {
+            margin: $page-title-fa-margin;
+            color: $page-title-fa-color; //font-size: ($font-size-lg / $font-size-base + .5rem);
             vertical-align: middle;
-            .fa {
-                margin: $page-title-fa-margin;
-                color: $page-title-fa-color; //font-size: ($font-size-lg / $font-size-base + .5rem);
-                vertical-align: middle;
-            }
-            .form-control {
-                flex: 0 1 auto;
-                max-width: 80%;
-                height: 35px;
-                border: 0;
-                border-radius: 0;
-            }
         }
-        .title-bar {
-            position: absolute;
-            top: 12rem;
-            display: flex;
-            margin-left: 5px;
-            color: $white;
+        .form-control {
+            flex: 0 1 auto;
+            max-width: 80%;
+            height: 35px;
+            border: 0;
+            border-radius: 0;
         }
+    }
+    .title-bar {
+        position: absolute;
+        top: 12rem;
+        display: flex;
+        margin-left: 5px;
+        color: $white;
     }
 }
 
@@ -714,11 +737,13 @@ button:hover {
 }
 
 .header-container {
+    position: fixed;
     z-index: 10;
     display: flex; //background-image: linear-gradient(to bottom, $blue, $blue-400);
     height: 112px;
     color: $blue-500;
     background: $blue;
+    margin-bottom: auto;
 }
 
 .brand-container {
@@ -753,8 +778,6 @@ button:hover {
     letter-spacing: 2px;
 }
 
-
-
 .header-content-divider {
     width: 100%;
     height: 20px;
@@ -765,9 +788,11 @@ button:hover {
     box-shadow: -1px -1px 20px 6px rgba(0, 0, 0, .2);
 }
 
+
 /*
 < --------- ALL SKEWED UP --------- >
 */
+
 .red-skew-bar {
     position: relative;
     flex: 1 auto;
@@ -798,9 +823,11 @@ button:hover {
     transform: skewX(-45deg);
 }
 
+
 /*
 < --------- ALERTS --------- >
 */
+
 .alertPane {
     height: rem(76px);
     padding-right: 0;
@@ -905,6 +932,32 @@ option {
     width: 100%;
 }
 
+.navbar-nav {
+    .nav-link {
+        &:hover {
+            color: $white;
+        }
+    }
+    .nav-link.active  {
+        color: #fff;
+    }
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    color: $white;
+    text-decoration: none;
+    background-color: $red;
+}
+
+
+.dropdown-item.active,
+.dropdown-item:active {
+    color: $white;
+    text-decoration: none;
+    background-color: $red;
+}
+
 .container-fluid .my-account {
     font-size: .85rem;
     color: $white;
@@ -976,7 +1029,8 @@ option {
     font-size: $font-size-sm;
     text-transform: none;
 }
-.nav-item.last.dropdown{
+
+.nav-item.last.dropdown {
     display: inline-flex;
     padding-right: 20px;
     margin-right: 20px;
@@ -994,9 +1048,10 @@ option {
     margin: auto;
 }
 
-.signout-link, {
+.signout-link,
+{
     background: transparent;
-    + .signout-link {
+    +.signout-link {
         &:visited {
             color: $white;
             background: transparent;
@@ -1095,8 +1150,6 @@ option {
 }
 
 // sign in page
-
-
 .sign-in-form-container {
     width: rem(398px);
     margin: 20px 20px 20px 109px;
@@ -1115,13 +1168,14 @@ option {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-radius: 20px;
-    border-image-source: linear-gradient(to top, rgba(255, 255, 255, .1), rgb(255, 255, 255));
-    // border-image-slice: 1;
+    border-image-source: linear-gradient(to top, rgba(255, 255, 255, .1), rgb(255, 255, 255)); // border-image-slice: 1;
     backdrop-filter: blur(4px);
     box-shadow: 11px 11px 11px 0 rgba(0, 0, 0, .2);
 }
+
 .bss.form-group .form-control.form-control-theme {
     width: 100%;
+    margin-bottom: 0;
     font-size: $font-size-sm;
     font-stretch: condensed;
     line-height: 1.57;
@@ -1135,24 +1189,22 @@ option {
     width: 398.9px;
     height: 344px;
     padding: 29px 20px;
-    background: rgba(255, 255, 255, .2);
+    background: rgba(255, 255, 255, .25);
     border: 1px solid linear-gradient(to top, rgba(255, 255, 255, .1), rgb(255, 255, 255));
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-radius: 20px;
-    border-image-source: linear-gradient(to top, rgba(255, 255, 255, .1), rgb(255, 255, 255));
-    // border-image-slice: 1;
+    border-image-source: linear-gradient(to top, rgba(255, 255, 255, .1), rgb(255, 255, 255)); // border-image-slice: 1;
     backdrop-filter: blur(4px);
     box-shadow: 11px 11px 11px 0 rgba(0, 0, 0, .2);
     color: $white;
     .input-wrapper {
         flex-grow: 1 0 100%;
-        white-space: nowrap;
-        // background: $white;
+        white-space: nowrap; // background: $white;
         border: $sign-in-input-border;
         border-radius: 10px;
         box-shadow: $blur-20;
-        .input-wrapper > .form-control-theme {
+        .input-wrapper>.form-control-theme {
             //width: 23.75rem;
         }
         .checkbox-theme {
@@ -1186,7 +1238,7 @@ option {
             top: .4375rem;
             left: .4rem;
         }
-        .row > [class^="col-"] {
+        .row>[class^="col-"] {
             padding-bottom: 0;
         }
     }
@@ -1271,22 +1323,6 @@ thead.cpl {
 
 /* stylelint-enable */
 
-.table thead th {
-    padding: 0;
-    vertical-align: middle;
-    background: $blue;
-    border-top: 10px solid $blue;
-    border-bottom: 0;
-    border-bottom: 10px solid $blue;
-    &:hover {
-        background: $blue-350 !important;
-        border-top: 10px solid $blue-350;
-        border-bottom: 10px solid $blue-350;
-    }
-    &:not(:last-child) {
-        border-right: $border-width-sm $border-type-solid $green;
-    }
-}
 
 // tbody {
 //   tr {
@@ -1311,6 +1347,10 @@ thead.cpl {
         margin-right: 6px;
         content: ":";
     }
+}
+
+.usafb-tbl-grid {
+    width: 98%;
 }
 
 //status circle
@@ -1415,7 +1455,7 @@ thead.cpl {
         padding: rem(20px);
         margin: 0 auto;
         color: $blue-600;
-        background: rgba(0, 0, 0, .35);
+        background: rgba(0, 0, 0, .25);
         border: solid 1px transparent;
         border-radius: 2px;
         .profileCard {
@@ -1435,7 +1475,7 @@ thead.cpl {
         min-width: 0;
         color: $white; //@include border-radius($card-border-radius);
         word-wrap: break-word;
-        background: rgba(9, 37, 74, .5);
+        background: rgba(0, 0, 0, .25);
         background-clip: border-box;
         border: $card-border-width solid $blue-300;
         >.list-group:first-child {
@@ -1463,6 +1503,9 @@ thead.cpl {
         // as much space as possible, ensuring footers are aligned to the bottom.
         flex: 1 1 auto;
         padding: $card-spacer-x;
+        .form-group {
+            margin-bottom: 0;
+        }
     }
     .card-title {
         margin-bottom: $card-spacer-y;
@@ -1592,6 +1635,8 @@ thead.cpl {
 .form-horizontal {
     .form-control {
         width: 100% !important;
+        color: $white;
+        background: rgba(255, 255, 255, .125);
     }
 }
 
@@ -2070,12 +2115,12 @@ thead.cpl {
 }
 
 // ----------------- nothing below the following class --------------//
-body.scaff .row > [class^="col-"],
+body.scaff .row>[class^="col-"],
 body.allDivs {
     border: 1px solid #ccc;
 }
 
-.row > [class^="col-"] {
+.row>[class^="col-"] {
     // padding-bottom: rem(10px);
     padding-top: rem(10px);
 }

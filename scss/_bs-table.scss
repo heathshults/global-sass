@@ -10,13 +10,9 @@
     margin: 0 auto;
 }
 
-table.table {
-    th {
-        padding: 0.55rem;
-    }
-    td {
-        padding: 0.55rem;
-    }
+table.table th,
+table.table td {
+    padding: 6px 20px;
 }
 
 .fixed-table-body {
@@ -53,13 +49,34 @@ table.table {
     }
 }
 
+.table thead th {
+    padding: 0;
+    vertical-align: middle;
+    background: $blue;
+    border-top: 10px solid $blue;
+    border-bottom: 0;
+    border-bottom: 10px solid $blue;
+    &:hover {
+        background: $blue-350 !important;
+        border-top: 10px solid $blue-350;
+        border-bottom: 10px solid $blue-350;
+    }
+    &:not(:last-child) {
+        border-right: $border-width-sm $border-type-solid $green;
+    }
+}
+
+.table td {
+    font-size: $font-size-sm;
+    vertical-align: top;
+    border-top: .0625rem solid #e9ecef;
+}
+
 .fixed-table-container {
-    border: 1px solid #dddddd;
-    border-top: 1px solid #09254a;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
     overflow: auto;
+    border: 1px solid $blue;
+    border-top: 1px solid $blue;
+    border-radius: 4px;
     table {
         width: 100%;
     }
@@ -67,31 +84,28 @@ table.table {
         th {
             padding: 0;
             margin: 0;
-            border-left: 1px solid #dddddd;
+            border-left: 1px solid $blue;
             &:focus {
                 outline: 0 solid transparent;
             }
             &:first-child {
                 border-left: none;
                 border-top-left-radius: 4px;
-                -webkit-border-top-left-radius: 4px;
-                -moz-border-radius-topleft: 4px;
             }
             .th-inner {
-                line-height: 24px;
-                vertical-align: top;
                 overflow: hidden;
+                line-height: 24px;
                 text-overflow: ellipsis;
                 white-space: nowrap;
+                vertical-align: top;
             }
             .sortable {
-                cursor: pointer;
-                background-position: right;
-                background-repeat: no-repeat;
-                background-position: right -4px center;
-                background-repeat: no-repeat;
                 padding-right: 20px;
                 padding-left: 20px;
+                cursor: pointer;
+                background-repeat: no-repeat;
+                background-position: right;
+                background-position: right -4px center;
             }
             .both {
                 white-space: nowrap;
@@ -189,7 +203,6 @@ table.table {
 #main-content {
     >.container-fluid {
         >.row {
-            -webkit-flex: 1 0 100%;
             flex: 1 0 100%;
             align-items: center;
             padding-top: 0;
@@ -202,7 +215,7 @@ table.table {
 
 .fixed-table-footer {
     overflow: hidden;
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid $gray-20;
 }
 
 .fixed-table-header {
@@ -219,8 +232,8 @@ table.table {
     z-index: 1000;
     display: inline-flex;
     margin: 0 auto;
-    background: lavender;
     text-align: center;
+    background: #e6e6fa;
 }
 
 .fixed-table-loading[style] {
@@ -229,14 +242,11 @@ table.table {
     z-index: 1000;
     display: inline-flex;
     margin: 0 auto;
-    background: lavender;
+    background: #e6e6fa;
     text-align: center;
 }
 
 .fa-spin {
-    -webkit-animation: fa-spin 2s infinite linear;
-    -o-animation: fa-spin 2s infinite linear;
-    -moz-animation: fa-spin 2s infinite linear;
     animation: fa-spin 2s infinite linear;
 }
 
@@ -246,9 +256,6 @@ table.table {
 }
 
 .fa-pulse {
-    -webkit-animation: fa-spin 1s infinite steps(8);
-    -moz-animation: fa-spin 1s infinite steps(8);
-    -o-animation: fa-spin 1s infinite steps(8);
     animation: fa-spin 1s infinite steps(8);
 }
 
@@ -278,6 +285,7 @@ table.table {
     display: -webkit-flex;
     display: flex;
     flex-direction: row;
+    margin-top: -70px;
     justify-content: space-between;
     align-items: flex-end;
     background: #ededed;
@@ -285,15 +293,15 @@ table.table {
     width: 100%;
     padding: 0 10px;
     .pagination-detail {
+        position: relative;
+        top: -5px;
         flex: 0 0 auto;
         margin-top: 10px;
         margin-bottom: 10px;
-        position: relative;
-        top: -5px;
-        font-size: 0.75rem;
+        font-size: .75rem;
     }
     .pagination-info {
-        font-size: 0.75rem;
+        font-size: .75rem;
         line-height: 34px;
     }
     .pagination {
@@ -307,15 +315,15 @@ table.table {
     }
     div.pagination {
         .pagination {
-            flex: 0 0 auto;
             position: relative;
             top: -65px;
+            flex: 0 0 auto;
         }
     }
     .pagination-info-r {
+        margin: 0 5px;
         font-size: rem(12px);
         line-height: 40px;
-        margin: 0 5px;
     }
     .btn-group {
         position: relative;
@@ -341,41 +349,41 @@ table.table {
 .whiteTools-wrapper {
     .dropdown-menu {
         position: absolute;
-        left: 2px !important;
         top: 49px;
+        left: 2px !important;
         z-index: 5000;
-        background-color: #fff;
-        border: 0.125rem solid transparent;
-        border-radius: 0.125rem;
         width: 1380px;
+        background-color: #fff;
+        border: .125rem solid transparent;
+        border-radius: .125rem;
+        box-shadow: .1875rem .1875rem .5rem .0625rem rgba(0, 0, 0, .175);
         transform: none !important;
-        box-shadow: 0.1875rem 0.1875rem 0.5rem 0.0625rem rgba(0, 0, 0, 0.175);
-        &:before {
-            content: '';
+        &::before {
             position: absolute;
-            left: 3px;
             top: -20px;
+            left: 3px;
             width: 0;
             height: 0;
-            border-left: 1.25rem solid transparent;
+            content: "";
             border-right: 1.25rem solid transparent;
             border-bottom: 1.25rem solid #adb5bd;
-            transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            border-left: 1.25rem solid transparent;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
         }
-        &:after {
-            content: '';
+        &::after {
             position: absolute;
-            left: 7px;
             top: -16px;
+            left: 7px;
             width: 0;
             height: 0;
-            border-left: 1rem solid transparent;
+            content: "";
             border-right: 1rem solid transparent;
-            border-bottom: 1rem solid #fff;
+            border-bottom: 1rem solid $white;
+            border-left: 1rem solid transparent;
         }
         label {
-            font-size: 0.875rem;
             display: block !important;
+            font-size: .875rem;
         }
         span {
             display: block;
@@ -795,9 +803,9 @@ div[id^=_SalesforceID] {
 
 .ui-datepicker {
     .theadcalendar {
-        background-color: #09254a;
+        background-color: $blue;
     }
     .thcalendar {
-        background-color: #09254a;
+        background-color: $blue;
     }
 }

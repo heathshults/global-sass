@@ -101,7 +101,7 @@ $grays: (
 $blue:                  #09254a !default;
 $indigo:                #6610f2 !default;
 $purple:                #6f42c1 !default;
-$purple-dark:           #330033 !default;
+$purple-dark:           #330 !default;
 $pink:                  #e83e8c !default;
 $xtra-light-pink:       #ffd7de !default;
 $light-pink:            #ed687c !default;
@@ -806,17 +806,17 @@ $jumbotron-bg:                   $gray-200 !default;
 
 // Cards
 
-$card-spacer-y:               .75rem !default;
+$card-spacer-y:               rem(10px) !default;
 $card-spacer-red-y:           rem(8px) !default;
 $card-spacer-red-top:         rem(8px) !default;
 $card-spacer-red-bottom:      rem(6px) !default;
-$card-spacer-x:               1.25rem !default;
+$card-spacer-x:               rem(20px) !default;
 $card-spacer-red-x:           rem(20px) !default;
 $card-border-width:           1px !default;
 $card-border-radius:          $border-radius !default;
-$card-border-color:           rgba($black,.125) !default;
+$card-border-color:           rgba($black, .125) !default;
 $card-red-border-radius:      $border-radius !default;
-$card-red-border-color:       rgba($black,.125) !default;
+$card-red-border-color:       rgba($black, .125) !default;
 $card-inner-border-radius:    calc(#{$card-border-radius} - #{$card-border-width}) !default;
 $card-cap-bg:                 rgba($black, .03) !default;
 $card-bg:                     $white !default;

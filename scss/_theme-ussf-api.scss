@@ -1,0 +1,690 @@
+@font-face {
+    font-family: "USSF90MinutesDisplay-medium";
+    src: url("./css/fonts/ussf/USSF_90_Min_Display_Medium.otf");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "USSF90MinutesDisplay-light";
+    src: url("./css/fonts/ussf/USSF_90_Min_Display_Light.otf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "USSF90MinutesDisplay-Cond-bold";
+    src: url("./css/fonts/ussf/USSF_90_Min_Display_Cond_Bold.otf");
+    font-weight: 700;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    color: $gray-850; // call the keyframe fadeIn, use animattion ease-in and repeat 1 time
+    opacity: 0;
+    animation: fadeIn ease-in 1; // making sure after animation is complete we remain at the last keyframe value (opacity: 1)
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/*
+< ---- utilities ----- >
+  ------ FLEX ------
+*/
+
+.flexi-container-fluid {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+}
+
+.container-flexi {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 1440px;
+    padding: 0;
+    margin: 0;
+}
+
+.flexi-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.flexi-inline-col-container {
+    display: inline-flex;
+    flex-flow: column wrap;
+}
+
+.flexi-item {
+    flex: 1 auto;
+}
+
+// gs = grow & shrink
+.flexi-item-gs-sm {
+    flex: .25 auto;
+}
+
+.flexi-item-gs-none {
+    flex: 0 auto;
+}
+
+.axis-column {
+    display: flow-root;
+    flex-flow: column wrap;
+}
+
+.axis-row {
+    display: flow-root;
+    flex-flow: row wrap;
+}
+
+.flex-no-shrink {
+    flex-shrink: 0;
+}
+
+/*
+< ----------- BACKGROUND COLORS ----------- >
+*/
+.bg-gray {
+    background: $gray-300;
+}
+
+.bg-gray-mid {
+    background: $gray-400;
+}
+
+.bg-gray-dark {
+    background: $gray-500;
+}
+
+/*
+< ----------- TEXTUAL ----------- >
+*/
+
+.font-weight-light {
+    font-weight: 300;
+}
+
+.font-95 {
+    font-size: 95%;
+}
+
+.font-85 {
+    font-size: 85%;
+}
+
+.font-75 {
+    font-size: 75%;
+}
+
+.font-50 {
+    font-size: 50%;
+}
+
+.text-small {
+    font-size: $font-size-sm;
+}
+
+.text-lg {
+    font-size: $font-size-lg;
+}
+
+.text-xlg {
+    font-size: $font-size-xlg;
+}
+
+.text-yellow {
+    color: $light-yellow;
+}
+
+.text-lightGray {
+    color: $gray-500;
+}
+
+
+/*
+< ----------- NEXT ----------- >
+*/
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+form {
+    flex: 0 1 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+strong {
+    font-weight: 700;
+}
+
+small {
+    font-weight: 300;
+}
+
+/*
+< ----------- ANIMATED CHECKBOX ----------- >
+*/
+
+.animate-checkbox {
+    .tg-list {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .tg-list-item {
+        margin: 0 2em;
+    }
+    .tgl {
+        display: none; // add default box-sizing for this scope
+        &::after,
+        &::before,
+        & *,
+        & *::after,
+        & *::before,
+        & + .tgl-btn {
+            box-sizing: border-box;
+            &::selection {
+                background: none;
+            }
+        }
+        + .tgl-btn {
+            position: relative;
+            display: inline-block;
+            width: 7rem;
+            height: 1.8rem;
+            cursor: pointer;
+            user-select: none;
+            outline: 0;
+            &::after,
+            &::before {
+                position: relative;
+                display: inline-block;
+                width: 50%;
+                height: 100%;
+                content: "";
+            }
+            &::after {
+                left: 0;
+            }
+            &::before {
+                display: none;
+            }
+        }
+        &:checked + .tgl-btn::after {
+            left: 50%;
+        }
+    }
+    .tgl-skewed {
+        + .tgl-btn {
+            overflow: hidden;
+            font-family: "Roboto Light", sans-serif;
+            background: $green;
+            transition: all .2s ease;
+            transform: skew(-10deg);
+            backface-visibility: hidden;
+            &::after,
+            &::before {
+                position: absolute;
+                display: inline-block;
+                width: 100%;
+                font-weight: 700;
+                line-height: 2em;
+                color: $white;
+                text-align: center;
+                text-shadow: 0 1px 0 rgba(0, 0, 0, .4);
+                transition: all .2s ease;
+                transform: skew(10deg);
+            }
+            &::after {
+                left: 100%;
+                content: attr(data-tg-on);
+            }
+            &::before {
+                left: 0;
+                content: attr(data-tg-off);
+            }
+            &:active {
+                background: $green;
+                &::before {
+                    left: -10%;
+                }
+            }
+        }
+        &:checked + .tgl-btn {
+            background: #888;
+            &::before {
+                left: -100%;
+            }
+            &::after {
+                left: 0;
+            }
+            &:active::after {
+                left: 10%;
+            }
+        }
+    }
+}
+
+
+/*
+< ----------- ASPECT RATIO ----------- >
+*/
+
+.are-21by9 {
+    &::before {
+        padding-top: percentage(9 / 21);
+    }
+}
+
+.ar-16by9 {
+    &::before {
+        padding-top: percentage(9 / 16);
+    }
+}
+
+.ar-4by3 {
+    &::before {
+        padding-top: percentage(3 / 4);
+    }
+}
+
+.ar-1by1 {
+    &::before {
+        padding-top: percentage(1 / 1);
+    }
+}
+
+
+/*
+< ----------- ICONS ----------- >
+*/
+
+.icon-chevron-down {
+    color: $btn-primary-02-color;
+    &::after {
+        box-sizing: border-box;
+        display: inline-block;
+        margin-left: 8px;
+        font-family: normal normal normal 14px/1 FontAwesome;
+        font-size: $font-family-base;
+        text-align: right;
+        content: "\f078";
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.icon-calendar {
+    color: $btn-primary-02-color;
+    &::after {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        z-index: 3000;
+        box-sizing: border-box;
+        display: inline-block;
+        margin-left: 8px;
+        font-family: normal normal normal 14px/1 FontAwesome;
+        font-size: $font-family-base;
+        text-align: right;
+        content: "\f073";
+        opacity: 1;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+
+/*
+< ----------- CALLOUTS ----------- >
+*/
+
+.callout {
+    position: relative;
+    padding: 18px 20px;
+    margin: 18px 0;
+    background: #eef4f9;
+    border-radius: 6px;
+    .notch {
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        width: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
+        border-top: 0;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #eef4f9;
+        border-left: 10px solid transparent;
+    }
+}
+
+//page loader
+.pace {
+    pointer-events: none;
+    user-select: none;
+    .pace-progress {
+        position: fixed;
+        top: 0;
+        right: 100%;
+        z-index: 2000;
+        width: 100%;
+        height: 2px;
+        background: $blue-400;
+    }
+}
+
+.pace-inactive {
+    display: none;
+}
+
+// a links
+a {
+    outline: none;
+    outline-width: 0;
+}
+
+// ALERTS
+.alert-success {
+    color: $gray-900;
+    background: #8fd19e;
+    border: 2px solid #74c184;
+}
+
+// buttons ---------------------------
+.btn {
+    text-transform: uppercase;
+    &:focus {
+        opacity: .9;
+    }
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.actionButtons {
+    .actionBtn label {
+        display: inline-flex;
+    }
+}
+
+.btn-skewed {
+    position: relative;
+    top: 0;
+    display: inline-block;
+    height: 1.8rem;
+    padding-top: 7px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: $white; //width: 7rem;
+    background: $blue;
+    outline: 0;
+    transform: skew(-10deg);
+    &:hover {
+        color: $white;
+        text-decoration: none;
+        background: $blue-375;
+    }
+    .lbl-save {
+        transform: skew(10deg);
+    }
+}
+
+.btn-blue-grad-pill {
+    width: 136.5px;
+    height: 41px;
+    color: $white;
+    background: #404e78 $blue-gradient-pill;
+    border: 2px solid #404e78;
+    border-radius: 100px;
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, .32);
+    transition: all .25s ease-in-out;
+    &:hover {
+        background: #404e78;
+    }
+}
+
+.bss-btn {
+    margin: rem(3px);
+    font-weight: $btn-font-weight;
+    color: $white !important;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: $input-btn-border-width solid transparent;
+    @include transition($btn-transition); // Share hover and focus styles
+    @include hover-focus {
+        text-decoration: none;
+    }
+    &:focus,
+    &.focus {
+        outline: 0;
+    } // Disabled comes first so active can properly restyle
+    &.disabled,
+    &:disabled {
+        opacity: .65;
+        @include box-shadow(none);
+    }
+    &:active,
+    &.active {
+        background-image: none;
+        @include box-shadow($btn-focus-box-shadow,
+        $btn-active-box-shadow);
+    }
+}
+
+.btn-primary-02 {
+    display: inline-flex;
+    /* stylelint-disable */
+    align-items: unset !important;
+    /* stylelint-enable */
+    padding: $btn-primary-02-padding;
+    font-size: $btn-primary-02-font-sm;
+    color: $btn-primary-02-color;
+    text-transform: uppercase;
+    background: $blue $btn-primary-02-bg-grad;
+    border: $btn-primary-02-border;
+    border-radius: $btn-primary-02-border-radius;
+    &:hover,
+    &:active,
+    &:focus {
+        color: $btn-primary-02-color;
+        cursor: pointer;
+        background: $blue-400;
+        /* stylelint-disable */
+        border: $btn-primary-02-border-hover !important;
+        /* stylelint-enable */
+        transition: $btn-primary-02-trans-bgcolor;
+    }
+    .fa {
+        font-size: $btn-primary-02-fa-size;
+    }
+}
+
+.btn-primary-02-sm {
+    width: 140px;
+    padding: $btn-primary-02-padding-sm;
+    margin: 1px;
+    white-space: nowrap;
+}
+
+.btn-danger,
+.btn-primary,
+.btn-primary-02 {
+    padding: $btn-red-padding;
+    font-size: $btn-red-font-size;
+    font-size: $btn-primary-02-font-sm;
+    /* stylelint-disable */
+    color: $btn-primary-02-color !important;
+    /* stylelint-enable */
+}
+
+.btn span {
+    margin: 0 auto;
+}
+
+.btn-red {
+    display: inline-flex;
+    align-items: unset !important;
+    padding: $btn-red-padding;
+    font-size: $btn-red-font-size;
+    color: $btn-red-color;
+    text-transform: uppercase;
+    vertical-align: $btn-red-fa-valign;
+    background: darken($red, 15%) $btn-red-bg-grad;
+    border: $btn-red-border;
+    border-radius: $btn-red-border-radius;
+    &:hover {
+        background: darken($red, 15%);
+        border: $btn-red-border-hover !important;
+        transition: $btn-red-trans-bgcolor;
+    }
+    &:active,
+    &:focus {
+        background: darken($red, 30%);
+        border: $btn-red-border-hover !important;
+    }
+    .fa {
+        font-size: $btn-red-fa-size;
+    }
+}
+
+.btn-clearWhite {
+    z-index: 1;
+    padding: $btn-clearWhite-padding;
+    margin: 0;
+    font-size: $btn-clearWhite-font-size !important;
+    color: $btn-clearWhite-color;
+    text-transform: capitalize !important;
+    vertical-align: $btn-clearWhite-fa-valign;
+    background: $btn-clearWhite-bg-grad;
+    border: $btn-clearWhite-border !important;
+    border-radius: 0;
+    &:hover {
+        color: $btn-clearWhite-color-hover;
+        background: $btn-clearWhite-bg-hover;
+        border: $btn-clearWhite-border-hover;
+    }
+    &:focus,
+    &:visited,
+    &:active {
+        color: $btn-clearWhite-color-hover;
+        background: $btn-clearWhite-bg-hover;
+        border: $btn-clearWhite-border-hover;
+    }
+    .fa {
+        margin-top: 4px;
+        margin-right: rem(6px);
+        font-size: $btn-clearWhite-fa-size;
+    }
+}
+
+.btn-green {
+    padding: $btn-green-padding;
+    font-size: $btn-green-font-size;
+    color: $btn-green-color;
+    text-transform: uppercase;
+    vertical-align: $btn-green-fa-valign;
+    background-image: $btn-green-bg-grad;
+    border: $btn-green-border;
+    border-radius: $btn-green-border-radius;
+    &:hover,
+    &:active,
+    &:focus {
+        color: $btn-green-color;
+        background: $green;
+        border: $btn-green-border-hover !important;
+        transition: $btn-green-trans-bgcolor;
+    }
+    .fa {
+        margin: rem(2px) rem(2px);
+        font-size: $btn-green-fa-size;
+    }
+}
+
+.btn-danger,
+.btn-primary {
+    padding: $btn-red-padding;
+    font-size: $btn-red-font-size;
+}
+
+.btn-default {
+    color: #333;
+    background: $gray-400;
+    border: 1px solid $gray-500;
+}
+
+.actionBtn {
+    align-self: center;
+    min-width: rem(80px);
+    min-height: rem(40px);
+    padding: 6px 10px;
+    text-align: center;
+    background: $blue;
+    border: 1px solid $cyan;
+    &:hover,
+    &:active,
+    &:focus {
+        cursor: pointer;
+        background: $blue-400;
+        border: 1px solid $cyan !important;
+        transition: all .3s ease-in;
+    }
+    .action-button-icon {
+        margin: 0 4px;
+    }
+}
+
+.button-save {
+    margin: $btn-save-margin;
+    color: $white;
+    background: $green;
+}
+
+.button.clear {
+    display: flex;
+}
+//page layout elements
+
+.logo-container {
+    max-width: 188px;
+    height: 98px;
+    .logo-main {
+        max-width: 100%;
+    }
+}
+
+// Nothing below here
+
+.row > [class^="col-"] {
+    padding: 0;
+    margin: 0;
+}

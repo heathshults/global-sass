@@ -64,7 +64,7 @@
     {
       "type": "gulp",
       "task": "browserSync",
-      "problemMatcher":"$gulp-tsc"
+      "problemMatcher": "$gulp-tsc"
     },
     {
       "type": "gulp",
@@ -88,6 +88,11 @@
     {
       "type": "npm",
       "script": "css-compile-v2",
+      "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "css-compile-ussf",
       "problemMatcher": []
     }
   ]

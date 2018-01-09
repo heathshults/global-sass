@@ -64,7 +64,7 @@ $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
-$gray-600: #868e96 !default;
+$gray-600: #6c757d !default;
 $gray-650: #767d84 !default;
 $gray-710: #495057 !default;
 $gray-700: #44484b !default;
@@ -83,46 +83,40 @@ $clear-black:           rgba(0, 0, 0, .25) !default;
 $clear-black-md:        rgba(0, 0, 0, .5) !default;
 $clear-black-dark:      rgba(0, 0, 0, .75) !default;
 
-$grays: (
-  10:  $gray-10,
-  20:  $gray-20,
-  100: $gray-100,
-  200: $gray-200,
-  300: $gray-300,
-  400: $gray-400,
-  500: $gray-500,
-  600: $gray-600,
-  700: $gray-700,
-  800: $gray-800,
-  850: $gray-850,
-  900: $gray-900
-) !default;
+$grays: () !default;
+$grays: map-merge(
+    (
+        "10":  $gray-10,
+        "20":  $gray-20,
+        "100": $gray-100,
+        "200": $gray-200,
+        "300": $gray-300,
+        "400": $gray-400,
+        "500": $gray-500,
+        "600": $gray-600,
+        "700": $gray-700,
+        "800": $gray-800,
+        "850": $gray-850,
+        "900": $gray-900
+    ),
+    $grays
+);
 
 $blue:                  #09254a !default;
 $indigo:                #6610f2 !default;
 $purple:                #6f42c1 !default;
-$purple-dark:           #330 !default;
 $pink:                  #e83e8c !default;
-$xtra-light-pink:       #ffd7de !default;
-$light-pink:            #ed687c !default;
-$pink-dark:             #ab0b33 !default;
 $red:                   #9e0a0f !default;
-$red-001:               #2c0104 !default;
-$red-000:               #4c0408 !default;
-$red-5:                 #eb3232 !default;
-$red-10:                #c90c12 !default;
-$red-20:                #9e0a0f !default;
-$red-100:               #5c090c !default;
+$red:                   #9e0a0f !default;
 $orange:                #fd7e14 !default;
 $light-yellow:          #fafad2 !default;
 $yellow:                #fdba04 !default;
-$yellow-md:             #eec111 !default;
 $green:                 #28a745 !default;
 $green-00:              #1d7530 !default;
 $green-05:              #26963c !default;
 $green-10:              #5cb85c !default;
 $green-20:              #80ff80 !default;
-$green-000-40:          rgba(40, 167, 69, 0.5) !default;
+$green-000-40:          rgba(40, 167, 69, .5) !default;
 $teal:                  #20c997 !default;
 $cyan:                  #0288d5 !default;
 $light-cyan:            #049dff !default;
@@ -146,34 +140,38 @@ $blue-450:              #4990e2 !default;
 $blue-500:              #8ab8e4 !default;
 $blue-600:              #d6ecff !default;
 
-$colors: (
-  blue: $blue,
-  indigo: $indigo,
-  purple: $purple,
-  pink: $pink,
-  red: $red,
-  orange: $orange,
-  yellow: $yellow,
-  lightgoldenrodyellow: $light-yellow,
-  green: $green,
-  teal: $teal,
-  white: $white,
-  gray: $gray-600,
-  gray-dark: $gray-800,
-  blue-dark: $blue-000,
-  blue-medium: $blue-400
-) !default;
+$colors: () !default;
+$colors: map-merge(
+    (
+        "blue":       $blue,
+        "indigo":     $indigo,
+        "purple":     $purple,
+        "pink":       $pink,
+        "red":        $red,
+        "orange":     $orange,
+        "yellow":     $yellow,
+        "green":      $green,
+        "teal":       $teal,
+        "white":      $white,
+        "gray":       $gray-600,
+    ),
+    $colors
+);
 
-$theme-colors: (
-  primary: $blue,
-  secondary: $gray-600,
-  success: $green,
-  info: $cyan,
-  warning: $yellow,
-  danger: $red,
-  light: $gray-100,
-  dark: $gray-800,
-) !default;
+$theme-colors: () !default;
+$theme-colors: map-merge(
+    (
+        "primary": $blue,
+        "secondary": $gray-600,
+        "success": $green,
+        "info": $cyan,
+        "warning": $yellow,
+        "danger": $red,
+        "light": $gray-100,
+        "dark": $gray-800,
+    ),
+    $theme-colors
+);
 
 // Set a specific jump point for requesting color jumps
 $theme-color-interval: 8% !default;
@@ -182,6 +180,7 @@ $theme-color-interval: 8% !default;
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
+$enable-caret:                      true !default;
 $enable-rounded:                    true !default;
 $enable-shadows:                    false !default;
 $enable-gradients:                  false !default;
@@ -199,7 +198,7 @@ $darkblue-gradient-reverse-50:      linear-gradient(to bottom, $blue-200-50, $bl
 $darkblue-gradient-reverse:         linear-gradient(to bottom, $blue-200, $blue-400) !default;
 $darkblue-button-gradient:          linear-gradient(to bottom, $blue, $blue-200) !default;
 $skew-divider-gradient:             linear-gradient(180deg, $blue-350, $blue--01) !default;
-$darkred-gradient-reverse:          linear-gradient(to bottom, $red-000, $red) !default;
+$darkred-gradient-reverse:          linear-gradient(to bottom, darken($red, 15%), $red) !default;
 $green-gradient-reverse:            linear-gradient(to bottom, $green-00, $green) !default;
 $blue-gradient-pill:                linear-gradient(to bottom, #45517e, $blue) !default;
 
@@ -212,20 +211,20 @@ $blue-gradient-pill:                linear-gradient(to bottom, #45517e, $blue) !
 
 $spacer: 1rem !default;
 $spacers: (
-  0: 0,
-  1: ($spacer * .25),
-  2: ($spacer * .5),
-  3: $spacer,
-  4: ($spacer * 1.5),
-  5: ($spacer * 3)
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3)
 ) !default;
 
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: (
-  25: 25%,
-  50: 50%,
-  75: 75%,
-  100: 100%
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%
 ) !default;
 
 // Body
@@ -251,11 +250,11 @@ $link-hover-decoration: underline !default;
 // adapting to different screen sizes, for use in media queries.
 
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1280px
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1440px
 ) !default;
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints);
@@ -266,10 +265,10 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 576px, //540px,
-  md: 768px, //720px,
-  lg: 992px, //960px,
-  xl: 1280px
+    sm: 576px, //540px,
+    md: 768px, //720px,
+    lg: 992px, //960px,
+    xl: 1440px
 ) !default;
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
@@ -279,7 +278,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns: 12 !default;
-$grid-gutter-width: 30px !default;
+$grid-gutter-width: 0 !default;
 
 // Components
 //
@@ -317,12 +316,12 @@ $transition-collapse:    height .35s ease !default;
 // Fonts
 //
 // Font, line-height, and color for body text, headings, and more.
-$font-url--sans-serif:        "./css/web-fonts/roboto/roboto-regular.woff2 " !default;
-$font-url--monospace:         "./css/web-fonts/LiberationMono-Regular.ttf" !default;
+$font-url--sans-serif:        "./css/fonts/ussf/USSF_90_Min_Display_Medium.otf" !default;
+$font-url--monospace:         "./css/fonts/ussf/USSF_90_Min_Display_Light.otf" !default;
 
-$font-family-sans-serif:  roboto, roboto light, sans-serif !default;
+$font-family-sans-serif:  "USSF90MinutesDisplay", sans-serif !default;
 $font-family-base:        $font-family-sans-serif !default;
-$font-family-monospace:   "RobotoMono-Regular", roboto-mono, monospace !default;
+$font-family-monospace:   "USSF90MinutesDisplay", monospace !default;
 
 $font-size-xsm:   .75rem !default;  // 12px
 $font-size-sm:    .875rem !default; // 14px
@@ -377,14 +376,14 @@ $text-muted:          $gray-600 !default;
 $blockquote-small-color:  $gray-600 !default;
 $blockquote-font-size:    ($font-size-base * 1.25) !default;
 
-$hr-border-color:     rgba($black,.1) !default;
+$hr-border-color:     rgba($black, .1) !default;
 $hr-border-width:     $border-width !default;
 
 $mark-padding:        .2em !default;
 
 $dt-font-weight: $font-weight-bold !default;
 
-$kbd-box-shadow:         inset 0 -.1rem 0 rgba($black,.25) !default;
+$kbd-box-shadow:         inset 0 -.1rem 0 rgba($black, .25) !default;
 $nested-kbd-font-weight: $font-weight-bold !default;
 
 $list-inline-padding:    5px !default;
@@ -400,8 +399,8 @@ $table-cell-padding:            .75rem !default;
 $table-cell-padding-sm:         .3rem !default;
 
 $table-bg:                      transparent !default;
-$table-accent-bg:               rgba($black,.05) !default;
-$table-hover-bg:                rgba($black,.075) !default;
+$table-accent-bg:               rgba($black, .05) !default;
+$table-hover-bg:                rgba($black, .075) !default;
 $table-active-bg:               $table-hover-bg !default;
 
 $table-border-width:            $border-width !default;
@@ -462,10 +461,10 @@ $btn-red-fa-size:        rem(16px) !default;
 $btn-red-fa-valign:      middle !default;
 $btn-red-color:          $white !default;
 $btn-red-padding:        rem(10px) rem(40px) !default;
-$btn-red-bg-grad:        linear-gradient(180deg, $red-20 65%, $red-10, 90%, $red-20) !default;
+$btn-red-bg-grad:        linear-gradient(180deg, $red 65%, darken($red, 10%), 90%, $red) !default;
 $btn-red-border:         solid rem(3px) $red !default;
 $btn-red-border-radius:  rem(4px) !default;
-$btn-red-border-hover:   rem(3px) solid $light-pink !default;
+$btn-red-border-hover:   rem(3px) solid lighten($pink, 15%) !default;
 $btn-red-trans-bgcolor:  all .15s ease-in !default;
 
 $btn-clearWhite-font-size:                  rem(14px) !default;
@@ -478,7 +477,7 @@ $btn-clearWhite-color-hover:                $white !default;
 $btn-clearWhite-padding:                    rem(8px) rem(12px) rem(3px) rem(12px) !default;
 $btn-clearWhite-bg:                         $gray-05 !default;
 $btn-clearWhite-bg-hover:                   $blue-375 !default;
-$btn-clearWhite-bg-grad:                    linear-gradient(180deg, #ededed 36%, #cccdcf 100%) !default;
+$btn-clearWhite-bg-grad:                    linear-gradient(180deg, $gray-05 36%, $gray-400 100%) !default;
 $btn-clearWhite-border:                     solid rem(2px) $white !default;
 $btn-clearWhite-border-hover:               solid rem(2px) $gray-500 !default;
 $btn-clearWhite-border-thin:                solid rem(1px) $white !default;
@@ -493,16 +492,16 @@ $btn-green-fa-size:        rem(16px) !default;
 $btn-green-fa-valign:      middle !default;
 $btn-green-color:          $white !default;
 $btn-green-padding:        rem(10px) rem(40px) !default;
-$btn-green-bg-grad:        linear-gradient(180deg, $green-00 65%, $green-05, 90%, $green-00) !default;
+$btn-green-bg-grad:        linear-gradient(180deg, darken($green, 5%) 65%, darken($green, 50%), 90%, darken($green, 5%)) !default;
 $btn-green-border:         solid rem(3px) $green-00 !default;
 $btn-green-border-radius:  rem(4px) !default;
 $btn-green-border-hover:   rem(3px) solid $green !default;
-$btn-green-trans-bgcolor:  background .3s ease-in !default;
+$btn-green-trans-bgcolor:  all .3s ease-in !default;
 
 $btn-font-weight:                $font-weight-normal !default;
-$btn-box-shadow:                 inset 0 rem(1px) 0 rgba($white,.15), 0 rem(1px) rem(1px) rgba($black,.075) !default;
+$btn-box-shadow:                 inset 0 rem(1px) 0 rgba($white, .15), 0 rem(1px) rem(1px) rgba($black, .075) !default;
 $btn-focus-box-shadow:           0 0 0 rem(3px) rgba(theme-color("primary"), .25) !default;
-$btn-active-box-shadow:          inset 0 rem(3px) rem(5px) rgba($black,.125) !default;
+$btn-active-box-shadow:          inset 0 rem(3px) rem(5px) rgba($black, .125) !default;
 
 $btn-link-disabled-color:        $gray-600 !default;
 
@@ -530,9 +529,9 @@ $input-bg:                       $white !default;
 $input-disabled-bg:              $gray-200 !default;
 
 $input-color:                    $gray-700 !default;
-$input-border-color:             rgba($blue,.15) !default;
+$input-border-color:             rgba($blue, .15) !default;
 $input-btn-border-width:         $border-width-md !default; // For form controls and buttons
-$input-box-shadow:               inset 0 1px 1px rgba($black,.075) !default;
+$input-box-shadow:               inset 0 1px 1px rgba($black, .075) !default;
 
 $input-border-radius:            $border-radius !default;
 $input-border-radius-lg:         $border-radius-lg !default;
@@ -581,7 +580,7 @@ $custom-control-spacer-x:         1rem !default;
 $custom-control-indicator-size:       1rem !default;
 $custom-control-indicator-bg:         $gray-20 !default;
 $custom-control-indicator-bg-size:    50% 50% !default;
-$custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba($black,.1) !default;
+$custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba($black, .1) !default;
 
 $custom-control-indicator-disabled-bg:       $gray-200 !default;
 $custom-control-description-disabled-color:  $gray-600 !default;
@@ -646,16 +645,16 @@ $custom-file-bg:            $white !default;
 $custom-file-border-width:  $border-width !default;
 $custom-file-border-color:  $input-border-color !default;
 $custom-file-border-radius: $border-radius !default;
-$custom-file-box-shadow:    inset 0 .2rem .4rem rgba($black,.05) !default;
+$custom-file-box-shadow:    inset 0 .2rem .4rem rgba($black, .05) !default;
 $custom-file-button-color:  $custom-file-color !default;
 $custom-file-button-bg:     $gray-200 !default;
 $custom-file-text: (
-  placeholder: (
-    en: "Choose file..."
-  ),
-  button-label: (
-    en: "Browse"
-  )
+    placeholder: (
+        en: "Choose file..."
+    ),
+    button-label: (
+        en: "Browse"
+    )
 ) !default;
 
 
@@ -756,19 +755,19 @@ $navbar-toggler-padding-x:           .75rem !default;
 $navbar-toggler-font-size:           $font-size-lg !default;
 $navbar-toggler-border-radius:       $btn-border-radius !default;
 
-$navbar-dark-color:                 rgba($white,.5) !default;
-$navbar-dark-hover-color:           rgba($white,.75) !default;
-$navbar-dark-active-color:          rgba($white,1) !default;
-$navbar-dark-disabled-color:        rgba($white,.25) !default;
+$navbar-dark-color:                 rgba($white, .5) !default;
+$navbar-dark-hover-color:           rgba($white, .75) !default;
+$navbar-dark-active-color:          rgba($white, 1) !default;
+$navbar-dark-disabled-color:        rgba($white, .25) !default;
 $navbar-dark-toggler-icon-bg:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
-$navbar-dark-toggler-border-color:  rgba($white,.1) !default;
+$navbar-dark-toggler-border-color:  rgba($white, .1) !default;
 
-$navbar-light-color:                rgba($black,.5) !default;
-$navbar-light-hover-color:          rgba($black,.7) !default;
-$navbar-light-active-color:         rgba($black,.9) !default;
-$navbar-light-disabled-color:       rgba($black,.3) !default;
+$navbar-light-color:                rgba($black, .5) !default;
+$navbar-light-hover-color:          rgba($black, .7) !default;
+$navbar-light-active-color:         rgba($black, .9) !default;
+$navbar-light-disabled-color:       rgba($black, .3) !default;
 $navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
-$navbar-light-toggler-border-color: rgba($black,.1) !default;
+$navbar-light-toggler-border-color: rgba($black, .1) !default;
 
 // Pagination
 
@@ -852,8 +851,8 @@ $popover-inner-padding:               1px !default;
 $popover-bg:                          $white !default;
 $popover-max-width:                   276px !default;
 $popover-border-width:                $border-width !default;
-$popover-border-color:                rgba($black,.2) !default;
-$popover-box-shadow:                  0 5px 10px rgba($black,.2) !default;
+$popover-border-color:                rgba($black, .2) !default;
+$popover-box-shadow:                  0 5px 10px rgba($black, .2) !default;
 
 $popover-header-bg:                    darken($popover-bg, 3%) !default;
 $popover-header-color:                 $headings-color !default;
@@ -897,10 +896,10 @@ $modal-dialog-margin-y-sm-up: 30px !default;
 $modal-title-line-height:     $line-height-base !default;
 
 $modal-content-bg:               $white !default;
-$modal-content-border-color:     rgba($black,.2) !default;
+$modal-content-border-color:     rgba($black, .2) !default;
 $modal-content-border-width:     $border-width !default;
-$modal-content-box-shadow-xs:    0 3px 9px rgba($black,.5) !default;
-$modal-content-box-shadow-sm-up: 0 5px 15px rgba($black,.5) !default;
+$modal-content-box-shadow-xs:    0 3px 9px rgba($black, .5) !default;
+$modal-content-box-shadow-sm-up: 0 5px 15px rgba($black, .5) !default;
 
 $modal-backdrop-bg:           $black !default;
 $modal-backdrop-opacity:      .5 !default;
@@ -943,7 +942,7 @@ $progress-height:               1rem !default;
 $progress-font-size:            .75rem !default;
 $progress-bg:                   $gray-200 !default;
 $progress-border-radius:        $border-radius !default;
-$progress-box-shadow:           inset 0 .1rem .1rem rgba($black,.1) !default;
+$progress-box-shadow:           inset 0 .1rem .1rem rgba($black, .1) !default;
 $progress-bar-color:            $white !default;
 $progress-bar-bg:               theme-color("primary") !default;
 $progress-bar-animation-timing: 1s linear infinite !default;
@@ -952,7 +951,7 @@ $progress-bar-transition:       width .6s ease !default;
 // List group
 
 $list-group-bg:                  $white !default;
-$list-group-border-color:        rgba($black,.125) !default;
+$list-group-border-color:        rgba($black, .125) !default;
 $list-group-border-width:        $border-width !default;
 $list-group-border-radius:       $border-radius !default;
 
@@ -981,7 +980,7 @@ $thumbnail-bg:                $body-bg !default;
 $thumbnail-border-width:      $border-width !default;
 $thumbnail-border-color:      $gray-20 !default;
 $thumbnail-border-radius:     $border-radius !default;
-$thumbnail-box-shadow:        0 1px 2px rgba($black,.075) !default;
+$thumbnail-box-shadow:        0 1px 2px rgba($black, .075) !default;
 $thumbnail-transition:        all .2s ease-in-out !default;
 
 
@@ -1037,7 +1036,7 @@ $close-text-shadow:           0 1px 0 $white !default;
 $code-font-size:              90% !default;
 $code-padding-y:              .2rem !default;
 $code-padding-x:              .4rem !default;
-$code-color:                  $red-10 !default; //#bd4147
+$code-color:                  $red !default; //#bd4147
 $code-bg:                     $gray-100 !default;
 
 $kbd-color:                   $white !default;
@@ -1055,7 +1054,7 @@ $user-avatar-width:             40px !default;
 $user-avatar-height:            40px !default;
 $user-avatar-margin:            .375rem !default;
 $user-avatar-bg-color:          $blue-450 !default;
-$user-avatar-red-bg-color:      $red-20 !default;
+$user-avatar-red-bg-color:      $red !default;
 $user-avatar-border-width:      .25rem !default;
 $user-avatar-border-radius:     50% !default;
 
@@ -1063,7 +1062,7 @@ $user-avatar-md-width:          100px !default;
 $user-avatar-md-height:         100px !default;
 $user-avatar-md-margin:         .18rem !default;
 $user-avatar-md-bg-color:       $blue-450 !default;
-$user-avatar-red-md-bg-color:   $red-20 !default;
+$user-avatar-red-md-bg-color:   $red !default;
 $user-avatar-md-border-width:   .25rem !default;
 $user-avatar-md-border-radius:  50% !default;
 
@@ -1071,7 +1070,7 @@ $user-avatar-lg-width:                  rem(140px) !default; //9.375rem 11.56rem
 $user-avatar-lg-height:                 rem(140px) !default;
 $user-avatar-lg-margin:                 .375rem !default;
 $user-avatar-lg-bg-color:               $blue-450 !default;
-$user-avatar-red-lg-bg-color:           $red-20 !default;
+$user-avatar-red-lg-bg-color:           $red !default;
 $user-avatar-lg-border-width:           .25rem !default;
 $user-avatar-lg-border-radius:          50% !default;
 
@@ -1098,10 +1097,3 @@ $border-lightgray-dashed-1:             1px dashed $gray-500 !default;
 $border-lightblue-solid-1:              1px solid $blue-375 !default;
 
 // icons
-// loading icons
-$loading-icon-spinner:                  url("data:image/svg+xml;charset=utf8,%3Cdiv class='loader loader--style7' title='6'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='24px' height='30px' viewBox='0 0 24 30' style='enable-background:new 0 0 50 50;' xml:space='preserve'%3E%3Crect x='0' y='0' width='4' height='20' fill='#333'%3E%3Canimate attributeName='opacity' attributeType='XML' values='1; .2; 1'  begin='0s' dur='0.6s' repeatCount='indefinite' /%3E%3C/rect%3E%3Crect x='7' y='0' width='4' height='20' fill='#333'%3E%3Canimate attributeName='opacity' attributeType='XML' values='1; .2; 1' begin='0.2s' dur='0.6s' repeatCount='indefinite' /%3E%3C/rect%3E %3Crect x='14' y='0' width='4' height='20' fill='#333'%3E%3Canimate attributeName='opacity' attributeType='XML' values='1; .2; 1' begin='0.4s' dur='0.6s' repeatCount='indefinite' /%3E%3C/rect%3E%3C/svg%3E%3C/div%3E") !default;
-$loading-icon-spinner-bg-blue:          $blue !default;
-
-// football
-$helmet-1:                              url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0' y='0' width='64' height='64' viewBox='-16 -16 64 64' fill='#ffffff' class='icon-fill-white'%3E%3Cpath d='M-13.938 45.857c0.068 0.516 0.469 0.979 0.992 0.992 2.419 0.061 4.886-0.184 7.183-0.979 1.651-0.572 3.214-1.488 4.335-2.834 1.964-2.365 2.242-5.578 2.596-8.514 0.034-0.279 0.258-0.504 0.537-0.531 0.292-0.033 0.578-0.061 0.863-0.094 0.313-0.035 0.604 0.176 0.659 0.488 0.122 0.686 0.298 1.387 0.53 2.1 2.283 6.869 9.982 8.371 16.28 6.762 2.637-0.674 4.771-1.855 6.932-3.486 1.849-1.393 3.758-2.84 6.007-3.5 0.659-0.197 1.271-0.291 1.821-0.291 0.707 0 1.108 0.236 1.332 0.502 0.395 0.455 0.985 0.707 1.59 0.707h2.161c0.646 0 1.257-0.299 1.651-0.809C45.812 30.785 48 23.738 48 16.495c0-17.286-13.258-31.353-29.552-31.353 -7.217 0-14.121 2.875-19.346 7.814C-4.153-3.965-6.891-0.208-8.719 3.883c-1.624 3.642-3.445 8.929 0.761 11.511 2.881 1.766 6.313 1.889 8.976 4.112 1.088 0.902 1.74 2.031 2.256 3.336 0.149 0.387-0.075 0.814-0.482 0.904l-17.804 4.498c-0.645 0.162-1.06 0.775-0.978 1.434C-15.997 29.678-14.386 42.371-13.938 45.857zM21.777 21.715c2.168 0 3.921 1.752 3.921 3.92s-1.753 3.92-3.921 3.92 -3.921-1.752-3.921-3.92S19.609 21.715 21.777 21.715zM1.705 29.996c0.102-0.889 0.19-1.617 0.251-2.188 0.027-0.258 0.217-0.469 0.476-0.523 0.095-0.02 0.197-0.041 0.292-0.066 0.265-0.063 0.516 0.154 0.489 0.428 -0.088 0.773-0.169 1.59-0.21 2.439 -0.014 0.299-0.245 0.543-0.543 0.576 -0.027 0-0.055 0.008-0.088 0.008C1.983 30.711 1.657 30.385 1.705 29.996zM-2.175 35.188c-0.102 0.838-0.211 1.727-0.333 2.686 -0.598 4.865-5.239 5.803-7.882 5.938 -0.313 0.014-0.591-0.211-0.632-0.523l-0.945-7.053c-0.047-0.332 0.19-0.639 0.523-0.68 1.828-0.23 5.035-0.625 8.589-1.039C-2.461 34.469-2.128 34.801-2.175 35.188zM-12.185 30.363c2.562-0.543 7.04-1.502 10.315-2.195 0.265-0.053 0.51 0.164 0.476 0.436 -0.068 0.584-0.149 1.264-0.238 2.039 -0.034 0.277-0.251 0.502-0.537 0.529 -4.002 0.463-7.712 0.918-9.717 1.17 -0.333 0.041-0.632-0.191-0.68-0.523l-0.102-0.789C-12.701 30.725-12.497 30.432-12.185 30.363z' class='icon-fill-white'/%3E%3C/svg%3E") !default;
-$helmet-1-right:                        url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0' y='0' width='64' height='64' viewBox='-16 -16 64 64' fill='#ffffff' class='icon-fill-white'%3E%3Cstyle%3E.icon-fill-white{fill:#FFF;fill-opacity:0.5;}%3C/style%3E%3Cpath d='M47.989 29.678c0.082-0.658-0.333-1.271-0.978-1.434l-17.804-4.498c-0.408-0.09-0.632-0.518-0.482-0.904 0.517-1.305 1.168-2.434 2.256-3.336 2.663-2.223 6.096-2.346 8.977-4.112 4.206-2.582 2.385-7.869 0.761-11.511 -1.828-4.091-4.566-7.849-7.821-10.927 -5.226-4.94-12.129-7.814-19.346-7.814C-2.742-14.858-16-0.792-16 16.495c0 7.244 2.188 14.291 6.469 19.876 0.395 0.51 1.006 0.809 1.651 0.809h2.161c0.604 0 1.195-0.252 1.59-0.707 0.224-0.266 0.625-0.502 1.332-0.502 0.551 0 1.162 0.094 1.821 0.291 2.249 0.66 4.158 2.107 6.007 3.5 2.161 1.631 4.295 2.813 6.932 3.486 6.298 1.609 13.997 0.107 16.28-6.762 0.231-0.713 0.407-1.414 0.529-2.1 0.055-0.313 0.347-0.523 0.659-0.488 0.286 0.033 0.571 0.061 0.863 0.094 0.279 0.027 0.503 0.252 0.537 0.531 0.354 2.936 0.632 6.148 2.596 8.514 1.121 1.346 2.684 2.262 4.335 2.834 2.297 0.795 4.764 1.039 7.183 0.979 0.523-0.014 0.924-0.477 0.992-0.992C46.386 42.371 47.996 29.678 47.989 29.678zM14.144 25.635c0 2.168-1.753 3.92-3.921 3.92s-3.921-1.752-3.921-3.92 1.753-3.92 3.921-3.92S14.144 23.467 14.144 25.635zM29.629 30.67c-0.033 0-0.061-0.008-0.088-0.008 -0.299-0.033-0.53-0.277-0.544-0.576 -0.041-0.85-0.122-1.666-0.21-2.439 -0.027-0.273 0.224-0.49 0.488-0.428 0.096 0.025 0.197 0.047 0.293 0.066 0.258 0.055 0.448 0.266 0.476 0.523 0.062 0.57 0.149 1.299 0.251 2.188C30.343 30.385 30.017 30.711 29.629 30.67zM34.854 34.516c3.554 0.414 6.761 0.809 8.589 1.039 0.333 0.041 0.571 0.348 0.523 0.68l-0.944 7.053c-0.041 0.313-0.319 0.537-0.632 0.523 -2.644-0.135-7.284-1.072-7.883-5.938 -0.122-0.959-0.23-1.848-0.333-2.686C34.128 34.801 34.461 34.469 34.854 34.516zM44.667 31.029l-0.102 0.789c-0.048 0.332-0.347 0.564-0.68 0.523 -2.005-0.252-5.715-0.707-9.717-1.17 -0.286-0.027-0.503-0.252-0.537-0.529 -0.089-0.775-0.17-1.455-0.238-2.039 -0.034-0.271 0.211-0.488 0.476-0.436 3.275 0.693 7.754 1.652 10.315 2.195C44.497 30.432 44.701 30.725 44.667 31.029z' class='icon-fill-white'/%3E%3C/svg%3E")!default;

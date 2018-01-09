@@ -170,13 +170,13 @@ small {
         & *,
         & *::after,
         & *::before,
-        &+.tgl-btn {
+        & + .tgl-btn {
             box-sizing: border-box;
             &::selection {
                 background: none;
             }
         }
-        +.tgl-btn {
+        + .tgl-btn {
             position: relative;
             display: inline-block;
             width: 7rem;
@@ -204,7 +204,7 @@ small {
         }
     }
     .tgl-skewed {
-        +.tgl-btn {
+        + .tgl-btn {
             overflow: hidden;
             font-family: "Roboto Light", sans-serif;
             background: $green;
@@ -239,7 +239,7 @@ small {
                 }
             }
         }
-        &:checked+.tgl-btn {
+        &:checked + .tgl-btn {
             background: #888;
             &::before {
                 left: -100%;
@@ -651,7 +651,7 @@ button:hover {
     background: $blue-450-50 url("images/bg/usa-fb-bg.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 1440px 1024px;
+    background-size: 1440px;
     background-blend-mode: multiply;
     object-fit: 100%;
 }
@@ -737,6 +737,7 @@ button:hover {
 }
 
 .player {
+    z-index: 110;
     width: 927px;
     height: 100vh;
     background: url("images/bg/sign-in/bg-sign-in-player-bg-01.png");
@@ -744,7 +745,6 @@ button:hover {
     background-attachment: fixed;
     background-position: bottom;
     background-size: 35%;
-    z-index: 110;
     // background-blend-mode: difference;
     // object-fit: 100%;
 }

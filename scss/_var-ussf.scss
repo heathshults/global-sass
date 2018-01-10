@@ -320,9 +320,13 @@ $transition-collapse:    height .35s ease !default;
 $font-url--sans-serif:        "./css/fonts/ussf/USSF_90_Min_Display_Medium.otf" !default;
 $font-url--monospace:         "./css/fonts/ussf/USSF_90_Min_Display_Light.otf" !default;
 
-$font-family-sans-serif:  "USSF90MinutesDisplay-medium", sans-serif !default;
+$light-font: "USSF90MinutesDisplay-light" !default;
+$medium-font: "USSF90MinutesDisplay-medium" !default;
+$cond-bold: "USSF90MinutesDisplay-Cond-bold" !default;
+
+$font-family-sans-serif:  $light-font, sans-serif !default;
 $font-family-base:        $font-family-sans-serif !default;
-$font-family-monospace:   "USSF90MinutesDisplay-light", monospace !default;
+$font-family-monospace:   $light-font, monospace !default;
 
 $font-size-xsm:   .75rem !default;  // 12px
 $font-size-sm:    .875rem !default; // 14px

@@ -1,5 +1,5 @@
 body {
-    font-family: "USSF90MinuteDisplay";
+    font-family: $font-family-base;
     font-size: $font-size-base;
     font-weight: $font-weight-base;
     color: $black; // call the keyframe fadeIn, use animattion ease-in and repeat 1 time

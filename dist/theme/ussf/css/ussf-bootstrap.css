@@ -5,23 +5,22 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 @font-face {
-  font-family: "USSF90MinutesDisplay-medium", sans-serif;
+  font-family: "USSF90MinutesDisplay-medium";
+  src: url("./css/fonts/ussf/USSF_90_Min_Display_Medium.otf");
   font-style: normal;
   font-weight: 500;
-  src: url("fonts/ussf/USSF_90_Min_Display-Medium.otf") format("otf");
 }
 
 @font-face {
-  font-family: "USSF90MinutesDisplay-light", sans-serif;
-  font-style: normal;
+  font-family: "USSF90MinutesDisplay-light";
+  src: url("./css/fonts/ussf/USSF_90_Min_Display_Light.otf");
   font-weight: 300;
-  src: url("fonts/ussf/USSF_90_Min_Display-Light.otf") format("otf");
 }
 
 @font-face {
-  font-family: "USSF90MinutesDisplay-Cond-bold", sans-serif;
-  font-style: normal;
-  src: url("fonts/ussf/USSF_90_Min_Display_Cond-Bold.otf") format("otf");
+  font-family: "USSF90MinutesDisplay-Cond-bold";
+  src: url("./css/fonts/ussf/USSF_90_Min_Display_Cond_Bold.otf");
+  font-weight: 700;
 }
 
 @media print {
@@ -108,7 +107,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: "USSF90MinutesDisplay-medium", sans-serif;
+  font-family: "USSF90MinutesDisplay-light", sans-serif;
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.5;
@@ -4893,7 +4892,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "USSF90MinutesDisplay-medium", sans-serif;
+  font-family: "USSF90MinutesDisplay-light", sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: 1.5;
@@ -5007,7 +5006,7 @@ button.close {
   display: block;
   max-width: 276px;
   padding: 1px;
-  font-family: "USSF90MinutesDisplay-medium", sans-serif;
+  font-family: "USSF90MinutesDisplay-light", sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: 1.5;
@@ -8358,7 +8357,7 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 body {
-  font-family: "USSF90MinuteDisplay";
+  font-family: "USSF90MinutesDisplay-light", sans-serif;
   font-size: 1rem;
   font-weight: 300;
   color: #000;
@@ -8724,7 +8723,7 @@ small {
   display: inline-block;
   margin-left: 8px;
   font-family: normal normal normal 14px/1 FontAwesome;
-  font-size: "USSF90MinutesDisplay-medium", sans-serif;
+  font-size: "USSF90MinutesDisplay-light", sans-serif;
   text-align: right;
   content: "\f078";
   text-rendering: auto;
@@ -8745,7 +8744,7 @@ small {
   display: inline-block;
   margin-left: 8px;
   font-family: normal normal normal 14px/1 FontAwesome;
-  font-size: "USSF90MinutesDisplay-medium", sans-serif;
+  font-size: "USSF90MinutesDisplay-light", sans-serif;
   text-align: right;
   content: "\f073";
   opacity: 1;

@@ -1,27 +1,8 @@
-@font-face {
-    font-family: "USSF90MinutesDisplay-medium";
-    src: url("./css/fonts/ussf/USSF_90_Min_Display_Medium.otf");
-    font-style: normal;
-    font-weight: 500;
-}
-
-@font-face {
-    font-family: "USSF90MinutesDisplay-light";
-    src: url("./css/fonts/ussf/USSF_90_Min_Display_Light.otf");
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: "USSF90MinutesDisplay-Cond-bold";
-    src: url("./css/fonts/ussf/USSF_90_Min_Display_Cond_Bold.otf");
-    font-weight: 700;
-}
-
 body {
-    font-family: Roboto, sans-serif;
+    font-family: "USSF90MinuteDisplay";
     font-size: $font-size-base;
     font-weight: $font-weight-base;
-    color: $gray-850; // call the keyframe fadeIn, use animattion ease-in and repeat 1 time
+    color: $black; // call the keyframe fadeIn, use animattion ease-in and repeat 1 time
     opacity: 0;
     animation: fadeIn ease-in 1; // making sure after animation is complete we remain at the last keyframe value (opacity: 1)
     animation-duration: .5s;
@@ -107,11 +88,15 @@ body {
 }
 
 .bg-gray-mid {
-    background: $gray-400;
+    background: $gray-450;
 }
 
 .bg-gray-dark {
     background: $gray-500;
+}
+
+.bg-blue {
+    background: $blue;
 }
 
 /*
@@ -120,6 +105,14 @@ body {
 
 .font-weight-light {
     font-weight: 300;
+}
+
+.font-200 {
+    font-size: 200% !important;
+}
+
+.font-150 {
+    font-size: 150% !important;
 }
 
 .font-95 {
@@ -643,30 +636,39 @@ button:hover {
 }
 
 .actionBtn {
-    align-self: center;
-    min-width: rem(80px);
-    min-height: rem(40px);
-    padding: 6px 10px;
-    text-align: center;
-    background: $blue;
-    border: 1px solid $cyan;
+    
+    background-image: linear-gradient(to bottom, $blue-350, $blue-000);
+    border: solid .5px $white;
+    border-radius: 8px;
     &:hover,
     &:active,
     &:focus {
-        cursor: pointer;
-        background: $blue-400;
-        border: 1px solid $cyan !important;
-        transition: all .3s ease-in;
-    }
-    .action-button-icon {
-        margin: 0 4px;
+        background-image: linear-gradient(to bottom, #00b1e0, #0079be);
+        transition: all .25s ease-in;
     }
 }
 
-.button-save {
-    margin: $btn-save-margin;
-    color: $white;
-    background: $green;
+.button-secondary {
+    max-height: 40px;
+    padding: 8px;
+    font-size: $font-size-xsm;
+    font-weight: 200;
+    color: $blue-350;
+    text-align: center;
+    letter-spacing: 1.3px;
+    white-space: nowrap;
+    background-image: linear-gradient(to top, $gray-05, $white);
+    border: solid 1px $gray-500 !important;
+    border-radius: 3px;
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none;
+        border: solid 1px $gray-500;
+        border-radius: 3px;
+        box-shadow: 0 0 6px 0 $blue-350;
+        transition: all .125s ease-in;
+    }
 }
 
 .button.clear {
@@ -681,10 +683,110 @@ button:hover {
         max-width: 100%;
     }
 }
+// form stuff
+.toggle.btn.btn-primary,
+.toggle.btn.btn-primary[style],
+.btn.btn-primary.toggle-on {
+    width: 75px;
+    font-size: $font-size-base;
+    background: $green;
+    border: 1px solid darken($green, 5%);
+}
+.toggle.btn.btn-default.off {
+    background: $gray-300;
+}
+.input-label {
+    display: block;
+    margin-bottom: 0;
+    font-size: $font-size-xsm !important;
+    color: $gray-600;
+}
+.form-control {
+    height: 40px;
+    padding: 10px;
+}
+.blue-divider {
+    height: 39px;
+    padding: 0;
+    margin: 0;
+    background: $blue;
+    border-bottom: 3px solid $red;
+}
+.navbar {
+    padding: 0;
+}
+nav {
+    // height: 50px;
+    padding: 0;
+    .navbar-nav {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        .col-md-4 {
+            flex: 0 0 20%;
+            max-width: 20%;
+        }
+        .nav-item {
+            &:not(:last-child) {
+                border-right: 2px solid $white;
+            }
+        }
+        .nav-link {
+            // flex: 1 0 33.333%;
+            // align-items: center;
+            // width: 75%;
+            height: 50px;
+            padding: 12px;
+            font-size: 125%;
+            color: $black;
+            text-align: center;
+            text-transform: none;
+            white-space: nowrap;
+            &:hover {
+                color: $black;
+                text-transform: none;
+                background: $white;
+            }
+            
+        }
+        .nav-item.active {
+            text-transform: none;
+            background: $white;
+        }
+    }
+}
+
+// headings
+h1 {
+    font-size: 30px;
+    font-weight: 300;
+    color: $black;
+    letter-spacing: .5px;
+}
+h2 {
+    font-size: 22px;
+    font-weight: 300;
+    color: $black;
+    letter-spacing: .4px;
+}
+// content
+.content-area {
+    font-size: $font-size-sm;
+    font-weight: 200;
+    color: $gray-600;
+}
+
+// borders
+.border-rbl {
+    border-right: 1px solid $gray-300;
+    border-bottom: 1px solid $gray-300;
+    border-left: 1px solid $gray-300;
+}
+
 
 // Nothing below here
 
 .row > [class^="col-"] {
-    padding: 0;
+    padding: 10px;
     margin: 0;
 }

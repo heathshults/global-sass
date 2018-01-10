@@ -56,17 +56,18 @@
 
 $white:    #fff !default;
 $gray-00:  #f5f5f5 !default;
-$gray-05:  #ededed !default;
+$gray-05:  #e7e7e7 !default;
 $gray-10:  #d8d8d8 !default;
 $gray-20:  #ddd !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
+$gray-300: #dbdfe2 !default;
 $gray-400: #ced4da !default;
+$gray-450: #bec2c6 !default;
 $gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
+$gray-600: #6f7070 !default;
 $gray-650: #767d84 !default;
-$gray-710: #495057 !default;
+$gray-710: #5e6267 !default;
 $gray-700: #44484b !default;
 $gray-800: #343a40 !default;
 $gray-850: #333 !default;
@@ -102,7 +103,7 @@ $grays: map-merge(
     $grays
 );
 
-$blue:                  #09254a !default;
+$blue:                  #202844 !default;
 $indigo:                #6610f2 !default;
 $purple:                #6f42c1 !default;
 $pink:                  #e83e8c !default;
@@ -129,7 +130,7 @@ $blue-025:              #061b36 !default;
 $blue-200:              #09254a !default;
 $blue-200-50:           rgba(3, 14, 27, .85) !default;
 $blue-300:              #083660 !default;
-$blue-350:              #113f69 !default;
+$blue-350:              #1e4774 !default;
 $blue-375:              #26579c !default;
 $blue-400:              #2e69a3 !default;
 $blue-400-50:           rgba(46, 105, 163, .6) !default;
@@ -319,14 +320,14 @@ $transition-collapse:    height .35s ease !default;
 $font-url--sans-serif:        "./css/fonts/ussf/USSF_90_Min_Display_Medium.otf" !default;
 $font-url--monospace:         "./css/fonts/ussf/USSF_90_Min_Display_Light.otf" !default;
 
-$font-family-sans-serif:  "USSF90MinutesDisplay", sans-serif !default;
+$font-family-sans-serif:  "USSF90MinutesDisplay-medium", sans-serif !default;
 $font-family-base:        $font-family-sans-serif !default;
-$font-family-monospace:   "USSF90MinutesDisplay", monospace !default;
+$font-family-monospace:   "USSF90MinutesDisplay-light", monospace !default;
 
 $font-size-xsm:   .75rem !default;  // 12px
 $font-size-sm:    .875rem !default; // 14px
 $font-size-base:  1rem !default; // Assumes the browser default, typically `16px`
-$font-size-md:    1.25rem !default; // Assumes the browser default, typically `16px`
+$font-size-md:    1.25rem !default; // 
 $font-size-lg:    1.5rem !default;
 $font-size-xlg:   2rem !default;
 

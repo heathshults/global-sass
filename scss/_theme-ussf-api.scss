@@ -1,8 +1,9 @@
 body {
-    font-family: $font-family-base;
-    font-size: $font-size-base;
+    // font-family: $font-family-base;
+    font-family: $medium-font;
+    font-size: 1rem;
     font-weight: $font-weight-base;
-    color: $black; // call the keyframe fadeIn, use animattion ease-in and repeat 1 time
+    color: $gray-600; // call the keyframe fadeIn, use animattion ease-in and repeat 1 time
     opacity: 0;
     animation: fadeIn ease-in 1; // making sure after animation is complete we remain at the last keyframe value (opacity: 1)
     animation-duration: .5s;
@@ -22,7 +23,18 @@ body {
         opacity: 1;
     }
 }
-
+a {
+    &:link,
+    &:active,
+    &:visited {
+        color: $link-color;
+        text-decoration: $link-decoration;
+    }
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+}
 
 /*
 < ---- utilities ----- >
@@ -104,7 +116,12 @@ body {
 */
 
 .font-weight-light {
-    font-weight: 300;
+    font-weight: $font-weight-normal;
+}
+
+.font-weight-bold {
+    font-family: $cond-bold;
+    font-weight: $font-weight-bold;
 }
 
 .font-200 {
@@ -623,10 +640,24 @@ button:hover {
     }
 }
 
-.btn-danger,
+
 .btn-primary {
     padding: $btn-red-padding;
-    font-size: $btn-red-font-size;
+    font-family: $light-font;
+    font-size: $font-size-base;
+    font-weight: 300;
+    letter-spacing: 1.4px;
+    background-image: linear-gradient(to bottom, $blue-350, $blue-000);
+    border: solid 1px $white;
+    border-radius: 8px;
+    &:hover {
+        text-decoration: none;
+        background-image: linear-gradient(to bottom, $blue-475, $blue-460);
+        border: solid .5px $blue-400;
+        box-shadow: 0 0 4px 0 $blue-325;
+
+    }
+
 }
 
 .btn-default {
@@ -737,6 +768,7 @@ nav {
             // width: 75%;
             height: 50px;
             padding: 12px;
+            font-family: $medium-font;
             font-size: 125%;
             color: $black;
             text-align: center;
@@ -747,7 +779,12 @@ nav {
                 text-transform: none;
                 background: $white;
             }
-            
+        }
+        .nav-link.disabled {
+            color: $gray-600;
+            &:hover {
+                background: transparent;
+            }
         }
         .nav-item.active {
             text-transform: none;
@@ -771,6 +808,9 @@ h2 {
 }
 // content
 .content-area {
+    position: absolute;
+    width: 1440px;
+    height: 100%;
     font-size: $font-size-sm;
     font-weight: 200;
     color: $gray-600;
@@ -781,6 +821,36 @@ h2 {
     border-right: 1px solid $gray-300;
     border-bottom: 1px solid $gray-300;
     border-left: 1px solid $gray-300;
+}
+
+.modal-window {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background: $modal-backdrop-bg;
+    .modal-window-content {
+        position: absolute;
+        top: 35%;
+        left: 35%;
+        z-index: 1041;
+        max-width: 440px;
+        padding: 40px;
+        font-family: $medium-font;
+        background: $light-yellow;
+        border-radius: 8px;
+        .fa {
+            float: left;
+        }
+        .fa-info-circle {
+            color: $yellow;
+        }
+        .fa-exclamation-triangle {
+            color: $red;
+        }
+    }
 }
 
 

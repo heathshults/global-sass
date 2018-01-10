@@ -130,14 +130,17 @@ $blue-025:              #061b36 !default;
 $blue-200:              #09254a !default;
 $blue-200-50:           rgba(3, 14, 27, .85) !default;
 $blue-300:              #083660 !default;
+$blue-325:              #024b81 !default;
 $blue-350:              #1e4774 !default;
 $blue-375:              #26579c !default;
-$blue-400:              #2e69a3 !default;
+$blue-400:              #366f8f !default;
 $blue-400-50:           rgba(46, 105, 163, .6) !default;
 $blue-475:              #45517e !default;
 $blue-450-14:           rgba(73, 144, 226, .14) !default;
 $blue-450-50:           rgba(9, 48, 90, .93) !default;
-$blue-450:              #4990e2 !default;
+$blue-450:              #3282c7 !default;
+$blue-460:              #0079be !default;
+$blue-475:              #00b1e0 !default;
 $blue-500:              #8ab8e4 !default;
 $blue-600:              #d6ecff !default;
 
@@ -162,7 +165,7 @@ $colors: map-merge(
 $theme-colors: () !default;
 $theme-colors: map-merge(
     (
-        "primary": $blue,
+        "primary": $blue-450,
         "secondary": $gray-600,
         "success": $green,
         "info": $cyan,
@@ -906,7 +909,7 @@ $modal-content-border-width:     $border-width !default;
 $modal-content-box-shadow-xs:    0 3px 9px rgba($black, .5) !default;
 $modal-content-box-shadow-sm-up: 0 5px 15px rgba($black, .5) !default;
 
-$modal-backdrop-bg:           $black !default;
+$modal-backdrop-bg:           rgba(32, 40, 68, .71) !default;
 $modal-backdrop-opacity:      .5 !default;
 $modal-header-border-color:   $gray-200 !default;
 $modal-footer-border-color:   $modal-header-border-color !default;

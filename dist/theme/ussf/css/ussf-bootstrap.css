@@ -8396,11 +8396,15 @@ body {
 a:link, a:active, a:visited {
   color: #3282c7;
   text-decoration: none;
+  outline: none;
+  outline-width: 0;
 }
 
 a:hover {
   color: #235a8a;
   text-decoration: underline;
+  outline: none;
+  outline-width: 0;
 }
 
 /*
@@ -8544,6 +8548,10 @@ a:hover {
 
 .text-lightGray {
   color: #adb5bd;
+}
+
+.text-white {
+  color: #fff;
 }
 
 /*
@@ -8815,11 +8823,6 @@ small {
   display: none;
 }
 
-a {
-  outline: none;
-  outline-width: 0;
-}
-
 .alert-success {
   color: #212529;
   background: #8fd19e;
@@ -9071,9 +9074,20 @@ button:hover {
 }
 
 .btn-default {
-  color: #333;
-  background: #ced4da;
-  border: 1px solid #adb5bd;
+  padding: 0.625rem 2.5rem;
+  font-family: "USSF90MinutesDisplay-light";
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333 !important;
+  letter-spacing: 1.4px;
+  background-image: linear-gradient(to top, #e7e7e7, #fff);
+  border: solid 1px #5e6267;
+  border-radius: 8px;
+}
+
+.btn-default:hover {
+  text-decoration: none;
+  box-shadow: 0 0 4px 0 #024b81;
 }
 
 .actionBtn {
@@ -9087,12 +9101,34 @@ button:hover {
   transition: all .25s ease-in;
 }
 
+.btn-white {
+  max-height: 40px;
+  padding: 8px;
+  font-size: 0.875rem;
+  font-weight: 200;
+  color: #333 !important;
+  text-align: center;
+  letter-spacing: 1.3px;
+  white-space: nowrap;
+  background: #fff;
+  border: solid 1px #fff !important;
+  border-radius: 3px;
+}
+
+.btn-white:hover, .btn-white:active, .btn-white:focus {
+  text-decoration: none;
+  background: #dbdfe2;
+  border: solid 1px #dbdfe2;
+  border-radius: 3px;
+  transition: all .125s ease-in;
+}
+
 .button-secondary {
   max-height: 40px;
   padding: 8px;
   font-size: 0.75rem;
   font-weight: 200;
-  color: #1e4774;
+  color: #333 !important;
   text-align: center;
   letter-spacing: 1.3px;
   white-space: nowrap;
@@ -9109,9 +9145,28 @@ button:hover {
   transition: all .125s ease-in;
 }
 
+.btn-sm, .btn-group-sm > .btn {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 0.75rem;
+  text-transform: none;
+}
+
+.btn-blue {
+  background: #202844;
+  border: 1px solid #26579c;
+}
+
 .button.clear {
   display: -ms-flexbox;
   display: flex;
+}
+
+.card-header {
+  font-size: 1.5rem;
+  color: #fff;
+  letter-spacing: 1.2;
+  background: #202844;
 }
 
 .logo-container {
@@ -9178,6 +9233,10 @@ nav .navbar-nav .col-md-4 {
   max-width: 20%;
 }
 
+nav .navbar-nav .nav-item {
+  border-bottom: 1px solid #dbdfe2;
+}
+
 nav .navbar-nav .nav-item:not(:last-child) {
   border-right: 2px solid #fff;
 }
@@ -9212,6 +9271,86 @@ nav .navbar-nav .nav-item.active {
   background: #fff;
 }
 
+@media (max-width: 991px) {
+  nav {
+    padding: 0;
+  }
+  nav .navbar-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    width: 100%;
+  }
+  nav .navbar-nav .col-md-4 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+    max-width: 100%;
+  }
+  nav .navbar-nav .nav-item:not(:last-child) {
+    border-right: 2px solid #fff;
+  }
+  nav .navbar-nav .nav-link {
+    width: 100%;
+    height: 50px;
+    padding: 12px;
+    font-family: "USSF90MinutesDisplay-medium";
+    font-size: 125%;
+    color: #000;
+    text-align: center;
+    text-transform: none;
+    white-space: nowrap;
+  }
+  nav .navbar-nav .nav-link:hover {
+    color: #000;
+    text-transform: none;
+    background: #fff;
+  }
+  nav .navbar-nav .nav-link.disabled {
+    color: #6f7070;
+    opacity: .5;
+  }
+  nav .navbar-nav .nav-link.disabled:hover {
+    background: transparent;
+  }
+  nav .navbar-nav .nav-item.active {
+    text-transform: none;
+    background: #fff;
+  }
+  .col-md-6 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .signin-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+  }
+  .form-signin {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .signin-button {
+    display: none;
+    float: right;
+  }
+}
+
+.modal-header {
+  padding: 6px;
+  color: #fff;
+  text-transform: uppercase;
+  background: #202844;
+}
+
 h1 {
   font-size: 30px;
   font-weight: 300;
@@ -9228,11 +9367,32 @@ h2 {
 
 .content-area {
   position: absolute;
-  width: 1440px;
+  width: 100%;
   height: 100%;
   font-size: 0.875rem;
   font-weight: 200;
   color: #6f7070;
+}
+
+.bss.dropdown {
+  float: right;
+}
+
+.bss.dropdown .bss.dropdown-menu {
+  width: 120px;
+  min-width: 120px;
+  color: #333;
+  background: #dbdfe2;
+}
+
+.bss.dropdown .bss.dropdown-menu .dropdown-item {
+  min-width: 120px;
+  color: #333;
+}
+
+.bss.dropdown .bss.dropdown-menu .dropdown-item:hover, .bss.dropdown .bss.dropdown-menu .dropdown-item:focus, .bss.dropdown .bss.dropdown-menu .dropdown-item:active {
+  color: #333;
+  background: #bec2c6;
 }
 
 .border-rbl {
@@ -9248,6 +9408,7 @@ h2 {
   bottom: 0;
   left: 0;
   z-index: 1040;
+  height: 100%;
   background: rgba(32, 40, 68, 0.71);
 }
 
@@ -9273,6 +9434,10 @@ h2 {
 
 .modal-window .modal-window-content .fa-exclamation-triangle {
   color: #9e0a0f;
+}
+
+footer {
+  background: #bec2c6;
 }
 
 .row > [class^="col-"] {

@@ -77,7 +77,7 @@ fieldset[disabled] a.btn {
   &:active,
   &.active,
   &:disabled {
-    background-color: transparent;
+    background: transparent;
     @include box-shadow(none);
   }
   &,
@@ -92,7 +92,7 @@ fieldset[disabled] a.btn {
   @include hover-focus {
     color: $link-hover-color;
     text-decoration: $link-hover-decoration;
-    background-color: transparent;
+    background: transparent;
   }
   &:disabled {
     color: $btn-link-disabled-color;

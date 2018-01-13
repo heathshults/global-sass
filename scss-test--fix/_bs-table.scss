@@ -232,7 +232,7 @@
 .form-control {
   &:focus {
     color: #495057;
-    background-color: #fff;
+    background: #fff;
     border-color: #d8d8d8;
     outline: none;
   }
@@ -304,7 +304,7 @@
     left: 2px;
     z-index: 5000;
     width: 1380px;
-    background-color: #fff;
+    background: #fff;
     border: .125rem solid transparent;
     border-radius: .125rem;
     box-shadow: .1875rem .1875rem .5rem .0625rem rgba(0, 0, 0, .175);
@@ -344,14 +344,14 @@
     }
     .btn-default {
       color: #333;
-      background-color: #868e96;
+      background: #868e96;
       border-color: #868e96;
     }
     .callout {
       position: relative;
       padding: 18px 20px;
       margin: 18px 0;
-      background-color: #eef4f9;
+      background: #eef4f9;
       border-radius: 6px;
       .notch {
         position: absolute;
@@ -374,7 +374,7 @@
     left: 2px;
     z-index: 5000;
     width: 1380px;
-    background-color: #fff;
+    background: #fff;
     border: .125rem solid transparent;
     border-radius: .125rem;
     box-shadow: .1875rem .1875rem .5rem .0625rem rgba(0, 0, 0, .175);
@@ -414,14 +414,14 @@
     }
     .btn-default {
       color: #333;
-      background-color: #868e96;
+      background: #868e96;
       border-color: #868e96;
     }
     .callout {
       position: relative;
       padding: 18px 20px;
       margin: 18px 0;
-      background-color: #eef4f9;
+      background: #eef4f9;
       border-radius: 6px;
       .notch {
         position: absolute;
@@ -456,17 +456,17 @@
     border-radius: 0;
     &:focus {
       color: #fff;
-      background-color: #255a99;
+      background: #255a99;
       border: solid .125rem #d8d8d8;
     }
     &:visited {
       color: #fff;
-      background-color: #255a99;
+      background: #255a99;
       border: solid .125rem #d8d8d8;
     }
     &:active {
       color: #fff;
-      background-color: #255a99;
+      background: #255a99;
       border: solid .125rem #d8d8d8;
     }
     .fa {
@@ -562,7 +562,7 @@
 .btn-clearWhite {
   &:hover {
     color: #fff;
-    background-color: #255a99;
+    background: #255a99;
     border: solid .125rem #d8d8d8;
   }
 }
@@ -583,7 +583,7 @@
   tbody {
     tr {
       &:nth-of-type(2n+1) {
-        background-color: transparent;
+        background: transparent;
       }
     }
   }
@@ -695,7 +695,7 @@
 .filter {
   input[type="text"] {
     color: #fff;
-    background-color: steelblue;
+    background: steelblue;
     border: solid 1px #4990e2;
   }/* stylelint-enable */
 }
@@ -730,9 +730,9 @@ div[id^=_SalesforceID] {
 }
 .ui-datepicker {
   .theadcalendar {
-    background-color: #09254a;
+    background: #09254a;
   }
   .thcalendar {
-    background-color: #09254a;
+    background: #09254a;
   }
 }

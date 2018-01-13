@@ -7,7 +7,7 @@
     &,
     > th,
     > td {
-      background-color: $background;
+      background: $background;
     }
   }
 
@@ -18,11 +18,11 @@
 
     .table-#{$state} {
       @include hover {
-        background-color: $hover-background;
+        background: $hover-background;
 
         > td,
         > th {
-          background-color: $hover-background;
+          background: $hover-background;
         }
       }
     }

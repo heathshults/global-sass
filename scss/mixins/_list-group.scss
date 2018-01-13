@@ -3,7 +3,7 @@
 @mixin list-group-item-variant($state, $background, $color) {
   .list-group-item-#{$state} {
     color: $color;
-    background-color: $background;
+    background: $background;
   }
 
   //scss-lint:disable QualifyingElement
@@ -13,12 +13,12 @@
 
     @include hover-focus {
       color: $color;
-      background-color: darken($background, 5%);
+      background: darken($background, 5%);
     }
 
     &.active {
       color: #fff;
-      background-color: $color;
+      background: $color;
       border-color: $color;
     }
   }

@@ -47,7 +47,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // Body
 //
 // 1. Remove the margin in all browsers.
-// 2. As a best practice, apply a default `background-color`.
+// 2. As a best practice, apply a default `background`.
 
 body {
   margin: 0; // 1
@@ -56,7 +56,7 @@ body {
   font-weight: $font-weight-base;
   line-height: $line-height-base;
   color: $body-color;
-  background-color: $body-bg; // 2
+  background: $body-bg; // 2
 }
 
 // Suppress the focus outline on elements that cannot be accessed via keyboard.
@@ -188,7 +188,7 @@ sup { top: -.5em; }
 a {
   color: $link-color;
   text-decoration: $link-decoration;
-  background-color: transparent; // Remove the gray background on active links in IE 10.
+  background: transparent; // Remove the gray background on active links in IE 10.
   -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.
 
   @include hover {

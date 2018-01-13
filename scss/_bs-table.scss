@@ -274,7 +274,7 @@ table.table td {
 .form-control {
     &:focus {
         color: #495057;
-        background-color: #fff !important;
+        background: #fff !important;
         border-color: #d8d8d8 !important;
         outline: none;
     }
@@ -347,11 +347,11 @@ table.table td {
 .whiteTools-wrapper {
     .dropdown-menu {
         position: absolute;
-        top: 49px;
+        top: $dropdown-position-top !important;
         left: 2px !important;
-        z-index: 5000;
+        z-index: $zindex-dropdown;
         width: 1380px;
-        background-color: #fff;
+        background: #fff;
         border: .125rem solid transparent;
         border-radius: .125rem;
         box-shadow: .1875rem .1875rem .5rem .0625rem rgba(0, 0, 0, .175);
@@ -391,14 +391,14 @@ table.table td {
         }
         .btn-default {
             color: #333;
-            background-color: #868e96;
+            background: #868e96;
             border-color: #868e96;
         }
         .callout {
             position: relative;
             margin: 18px 0;
             padding: 18px 20px;
-            background-color: #eef4f9;
+            background: #eef4f9;
             border-radius: 6px;
             .notch {
                 position: absolute;
@@ -417,37 +417,37 @@ table.table td {
     }
     .dropdown-menu[style] {
         position: absolute;
+        top: $dropdown-position-top !important;
         left: 2px !important;
-        top: 49px;
-        z-index: 5000;
-        background-color: #fff;
+        z-index: $zindex-dropdown;
+        width: 1380px;
+        background: #fff;
         border: .125rem solid transparent;
         border-radius: .125rem;
-        width: 1380px;
-        transform: none !important;
         box-shadow: .1875rem .1875rem .5rem .0625rem rgba(0, 0, 0, .175);
+        transform: none !important;
         &::before {
-            content: '';
             position: absolute;
-            left: 3px;
             top: -20px;
+            left: 3px;
             width: 0;
             height: 0;
-            border-left: 1.25rem solid transparent;
+            content: "";
             border-right: 1.25rem solid transparent;
             border-bottom: 1.25rem solid #adb5bd;
+            border-left: 1.25rem solid transparent;
             transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
         }
         &::after {
-            content: '';
             position: absolute;
-            left: 7px;
             top: -16px;
+            left: 7px;
             width: 0;
             height: 0;
-            border-left: 1rem solid transparent;
+            content: "";
             border-right: 1rem solid transparent;
             border-bottom: 1rem solid #fff;
+            border-left: 1rem solid transparent;
         }
         label {
             font-size: .875rem;
@@ -461,14 +461,14 @@ table.table td {
         }
         .btn-default {
             color: #333;
-            background-color: #868e96;
+            background: #868e96;
             border-color: #868e96;
         }
         .callout {
             position: relative;
             margin: 18px 0;
             padding: 18px 20px;
-            background-color: #eef4f9;
+            background: #eef4f9;
             border-radius: 6px;
             .notch {
                 position: absolute;
@@ -503,17 +503,17 @@ table.table td {
         z-index: 1;
         &:focus {
             color: #fff;
-            background-color: #255a99;
+            background: #255a99;
             border: solid .125rem #d8d8d8;
         }
         &:visited {
             color: #fff;
-            background-color: #255a99;
+            background: #255a99;
             border: solid .125rem #d8d8d8;
         }
         &:active {
             color: #fff;
-            background-color: #255a99;
+            background: #255a99;
             border: solid .125rem #d8d8d8;
         }
         .fa {
@@ -549,60 +549,61 @@ table.table td {
     }
 }
 
-// dropups
+// dropups white triangle
 .up {
     > .updrop.dropdown-menu {
+        top: $dropdown-position-top !important;
+        z-index: 1050;
         &::before {
-            content: '';
             position: absolute;
+            top: $dropup-before-top;
             left: 3px;
-            top: 176px;
             width: 0;
             height: 0;
-            border-left: 1.25rem solid transparent;
+            content: "";
+            border-top: 1.25rem solid rgba(214, 214, 214, .45);
             border-right: 1.25rem solid transparent;
-            border-top: 1.25rem solid #adb5bd;
             border-bottom: 0;
-            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            border-left: 1.25rem solid transparent;
+            transition: all ease-in-out .15s;
         }
         &::after {
-            content: '';
             position: absolute;
+            top: $dropup-after-top;
             left: 7px;
-            top: 176px;
             width: 0;
             height: 0;
-            border-left: 1rem solid transparent;
-            border-right: 1rem solid transparent;
+            content: "";
             border-top: 1rem solid #fff;
+            border-right: 1rem solid transparent;
             border-bottom: 0;
+            border-left: 1rem solid transparent;
         }
     }
     > .updrop.dropdown-menu[style] {
         &::before {
-            content: '';
             position: absolute;
-            left: 3px;
-            top: 176px;
+            top: $dropup-before-top;
             width: 0;
             height: 0;
-            border-left: 1.25rem solid transparent;
+            content: "";
+            border-top: 1.25rem solid rgba(214, 214, 214, .45);
             border-right: 1.25rem solid transparent;
-            border-top: 1.25rem solid #adb5bd;
             border-bottom: 0;
-            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            border-left: 1.25rem solid transparent;
+            transition: all ease-in-out .15s;
         }
         &::after {
-            content: '';
             position: absolute;
+            top: $dropup-after-top;
             left: 7px;
-            top: 176px;
             width: 0;
             height: 0;
-            border-left: 1rem solid transparent;
-            border-right: 1rem solid transparent;
+            content: "";
             border-top: 1rem solid #fff;
+            border-right: 1rem solid transparent;
             border-bottom: 0;
+            border-left: 1rem solid transparent;
         }
     }
 }
@@ -610,7 +611,7 @@ table.table td {
 .btn-clearWhite {
     &:hover {
         color: #fff;
-        background-color: #255a99;
+        background: #255a99;
         border: solid .125rem #d8d8d8;
     }
 }
@@ -627,15 +628,15 @@ table.table td {
 }
 
 .fht-cell {
-    white-space: nowrap;
     box-sizing: border-box;
+    white-space: nowrap;
 }
 
 .table-striped {
     tbody {
         tr {
             &:nth-of-type(2n+1) {
-                background-color: transparent;
+                background: transparent;
             }
         }
     }
@@ -651,17 +652,17 @@ table.table td {
 
 .bss-ddm-overide {
     .row {
-        >[class^=col-] {
+        > [class^="col-"] {
             white-space: pre;
         }
     }
     .sectionTitle {
-        color: #2e69a3;
-        white-space: nowrap;
+        display: block;
         padding-bottom: 4px;
         margin: 10px 0 !important;
+        color: #2e69a3;
+        white-space: nowrap;
         border-bottom: 1px solid transparent;
-        display: block;
     }
     .first-ddm-secTitle {
         position: absolute;
@@ -670,10 +671,10 @@ table.table td {
     .dropdown-item {
         .dd-label {
             display: flex;
-            color: #333;
-            font-size: .75rem;
-            margin-left: 20px;
             padding: 6px;
+            margin-left: 20px;
+            font-size: .75rem;
+            color: #333;
         }
         padding: 0;
         margin: 0;
@@ -761,7 +762,7 @@ div.dropdown-menu.bss-ddm-overide {
 .filter {
     input[type="text"] {
         color: #fff;
-        background-color: steelblue;
+        background: steelblue;
         border: solid 1px #4990e2;
     }
 }
@@ -801,9 +802,9 @@ div[id^=_SalesforceID] {
 
 .ui-datepicker {
     .theadcalendar {
-        background-color: $blue;
+        background: $blue;
     }
     .thcalendar {
-        background-color: $blue;
+        background: $blue;
     }
 }

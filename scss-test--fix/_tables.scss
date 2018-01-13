@@ -6,7 +6,7 @@
   width: 100%;
   max-width: 100%;
   margin-bottom: $spacer;
-  background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+  background: $table-bg; // Reset for nesting within parents with `background`.
 
   th,
   td {
@@ -25,7 +25,7 @@
   }
 
   .table {
-    background-color: $body-bg;
+    background: $body-bg;
   }
 }
 
@@ -69,7 +69,7 @@
 
 .table-striped {
   tbody tr:nth-of-type(odd) {
-    background-color: $table-accent-bg;
+    background: $table-accent-bg;
   }
 }
 
@@ -81,7 +81,7 @@
 .table-hover {
   tbody tr {
     @include hover {
-      background-color: $table-hover-bg;
+      background: $table-hover-bg;
     }
   }
 }
@@ -106,20 +106,20 @@
 .thead-inverse {
   th {
     color: $table-inverse-color;
-    background-color: $table-inverse-bg;
+    background: $table-inverse-bg;
   }
 }
 
 .thead-default {
   th {
     color: $table-head-color;
-    background-color: $table-head-bg;
+    background: $table-head-bg;
   }
 }
 
 .table-inverse {
   color: $table-inverse-color;
-  background-color: $table-inverse-bg;
+  background: $table-inverse-bg;
 
   th,
   td,
@@ -133,14 +133,14 @@
 
   &.table-striped {
     tbody tr:nth-of-type(odd) {
-      background-color: $table-inverse-accent-bg;
+      background: $table-inverse-accent-bg;
     }
   }
 
   &.table-hover {
     tbody tr {
       @include hover {
-        background-color: $table-inverse-hover-bg;
+        background: $table-inverse-hover-bg;
       }
     }
   }

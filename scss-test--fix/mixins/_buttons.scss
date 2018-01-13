@@ -5,13 +5,13 @@
 
 @mixin button-variant($background, $border, $active-background: darken($background, 7.5%), $active-border: darken($border, 10%)) {
   @include color-yiq($background);
-  background-color: $background;
+  background: $background;
   border-color: $border;
   @include box-shadow($btn-box-shadow);
 
   &:hover {
     @include color-yiq($background);
-    background-color: $active-background;
+    background: $active-background;
     border-color: $active-border;
   }
 
@@ -28,14 +28,14 @@
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
-    background-color: $background;
+    background: $background;
     border-color: $border;
   }
 
   &:active,
   &.active,
   .show > &.dropdown-toggle {
-    background-color: $active-background;
+    background: $active-background;
     background-image: none; // Remove the gradient for the pressed/active state
     border-color: $active-border;
     @include box-shadow($btn-active-box-shadow);
@@ -44,13 +44,13 @@
 
 @mixin button-outline-variant($color, $color-hover: #fff) {
   color: $color;
-  background-color: transparent;
+  background: transparent;
   background-image: none;
   border-color: $color;
 
   @include hover {
     color: $color-hover;
-    background-color: $color;
+    background: $color;
     border-color: $color;
   }
 
@@ -62,14 +62,14 @@
   &.disabled,
   &:disabled {
     color: $color;
-    background-color: transparent;
+    background: transparent;
   }
 
   &:active,
   &.active,
   .show > &.dropdown-toggle {
     color: $color-hover;
-    background-color: $color;
+    background: $color;
     border-color: $color;
   }
 }

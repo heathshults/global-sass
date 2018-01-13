@@ -8,7 +8,7 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: $card-bg;
+  background: $card-bg;
   background-clip: border-box;
   border: $card-border-width solid $card-border-color;
   @include border-radius($card-border-radius);
@@ -60,7 +60,7 @@
 .card-header {
   padding: $card-spacer-y $card-spacer-x;
   margin-bottom: 0; // Removes the default margin-bottom of <hN>
-  background-color: $card-cap-bg;
+  background: $card-cap-bg;
   border-bottom: $card-border-width solid $card-border-color;
 
   &:first-child {
@@ -70,7 +70,7 @@
 
 .card-footer {
   padding: $card-spacer-y $card-spacer-x;
-  background-color: $card-cap-bg;
+  background: $card-cap-bg;
   border-top: $card-border-width solid $card-border-color;
 
   &:last-child {

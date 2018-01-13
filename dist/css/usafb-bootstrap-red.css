@@ -129,7 +129,7 @@
   letter-spacing: .9px;
   text-align: left;
   text-shadow: -1px -1px 28px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease-out;
+  transition: all .3s ease-out;
 }
 
 .red-theme .navbar-nav .nav-link:hover {
@@ -469,6 +469,11 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
+.red-theme .nav-link.dropdown-item {
+  font-size: 0.875rem;
+  text-transform: none;
+}
+
 .red-theme .card-red-header-special {
   position: absolute;
   top: 0px;
@@ -493,8 +498,18 @@
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  background-clip: border-box;
   color: #fff;
+  background-clip: border-box;
+}
+
+.red-theme .card-theme-red .card-red > .list-group:first-child .list-group-item:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.red-theme .card-theme-red .card-red > .list-group:last-child .list-group-item:last-child {
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
 }
 
 .red-theme .card-theme-red .card-red-mspacing-top {
@@ -503,23 +518,23 @@
 
 .red-theme .card-theme-red .card-red-header-positioning {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .red-theme .card-theme-red .card-red-pspacing-top {
-  padding-top: 0.625rem;
+  padding-top: .625rem;
 }
 
 .red-theme .card-theme-red .card-red-header {
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.125rem;
-  color: #fff;
   padding: 0.5rem 1.25rem 0.375rem 1.25rem;
   margin-bottom: 0;
+  font-size: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
   background: #09254a;
 }
 
@@ -584,56 +599,46 @@
 
 .red-theme .card-theme-red div.collapse.indent.show {
   padding-left: 20px;
-  transition: all 0.2s ease-in-out;
   visibility: visible;
-}
-
-.red-theme .card-theme-red .card-red > .list-group:first-child .list-group-item:first-child {
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-}
-
-.red-theme .card-theme-red .card-red > .list-group:last-child .list-group-item:last-child {
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .red-theme .card-theme-red thead th {
-  background: #5c090c !important;
   text-align: center;
+  background: #5c090c !important;
 }
 
 .red-theme .user-avatar-red {
-  background: #4990e2;
   width: 40px;
   max-width: 100%;
   margin: 0.375rem;
+  background: #4990e2;
   border: 0.25rem solid #5c090c;
   border-radius: 50%;
 }
 
 .red-theme .user-avatar-red-md {
-  background: #9e0a0f;
   width: 100px;
   max-width: 100%;
   margin: 0.18rem;
+  background: #9e0a0f;
   border: 0.25rem solid #5c090c;
   border-radius: 50%;
 }
 
 .red-theme .user-avatar-red-lg {
-  background: #4990e2;
   width: 8.75rem;
   width: 8.75rem;
   max-width: 100%;
   max-height: 100%;
   margin: 0.375rem;
+  background: #4990e2;
   border: 0.25rem solid #5c090c;
   border-radius: 50%;
 }
 
 .red-theme .player-info {
-  padding-top: 0.625rem;
+  padding-top: .625rem;
 }
 
 .red-theme .player-info .theme-red-title {
@@ -678,7 +683,7 @@
 .red-theme .whiteTools-wrapper .col-3 {
   background: rgba(0, 0, 0, 0.25);
   height: 50px;
-  transition: all 0.2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .red-theme .whiteTools-wrapper .col-3:hover {
@@ -701,8 +706,8 @@
   display: flex;
   border: solid 1px #5c090c;
   background: #2c0104;
-  transition: all 0.2s ease, border 0.2s ease;
-  -webkit-transition: all 0.2s ease, border 0.2s ease;
+  transition: all .2s ease, border .2s ease;
+  -webkit-transition: all .2s ease, border .2s ease;
 }
 
 .red-theme .formField:disabled {

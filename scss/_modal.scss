@@ -50,7 +50,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: $modal-content-bg;
+  background: $modal-content-bg;
   background-clip: padding-box;
   border: $modal-content-border-width solid $modal-content-border-color;
   @include border-radius($border-radius-lg);
@@ -67,7 +67,7 @@
   bottom: 0;
   left: 0;
   z-index: $zindex-modal-backdrop;
-  background-color: $modal-backdrop-bg;
+  background: $modal-backdrop-bg;
 
   // Fade for backdrop
   &.fade { opacity: 0; }

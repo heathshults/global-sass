@@ -2,11 +2,11 @@
 
 @mixin bg-variant($parent, $color) {
   #{$parent} {
-    background-color: $color !important;
+    background: $color !important;
   }
   a#{$parent} {
     @include hover-focus {
-      background-color: darken($color, 10%) !important;
+      background: darken($color, 10%) !important;
     }
   }
 }

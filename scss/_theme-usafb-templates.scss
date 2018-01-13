@@ -3,7 +3,9 @@ body {
     font-size: $font-size-base;
     font-weight: $font-weight-base;
     color: $gray-850; // call the keyframe fadeIn, use animattion ease-in and repeat 1 time
+    background: $blue-500;
     opacity: 0;
+    transition: all .25s ease-in-out;
     animation: fadeIn ease-in 1; // making sure after animation is complete we remain at the last keyframe value (opacity: 1)
     animation-duration: .5s;
     animation-fill-mode: forwards;
@@ -11,7 +13,10 @@ body {
 
 html,
 body {
+    width: 100%;
     height: 100%;
+    margin: 0;
+    border: 0;
 }
 
 @keyframes fadeIn {
@@ -23,7 +28,15 @@ body {
     }
 }
 
+iframe {
+    width: 100%;
+    border: 0;
+}
 
+.iframeSizeMe {
+    height: 2000px;
+    background: transparent;
+}
 /*
 < ---- utilities ----- >
   ------ FLEX ------
@@ -122,6 +135,10 @@ body {
 
 .text-lightGray {
     color: $gray-500;
+}
+
+.text-gray {
+    color: $gray-850;
 }
 
 
@@ -440,7 +457,6 @@ button:hover {
 .bss-btn {
     margin: rem(3px);
     font-weight: $btn-font-weight;
-    color: $white !important;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
@@ -548,7 +564,7 @@ button:hover {
     padding: $btn-clearWhite-padding;
     margin: 0;
     font-size: $btn-clearWhite-font-size !important;
-    color: $btn-clearWhite-color;
+    color: $gray-850;
     text-transform: capitalize !important;
     vertical-align: $btn-clearWhite-fa-valign;
     background: $btn-clearWhite-bg-grad;
@@ -645,20 +661,32 @@ button:hover {
 */
 
 .full-screen-bg-landing-page {
-    width: 100vw;
-    height: 100vh;
-    padding: 0; //@include make-container();
-    background: $blue-450-50 url("images/bg/usa-fb-bg.jpg");
+    // width: 100%;
+    // height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    // z-index: -1;
+    background: $blue-450-50 url("images/bg/usa-fb-bg.jpg") center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 1440px;
+    background-position: top center;
+    background-size: cover;
     background-blend-mode: multiply;
-    object-fit: 100%;
+    object-fit: fill;
+}
+
+.container-flexi-fluid.card-theme-blue {
+    position: absolute;
+    top: 112px;
 }
 
 .bg-pages-blue {
     position: absolute;
-    top: 0;
+    top: 112px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -960,7 +988,7 @@ option {
 .dropdown-item:hover {
     color: $white;
     text-decoration: none;
-    background-color: $red;
+    background: $red;
 }
 
 
@@ -968,7 +996,7 @@ option {
 .dropdown-item:active {
     color: $white;
     text-decoration: none;
-    background-color: $red;
+    background: $red;
 }
 
 .container-fluid .my-account {
@@ -1028,14 +1056,21 @@ option {
     color: $gray-850;
 }
 
-.my-account .nav-link.dropdown-toggle {
-    text-transform: lowercase !important;
+.my-account {
+    .nav-link.dropdown-toggle {
+        text-transform: lowercase !important;
+    }
 }
-
 .nav-link {
     display: block;
     padding: .5rem 0;
     font-size: $font-size-base;
+}
+
+.top-nav {
+    position: fixed;
+    height: 112px;
+    background: linear-gradient(180deg, rgb(0, 17, 33) 12%, rgb(0, 21, 33) 33%, rgba(0, 0, 0, 0) 100%); // filter: blur(13px);
 }
 
 .nav-link.dropdown-item {
@@ -1051,7 +1086,8 @@ option {
 }
 
 .bss.dropdown-menu {
-    width: 180px;
+    min-width: 180px;
+    max-width: 250px;
     font-size: $font-size-sm;
 }
 
@@ -1105,6 +1141,10 @@ option {
     left: -10px;
     display: flex;
     padding: 20px;
+}
+
+.main-content {
+    margin-top: 20px;
 }
 
 .footer-container {
@@ -1195,7 +1235,7 @@ option {
     line-height: 1.57;
     color: $white;
     letter-spacing: .8px;
-    background-color: rgba(0, 0, 0, .15);
+    background: rgba(0, 0, 0, .15);
     border-radius: 10px;
     
 }
@@ -1241,7 +1281,7 @@ option {
             width: 294.2px;
             height: 47.1px;
             padding-left: 50px;
-            // background-color: rgba(0, 0, 0, .5);
+            // background: rgba(0, 0, 0, .5);
             // border: 1px solid $white;
             border-radius: 10px;
         }
@@ -1276,7 +1316,7 @@ option {
     .form-control-theme {
         width: 100%;
         height: 47.1px;
-        background-color: rgba(0, 0, 0, .5);
+        background: rgba(0, 0, 0, .5);
         border-radius: 10px;
     }
     .input-group {
@@ -1381,7 +1421,7 @@ thead.cpl {
 }
 
 .usafb-tbl-grid {
-    width: 98%;
+    width: 100%;
 }
 
 //status circle
@@ -1506,15 +1546,15 @@ thead.cpl {
         min-width: 0;
         color: $white; //@include border-radius($card-border-radius);
         word-wrap: break-word;
-        background: rgba(0, 0, 0, .25);
+        background: rgba(0, 0, 0, .45);
         background-clip: border-box;
         border: $card-border-width solid $blue-300;
-        >.list-group:first-child {
+        > .list-group:first-child {
             .list-group-item:first-child {
                 @include border-top-radius($card-border-radius);
             }
         }
-        >.list-group:last-child {
+        > .list-group:last-child {
             .list-group-item:last-child {
                 @include border-bottom-radius($card-border-radius);
             }
@@ -1552,7 +1592,7 @@ thead.cpl {
         @include hover {
             text-decoration: none;
         }
-        +.card-link {
+        + .card-link {
             margin-left: $card-spacer-x;
         }
     }
@@ -1608,7 +1648,7 @@ thead.cpl {
     //   flex: 0 0 100%;
     //   max-width: 100%;
     // }
-    .row>[class^="col-"] {
+    .row > [class^="col-"] {
         flex: 0 0 100%;
         max-width: 100%;
         text-align: center;
@@ -1671,9 +1711,13 @@ thead.cpl {
     }
 }
 
-#multiSorter .modal-body .container-fluid {
-    .bootstrap-table {
-        opacity: 1;
+#multiSorter {
+    .modal-body {
+        .container-fluid {
+            .bootstrap-table {
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -1724,7 +1768,7 @@ thead.cpl {
         border: 12px solid $white;
         border-radius: 50%;
     }
-    >span {
+    > span {
         position: absolute;
         top: 0;
         z-index: 1;
@@ -1899,12 +1943,15 @@ thead.cpl {
     flex-flow: row wrap;
     padding: 0 !important;
     background: $blue-400;
+    &:nth-child(odd) {
+        background: darken($blue-400, 5%);
+    }
 }
 
 .notify-item {
+    padding-bottom: 10px;
     font-size: .9rem;
     color: $blue-600;
-    /* padding: .625rem .625rem .625rem 3.125rem; */
     border-bottom: $border-lightblue-solid-1;
 }
 
@@ -1937,6 +1984,12 @@ thead.cpl {
 
 .icon-white {
     fill: $white;
+}
+
+.if-height {
+    display: flex;
+    width: 100%;
+    height: 100%;
 }
 
 // moved into bootstrap-table.css
@@ -2144,6 +2197,7 @@ thead.cpl {
         }
     }
 }
+
 
 // ----------------- nothing below the following class --------------//
 body.scaff .row>[class^="col-"],

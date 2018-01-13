@@ -13,7 +13,7 @@
     min-width: 0 !important;
     max-width: none !important;
     padding: .75rem 0 !important;
-    background-color: #fff;
+    background: #fff;
     background-clip: padding-box;
     border: 1px solid rgba(0,0,0,.1);
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.175);
@@ -30,7 +30,7 @@
     [class^="ds-dataset-"] {
       padding: 0 !important;
       overflow: visible !important;
-      background-color: transparent !important;
+      background: transparent !important;
       border: 0 !important;
     }
 
@@ -128,7 +128,7 @@
 
   .algolia-docsearch-suggestion--highlight {
     color: #5f2dab;
-    background-color: rgba(154, 132, 187, .12);
+    background: rgba(154, 132, 187, .12);
   }
 
   .algolia-docsearch-suggestion--text .algolia-docsearch-suggestion--highlight {
@@ -136,6 +136,6 @@
   }
 
   .ds-suggestion.ds-cursor .algolia-docsearch-suggestion--content {
-    background-color: rgba(208,189,236,.15) !important;
+    background: rgba(208,189,236,.15) !important;
   }
 }

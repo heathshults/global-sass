@@ -13,7 +13,7 @@
   font-size: $font-size-base;
   line-height: $input-btn-line-height;
   color: $input-color;
-  background-color: $input-bg;
+  background: $input-bg;
   // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214.
   background-image: none;
   background-clip: padding-box;
@@ -33,7 +33,7 @@
 
   // Unstyle the caret on `<select>`s in IE10+.
   &::-ms-expand {
-    background-color: transparent;
+    background: transparent;
     border: 0;
   }
 
@@ -54,7 +54,7 @@
   // don't honor that edge case; we style them as disabled anyway.
   &:disabled,
   &[readonly] {
-    background-color: $input-disabled-bg;
+    background: $input-disabled-bg;
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
     opacity: 1;
   }
@@ -72,7 +72,7 @@ select.form-control {
     // match the appearance of the native widget.
     // See https://github.com/twbs/bootstrap/issues/19398.
     color: $input-color;
-    background-color: $input-bg;
+    background: $input-bg;
   }
 }
 
@@ -281,7 +281,7 @@ select.form-control-lg {
   font-size: .875rem;
   line-height: 1;
   color: #fff;
-  background-color: rgba($form-feedback-invalid-color,.8);
+  background: rgba($form-feedback-invalid-color,.8);
   border-radius: .2rem;
 }
 

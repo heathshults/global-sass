@@ -19,7 +19,7 @@
     opacity: 0;
     &:checked~.custom-control-indicator {
         color: $custom-control-indicator-checked-color;
-        background-color: $custom-control-indicator-checked-bg;
+        background: $custom-control-indicator-checked-bg;
         @include box-shadow($custom-control-indicator-checked-box-shadow);
     }
     &:focus~.custom-control-indicator {
@@ -28,12 +28,12 @@
     }
     &:active~.custom-control-indicator {
         color: $custom-control-indicator-active-color;
-        background-color: $custom-control-indicator-active-bg;
+        background: $custom-control-indicator-active-bg;
         @include box-shadow($custom-control-indicator-active-box-shadow);
     }
     &:disabled {
         ~.custom-control-indicator {
-            background-color: $custom-control-indicator-disabled-bg;
+            background: $custom-control-indicator-disabled-bg;
         }
         ~.custom-control-description {
             color: $custom-control-description-disabled-color;
@@ -53,7 +53,7 @@
     height: $custom-control-indicator-size;
     pointer-events: none;
     user-select: none;
-    background-color: $custom-control-indicator-bg;
+    background: $custom-control-indicator-bg;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: $custom-control-indicator-bg-size;
@@ -71,7 +71,7 @@
         background-image: $custom-checkbox-indicator-icon-checked;
     }
     .custom-control-input:indeterminate~.custom-control-indicator {
-        background-color: $custom-checkbox-indicator-indeterminate-bg;
+        background: $custom-checkbox-indicator-indeterminate-bg;
         background-image: $custom-checkbox-indicator-icon-indeterminate;
         @include box-shadow($custom-checkbox-indicator-indeterminate-box-shadow);
     }
@@ -138,12 +138,12 @@
             // in IE and (under certain conditions) Edge.
             // See https://github.com/twbs/bootstrap/issues/19398.
             color: $input-color;
-            background-color: $input-bg;
+            background: $input-bg;
         }
     }
     &:disabled {
         color: $custom-select-disabled-color;
-        background-color: $custom-select-disabled-bg;
+        background: $custom-select-disabled-bg;
     } // Hides the default caret in IE11
     &::-ms-expand {
         opacity: 0;
@@ -191,7 +191,7 @@
     color: $custom-file-color;
     pointer-events: none;
     user-select: none;
-    background-color: $custom-file-bg;
+    background: $custom-file-bg;
     border: $custom-file-border-width solid $custom-file-border-color;
     @include border-radius($custom-file-border-radius);
     @include box-shadow($custom-file-box-shadow);
@@ -212,7 +212,7 @@
         padding: $custom-file-padding-x $custom-file-padding-y;
         line-height: $custom-file-line-height;
         color: $custom-file-button-color;
-        background-color: $custom-file-button-bg;
+        background: $custom-file-button-bg;
         border: $custom-file-border-width solid $custom-file-border-color;
         @include border-radius(0 $custom-file-border-radius $custom-file-border-radius 0);
     }

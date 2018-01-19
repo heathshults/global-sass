@@ -74,17 +74,6 @@
             color: $white;
         }
     }
-    .nav-item-separator {
-        border-left: $nav-item-divider-border;
-        transform: $nav-item-divider-transform;
-        margin: $nav-item-divider-margin;
-        height: 20px;
-    }
-    .dropdown-menu {
-        font-size: $font-size-sm;
-        position: static;
-        float: none;
-    }
 }
 
 // Navbar text

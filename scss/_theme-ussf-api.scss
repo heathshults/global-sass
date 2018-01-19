@@ -13,6 +13,7 @@ body {
 html,
 body {
     height: 100%;
+    background: $gray-300;
 }
 
 @keyframes fadeIn {
@@ -115,10 +116,15 @@ a {
     background: $blue;
 }
 
+.bg-white {
+    background: $white;
+}
 /*
 < ----------- TEXTUAL ----------- >
 */
-
+.form-control-feedback {
+    color: $red;
+}
 .font-weight-light {
     font-weight: $font-weight-normal;
 }
@@ -180,11 +186,21 @@ a {
 /*
 < ----------- NEXT ----------- >
 */
+.pt-17 {
+    padding-top: 17px;
+}
+.was-validated .form-control:invalid ~ .invalid-feedback {
+    display: inline-block !important;
+}
 
 header {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    background: $white;
+}
+.header-container {
+    background: $header-container-bg;
 }
 
 form {
@@ -788,6 +804,9 @@ button:hover {
 .form-control {
     height: 40px;
     padding: 10px;
+}
+.form-signin {
+    height: 34px;
 }
 .blue-divider {
     height: 39px;

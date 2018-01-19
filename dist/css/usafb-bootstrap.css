@@ -3399,20 +3399,6 @@ tbody.collapse.show {
   color: #fff;
 }
 
-.navbar-nav .nav-item-separator {
-  border-left: 0.125rem #2e69a3 solid;
-  -webkit-transform: skewX(-25deg);
-          transform: skewX(-25deg);
-  margin: 0.65rem 0.3rem 0 0.3rem;
-  height: 20px;
-}
-
-.navbar-nav .dropdown-menu {
-  font-size: 0.875rem;
-  position: static;
-  float: none;
-}
-
 .navbar-text {
   display: inline-block;
   padding-top: 1rem;
@@ -10493,9 +10479,10 @@ button:hover {
   background: rgba(9, 48, 90, 0.93) url("images/bg/usa-fb-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: top center;
   background-size: cover;
   background-blend-mode: multiply;
-  object-fit: contain;
+  object-fit: fill;
 }
 
 .bg-pages-blue .bss-btn.btn-primary-02 {
@@ -10589,23 +10576,23 @@ button:hover {
   display: -ms-flexbox;
   display: flex;
   height: 112px;
+  margin-bottom: auto;
   color: #8ab8e4;
   background: #09254a;
-  margin-bottom: auto;
 }
 
 .brand-container {
   display: -ms-flexbox;
   display: flex;
-  padding: 18px 20px;
+  max-width: 350px;
+  padding: 7px 20px;
+  margin-top: 18px;
   color: #fff;
   white-space: nowrap;
 }
 
 .brand-container .brand-logo {
-  width: 150px;
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 300px;
 }
 
 .brand-container .brand-tag {
@@ -10613,7 +10600,11 @@ button:hover {
   top: 3px;
   -ms-flex-item-align: center flex-end;
       align-self: center flex-end;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  font-size: 0.875rem;
   color: #fff;
+  text-decoration: none;
   white-space: nowrap;
 }
 
@@ -10785,12 +10776,35 @@ option {
   width: 100%;
 }
 
+.navbar-nav .nav-link {
+  font-size: 0.8125rem;
+}
+
 .navbar-nav .nav-link:hover {
   color: #fff;
 }
 
+.navbar-nav .nav-link:contains("Home") {
+  display: none;
+}
+
 .navbar-nav .nav-link.active {
   color: #fff;
+}
+
+.nav-item-separator {
+  display: none;
+  height: 20px;
+  margin: 0.65rem 0.3rem 0 0.3rem;
+  border-left: 0.125rem #2e69a3 solid;
+  -webkit-transform: skewX(-25deg);
+          transform: skewX(-25deg);
+}
+
+.dropdown-menu {
+  position: static;
+  float: none;
+  font-size: 0.875rem;
 }
 
 .dropdown-item:focus,
@@ -11340,7 +11354,7 @@ thead.cpl th .th-inner {
   min-width: 0;
   color: #fff;
   word-wrap: break-word;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.45);
   background-clip: border-box;
   border: 1px solid #083660;
 }

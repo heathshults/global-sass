@@ -147,32 +147,32 @@ $blue-500:              #8ab8e4 !default;
 $blue-600:              #d6ecff !default;
 
 $colors: (
-  blue: $blue,
-  indigo: $indigo,
-  purple: $purple,
-  pink: $pink,
-  red: $red,
-  orange: $orange,
-  yellow: $yellow,
-  lightgoldenrodyellow: $light-yellow,
-  green: $green,
-  teal: $teal,
-  white: $white,
-  gray: $gray-600,
-  gray-dark: $gray-800,
-  blue-dark: $blue-000,
-  blue-medium: $blue-400
+    blue: $blue,
+    indigo: $indigo,
+    purple: $purple,
+    pink: $pink,
+    red: $red,
+    orange: $orange,
+    yellow: $yellow,
+    lightgoldenrodyellow: $light-yellow,
+    green: $green,
+    teal: $teal,
+    white: $white,
+    gray: $gray-600,
+    gray-dark: $gray-800,
+    blue-dark: $blue-000,
+    blue-medium: $blue-400
 ) !default;
 
 $theme-colors: (
-  primary: $blue,
-  secondary: $gray-600,
-  success: $green,
-  info: $cyan,
-  warning: $yellow,
-  danger: $red,
-  light: $gray-100,
-  dark: $gray-800,
+    primary: $blue,
+    secondary: $gray-600,
+    success: $green,
+    info: $cyan,
+    warning: $yellow,
+    danger: $red,
+    light: $gray-100,
+    dark: $gray-800,
 ) !default;
 
 // Set a specific jump point for requesting color jumps
@@ -212,20 +212,20 @@ $blue-gradient-pill:                linear-gradient(to bottom, #45517e, $blue) !
 
 $spacer: 1rem !default;
 $spacers: (
-  0: 0,
-  1: ($spacer * .25),
-  2: ($spacer * .5),
-  3: $spacer,
-  4: ($spacer * 1.5),
-  5: ($spacer * 3)
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3)
 ) !default;
 
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: (
-  25: 25%,
-  50: 50%,
-  75: 75%,
-  100: 100%
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%
 ) !default;
 
 // Body

@@ -694,9 +694,10 @@ button:hover {
     background: $blue-450-50 url("images/bg/usa-fb-bg.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: top center;
     background-size: cover;
     background-blend-mode: multiply;
-    object-fit: contain;
+    object-fit: fill;
     .bss-btn.btn-primary-02 {
         padding: 6px 10px;
     }
@@ -782,27 +783,30 @@ button:hover {
     z-index: 10;
     display: flex; //background-image: linear-gradient(to bottom, $blue, $blue-400);
     height: 112px;
+    margin-bottom: auto;
     color: $blue-500;
     background: $blue;
-    margin-bottom: auto;
 }
 
 .brand-container {
-    //max-width: 360px;
     display: flex;
-    padding: 18px 20px;
+    max-width: 350px;
+    padding: 7px 20px;
+    margin-top: 18px;
     color: $white;
     white-space: nowrap;
     .brand-logo {
-        width: 150px;
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 300px;
+        // max-height: 100%;
     }
     .brand-tag {
         position: relative;
         top: 3px;
         align-self: center flex-end;
+        flex-shrink: 1;
+        font-size: rem(14px);
         color: $white;
+        text-decoration: none;
         white-space: nowrap;
     }
     .brand-tag.a:link,
@@ -828,7 +832,9 @@ button:hover {
     background: $white;
     box-shadow: -1px -1px 20px 6px rgba(0, 0, 0, .2);
 }
+.logo-container {
 
+}
 
 /*
 < --------- ALL SKEWED UP --------- >
@@ -975,13 +981,30 @@ option {
 
 .navbar-nav {
     .nav-link {
+        font-size: rem(13px);
         &:hover {
             color: $white;
+        }
+        &:contains("Home") {
+            display: none;
         }
     }
     .nav-link.active  {
         color: #fff;
     }
+}
+
+.nav-item-separator {
+    display: none;
+    height: 20px;
+    margin: $nav-item-divider-margin;
+    border-left: $nav-item-divider-border;
+    transform: $nav-item-divider-transform;
+}
+.dropdown-menu {
+    position: static;
+    float: none;
+    font-size: $font-size-sm;
 }
 
 .dropdown-item:focus,

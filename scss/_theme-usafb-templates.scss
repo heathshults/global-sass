@@ -1287,7 +1287,7 @@ option {
         padding-left: 35px;
         white-space: nowrap; // background: $white;
         background: rgba(0, 0, 0, .15);
-        border: $sign-in-input-border;
+        border: solid 3px;
         border-radius: 10px;
         // box-shadow: $blur-20;
         .input-icon-wrapper {
@@ -1313,8 +1313,8 @@ option {
             z-index: 500;
             display: flex;
             margin: 0 6px;
-            font-size: $font-size-lg;
-            color: $gray-600;
+            font-size: 1.5rem;
+            color: #868e96;
         }
         .fa-envelope {
             position: absolute;

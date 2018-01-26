@@ -5,7 +5,7 @@
 .table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: $spacer;
+  // margin-bottom: $spacer;
   background: $table-bg; // Reset for nesting within parents with `background`.
 
   th,
@@ -68,8 +68,8 @@
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 
 .table-striped {
-  tbody tr:nth-of-type(odd) {
-    background: $table-accent-bg;
+    tbody tr:nth-of-type(odd) {
+   background: $table-accent-bg;
   }
 }
 
@@ -81,7 +81,8 @@
 .table-hover {
   tbody tr {
     @include hover {
-      background: $table-hover-bg;
+      background: $blue-600;
+      // background: $table-hover-bg;
     }
   }
 }

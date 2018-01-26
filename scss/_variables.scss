@@ -76,7 +76,7 @@ $black:    #000 !default;
 
 // clear shaders
 $clear-white:           rgba(255, 255, 255, .03) !default;
-$clear-white-md:        rgba(255, 255, 255, .5) !default;
+$clear-white-md:        rgba(255, 255, 255, .15) !default;
 $clear-white-dark:      rgba(255, 255, 255, .75) !default;
 
 $clear-black:           rgba(0, 0, 0, .25) !default;
@@ -144,6 +144,7 @@ $blue-450-14:           rgba(73, 144, 226, .14) !default;
 $blue-450-50:           rgba(9, 48, 90, .93) !default;
 $blue-450:              #4990e2 !default;
 $blue-500:              #8ab8e4 !default;
+$blue-550:              #96cafa !default;
 $blue-600:              #d6ecff !default;
 
 $colors: (
@@ -202,6 +203,7 @@ $skew-divider-gradient:             linear-gradient(180deg, $blue-350, $blue--01
 $darkred-gradient-reverse:          linear-gradient(to bottom, $red-000, $red) !default;
 $green-gradient-reverse:            linear-gradient(to bottom, $green-00, $green) !default;
 $blue-gradient-pill:                linear-gradient(to bottom, #45517e, $blue) !default;
+$blue-gradient-pill-hover:          linear-gradient(to bottom, darken(#45517e, 5%), darken($blue, 5%)) !default;
 
 
 // Spacing
@@ -401,7 +403,7 @@ $table-cell-padding-sm:         .3rem !default;
 
 $table-bg:                      transparent !default;
 $table-accent-bg:               rgba($black, .05) !default;
-$table-hover-bg:                rgba($black, .075) !default;
+$table-hover-bg:                rgba($black, .15) !default;
 $table-active-bg:               $table-hover-bg !default;
 
 $table-border-width:            $border-width !default;

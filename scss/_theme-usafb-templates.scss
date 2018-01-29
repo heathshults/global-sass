@@ -37,10 +37,15 @@ iframe {
     height: 2000px;
     background: transparent;
 }
-/*
-< ---- utilities ----- >
-  ------ FLEX ------
-*/
+
+/* ---- utilities ----- */
+.vh100 {
+    height: 100vh;
+}
+
+
+/* ------ FLEX ------ */
+
 
 .container-flexi-fluid {
     display: flex;
@@ -758,6 +763,7 @@ button:hover {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 2800px;
+    transition: all .15s ease-in-out;
 }
 
 .player-container {
@@ -1267,7 +1273,7 @@ option {
     border-top-right-radius: 20px;
     border-image-source: linear-gradient(to top, rgba(255, 255, 255, .1), rgb(255, 255, 255)); // border-image-slice: 1;
     backdrop-filter: blur(4px);
-    box-shadow: 11px 11px 11px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 0 13px 9px rgba(0, 0, 0, .2);
     &::before {
         width: 398.9px;
         height: 344px;

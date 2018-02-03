@@ -99,6 +99,11 @@
       "type": "npm",
       "script": "css-compile-usafb",
       "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "css-compile-game-officials",
+      "problemMatcher": []
     }
   ]
 }

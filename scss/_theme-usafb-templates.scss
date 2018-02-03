@@ -766,12 +766,29 @@ button:hover {
     transition: all .15s ease-in-out;
 }
 
+.signin-screen-container {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding-top: 20px;
+    overflow: hidden;
+    background-image: url("images/bg/bg-usafb-signin.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2800px;
+  }
+
 .player-container {
     position: relative;
     .players-signin {
         flex: 1 auto;
         align-self: flex-start;
-        height: calc(100vh - 50px);
+        height: 97vh;
         max-height: 865px;
         filter: drop-shadow(-16px 15px 14px rgba(0, 0, 0, .5));
     }
@@ -986,6 +1003,11 @@ option {
         border: 1px solid transparent;
     }
 }
+
+// .nav-container {
+//     display: flex;
+//     flex-flow: row wrap;
+// }
 
 .navbar {
     width: 100%;
@@ -1303,11 +1325,15 @@ option {
             .txtEmail {
                 &::before {
                     content: "\f0e0";
+                    font-family: 'FontAwesome';
+                    font-size: .8rem;
                 }
             }
             .txtPass {
                 &::before {
                     content: "\f023";
+                    font-family: 'FontAwesome';
+                    font-size: .8rem;
                 }
             }
         /* stylelint-enable */

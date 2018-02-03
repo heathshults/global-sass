@@ -10561,26 +10561,6 @@ button:hover {
   transition: all .15s ease-in-out;
 }
 
-.signin-screen-container {
-  position: relative;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  height: 100vh;
-  padding: 0;
-  overflow: hidden;
-  background-image: url("images/bg/sign-in/bg-sign-in-1.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 2800px;
-  transition: all .15s ease-in-out;
-}
-
 .player-container {
   position: relative;
 }

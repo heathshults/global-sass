@@ -32,7 +32,8 @@ gulp.task('clean-bs', function() {
     'dist/bs/css/**/*.map'
   ])
   .pipe(clean({force: true}));
- });
+});
+ 
 
 // Delete the ussf dist directory
 gulp.task('clean-ussf', function() {
@@ -40,6 +41,16 @@ gulp.task('clean-ussf', function() {
     'dist/theme/ussf/css/**/*.css', 
     // 'dist/**/*.js', 
     'dist/theme/ussf/css/**/*.map'
+  ])
+  .pipe(clean({force: true}));
+ });
+
+ // Delete the game-officials dist directory
+gulp.task('clean-game-officials', function() {
+  return gulp.src([
+    'dist/theme/game-officials/css/**/*.css', 
+    // 'dist/**/*.js', 
+    'dist/theme/game-officials/css/**/*.map'
   ])
   .pipe(clean({force: true}));
  });
@@ -53,6 +64,7 @@ const banner = ['/*!\n',
   ' */\n',
   ''
 ].join('')
+
 
 // Compiles SCSS files from /scss into /css
 gulp.task('sass-2-css', () => {
@@ -156,6 +168,26 @@ gulp.task('copy-ussf', () => {
   //   '!node_modules/font-awesome/*.json'
   //   ])
   //   .pipe(gulp.dest('../npdb-usafb-templates/app/css/vendor/font-awesome'))
+  ]
+})
+
+// Copy css and js files to site location
+gulp.task('copy-game-officials', () => {
+  gulp.src(['dist/theme/game-officials/css/*.css', 'dist/theme/game-officials/css/*.map'])
+        .pipe(gulp.dest('../npdb-game-officials/src/css'))
+  var emptystuff = [
+  // gulp.src(['dist/js/*.js'])
+  //       .pipe(gulp.dest('../npdb-usafb-templates/src/js'))
+
+  // gulp.src([
+  //   'node_modules/font-awesome/css/**',
+  //   '!node_modules/font-awesome/**/*.map',
+  //   '!node_modules/font-awesome/.npmignore',
+  //   '!node_modules/font-awesome/*.txt',
+  //   '!node_modules/font-awesome/*.md',
+  //   '!node_modules/font-awesome/*.json'
+  //   ])
+  //   .pipe(gulp.dest('../npdb-usafb-templates/src/css/vendor/font-awesome'))
   ]
 })
 

@@ -327,5 +327,5 @@ module.exports = {
   "value-list-comma-space-before": valueListCommaSpaceBefore,
   "value-list-max-empty-lines": valueListMaxEmptyLines,
   "value-no-vendor-prefix": valueNoVendorPrefix,
-  indentation: indentation /* Placed here for better autofixing */ // eslint-disable-line object-shorthand
+  "indentation": indentation /* Placed here for better autofixing */ // eslint-disable-line object-shorthand
 };

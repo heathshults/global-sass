@@ -18,8 +18,8 @@ gulp.task('clean', function() {
     'dist/**/*.css', 
     // 'dist/**/*.js', 
     'dist/**/*.map',
-    '../npdb-usafb-templates/app/css/*.css',
-    '../npdb-usafb-templates/app/css/*.map'
+    '../usafb-ui/app/css/*.css',
+    '../usafb-ui/app/css/*.map'
   ])
   .pipe(clean({force: true}));
  });
@@ -134,7 +134,7 @@ gulp.task('minify-js', () => {
 // Copy css and js files to site location
 gulp.task('copy-usafb', () => {
   gulp.src(['dist/css/*.css', 'dist/css/*.map'])
-        .pipe(gulp.dest('../npdb-usafb-templates/app/css'))
+        .pipe(gulp.dest('../usafb-ui/app/css'))
   var emptystuff = [
   // gulp.src(['dist/js/*.js'])
   //       .pipe(gulp.dest('../npdb-usafb-templates/app/js'))
@@ -154,7 +154,7 @@ gulp.task('copy-usafb', () => {
 // Copy css and js files to site location
 gulp.task('copy-ussf', () => {
   gulp.src(['dist/theme/ussf/css/*.css', 'dist/theme/ussf/css/*.map'])
-        .pipe(gulp.dest('../npdb-ussf-api-templates/app/css'))
+        .pipe(gulp.dest('../ussf-api-templates/app/css'))
   var emptystuff = [
   // gulp.src(['dist/js/*.js'])
   //       .pipe(gulp.dest('../npdb-usafb-templates/app/js'))
@@ -174,7 +174,7 @@ gulp.task('copy-ussf', () => {
 // Copy css and js files to site location
 gulp.task('copy-game-officials', () => {
   gulp.src(['dist/theme/game-officials/css/*.css', 'dist/theme/game-officials/css/*.map'])
-        .pipe(gulp.dest('../npdb-game-officials/src/css'))
+        .pipe(gulp.dest('../game-officials/src/css'))
   var emptystuff = [
   // gulp.src(['dist/js/*.js'])
   //       .pipe(gulp.dest('../npdb-usafb-templates/src/js'))
@@ -200,7 +200,7 @@ gulp.task('autoprefixme', function () {
       .pipe(rename({
         prefix: ''
       }))
-      .pipe(gulp.dest('../npdb-usafb-templates/app/css/'))
+      .pipe(gulp.dest('../usafb-ui/app/css/'))
 })
 
 // in test mode, needs correct directory sset for real use

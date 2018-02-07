@@ -10561,39 +10561,47 @@ button:hover {
   transition: all .15s ease-in-out;
 }
 
+.sign-in-body {
+  background: #09254a url("images/bg/sign-in/bg-sign-in-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2800px;
+}
+
 .signin-screen-container {
-  position: relative;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-      align-items: center;
   height: 100vh;
-  padding: 0;
+  padding-top: 20px;
   overflow: hidden;
   background-image: url("images/bg/sign-in/bg-sign-in-1.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 2800px;
-  transition: all .15s ease-in-out;
 }
 
 .player-container {
   position: relative;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  width: 100%;
 }
 
 .player-container .players-signin {
-  -ms-flex: 1 auto;
-      flex: 1 auto;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  height: 97vh;
-  max-height: 865px;
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  height: 97%;
+  width: 97%;
   -webkit-filter: drop-shadow(-16px 15px 14px rgba(0, 0, 0, 0.5));
           filter: drop-shadow(-16px 15px 14px rgba(0, 0, 0, 0.5));
+  transition: all 0.2s ease-in-out;
 }
 
 .player {
@@ -11032,13 +11040,31 @@ option {
 }
 
 .sign-in-form-container {
+  position: absolute;
   width: 24.875rem;
-  margin: 20px 20px 20px 109px;
+  margin: 20px auto;
+  opacity: 1;
+  top: 120px;
+  transition: all 0.2s ease-in-out;
 }
 
 .sign-in-form-container .sign-in-page-logo {
   width: 15.1875rem;
   margin: 20px 18px;
+}
+
+@media (max-width: 867px) {
+  .sign-in-form-container {
+    position: unset;
+    margin: 20px;
+    transition: all 0.2s ease-in-out;
+  }
+  .players-signin {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.2s ease-in-out;
+  }
 }
 
 .bss.form-group .form-control.form-control-theme {

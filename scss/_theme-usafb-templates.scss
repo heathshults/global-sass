@@ -39,13 +39,12 @@ iframe {
 }
 
 /* ---- utilities ----- */
+
 .vh100 {
     height: 100vh;
 }
 
-
 /* ------ FLEX ------ */
-
 
 .container-flexi-fluid {
     display: flex;
@@ -97,7 +96,6 @@ iframe {
     flex-shrink: 0;
 }
 
-
 /*
 < ----------- TEXTUAL ----------- >
 */
@@ -146,7 +144,6 @@ iframe {
     color: $gray-850;
 }
 
-
 /*
 < ----------- NEXT ----------- >
 */
@@ -171,7 +168,6 @@ small {
     font-weight: 300;
 }
 
-
 /*
 < ----------- ANIMATED CHECKBOX ----------- >
 */
@@ -192,13 +188,13 @@ small {
         & *,
         & *::after,
         & *::before,
-        & + .tgl-btn {
+        &+.tgl-btn {
             box-sizing: border-box;
             &::selection {
                 background: none;
             }
         }
-        + .tgl-btn {
+        +.tgl-btn {
             position: relative;
             display: inline-block;
             width: 7rem;
@@ -226,7 +222,7 @@ small {
         }
     }
     .tgl-skewed {
-        + .tgl-btn {
+        +.tgl-btn {
             overflow: hidden;
             font-family: "Roboto Light", sans-serif;
             background: $green;
@@ -261,7 +257,7 @@ small {
                 }
             }
         }
-        &:checked + .tgl-btn {
+        &:checked+.tgl-btn {
             background: #888;
             &::before {
                 left: -100%;
@@ -275,7 +271,6 @@ small {
         }
     }
 }
-
 
 /*
 < ----------- ASPECT RATIO ----------- >
@@ -304,7 +299,6 @@ small {
         padding-top: percentage(1 / 1);
     }
 }
-
 
 /*
 < ----------- ICONS ----------- >
@@ -346,7 +340,6 @@ small {
         -moz-osx-font-smoothing: grayscale;
     }
 }
-
 
 /*
 < ----------- CALLOUTS ----------- >
@@ -660,7 +653,6 @@ button:hover {
     display: flex;
 }
 
-
 /*
 < --------- BACKGROUNDS --------- >
 */
@@ -673,8 +665,7 @@ button:hover {
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 0;
-    // z-index: -1;
+    padding: 0; // z-index: -1;
     background: $blue-450-50 url("images/bg/usa-fb-bg.jpg") center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -766,31 +757,40 @@ button:hover {
     transition: all .15s ease-in-out;
 }
 
+.sign-in-body {
+    background: $blue url("images/bg/sign-in/bg-sign-in-1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2800px;
+}
+
 .signin-screen-container {
-    position: relative;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     display: flex;
-    align-items: center;
     height: 100vh;
     padding-top: 20px;
     overflow: hidden;
-    background-image: url("images/bg/bg-usafb-signin.jpg");
+    background-image: url("images/bg/sign-in/bg-sign-in-1.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 2800px;
-  }
+}
 
 .player-container {
     position: relative;
+    align-items: flex-end;
+    width: 100%;
     .players-signin {
-        flex: 1 auto;
-        align-self: flex-start;
-        height: 97vh;
-        max-height: 865px;
+        flex: 1 1 auto;
+        align-self: flex-end;
+        height: 97%; // max-height: 865px;
+        width: 97%;
         filter: drop-shadow(-16px 15px 14px rgba(0, 0, 0, .5));
+        transition: $transition-base;
     }
 }
 
@@ -802,8 +802,7 @@ button:hover {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: middle bottom;
-    background-size: 35%;
-    // background-blend-mode: difference;
+    background-size: 35%; // background-blend-mode: difference;
     // object-fit: 100%;
 }
 
@@ -825,8 +824,7 @@ button:hover {
     color: $white;
     white-space: nowrap;
     .brand-logo {
-        max-width: 300px;
-        // max-height: 100%;
+        max-width: 300px; // max-height: 100%;
     }
     .brand-tag {
         position: relative;
@@ -861,9 +859,8 @@ button:hover {
     background: $white;
     box-shadow: -1px -1px 20px 6px rgba(0, 0, 0, .2);
 }
-.logo-container {
 
-}
+.logo-container {}
 
 /*
 < --------- ALL SKEWED UP --------- >
@@ -898,7 +895,6 @@ button:hover {
     background: $skew-divider-gradient;
     transform: skewX(-45deg);
 }
-
 
 /*
 < --------- ALERTS --------- >
@@ -1008,7 +1004,6 @@ option {
 //     display: flex;
 //     flex-flow: row wrap;
 // }
-
 .navbar {
     width: 100%;
 }
@@ -1023,7 +1018,7 @@ option {
             display: none;
         }
     }
-    .nav-link.active  {
+    .nav-link.active {
         color: #fff;
     }
 }
@@ -1035,6 +1030,7 @@ option {
     border-left: $nav-item-divider-border;
     transform: $nav-item-divider-transform;
 }
+
 .dropdown-menu {
     position: static;
     float: none;
@@ -1047,7 +1043,6 @@ option {
     text-decoration: none;
     background: $red;
 }
-
 
 .dropdown-item.active,
 .dropdown-item:active {
@@ -1118,6 +1113,7 @@ option {
         text-transform: lowercase !important;
     }
 }
+
 .nav-link {
     display: block;
     padding: .5rem 0;
@@ -1155,7 +1151,7 @@ option {
 }
 
 .signout-link,
-{
+    {
     background: transparent;
     +.signout-link {
         &:visited {
@@ -1261,12 +1257,32 @@ option {
 
 // sign in page
 .sign-in-form-container {
-    width: rem(398px);
-    margin: 20px 20px 20px 109px;
+  position: absolute;  
+  width: rem(398px);
+    margin: 20px auto;
+    opacity: 1;
+    top: 120px;
+    transition: $transition-base;
+
     .sign-in-page-logo {
         width: rem(243px);
         margin: 20px 18px;
     }
+}
+@media (max-width: 867px) {
+    .sign-in-form-container {
+      position: unset;
+      margin: 20px;
+      transition: $transition-base;
+    }
+    .players-signin {
+      opacity: 0;
+      position: absolute;
+      bottom: 0;
+      transition: $transition-base;
+    }
+
+
 }
 
 .bss.form-group .form-control.form-control-theme {
@@ -1280,7 +1296,6 @@ option {
     letter-spacing: .8px;
     background: rgba(0, 0, 0, .15);
     border-radius: 10px;
-    
 }
 
 .sign-in-form {
@@ -1308,13 +1323,12 @@ option {
         white-space: nowrap;
         background: rgba(0, 0, 0, .2);
         border: solid 3px rgba(0, 0, 0, .25);
-        border-radius: 10px;
-        // box-shadow: $blur-20;
+        border-radius: 10px; // box-shadow: $blur-20;
         .input-icon-wrapper {
             width: 35px;
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
-             /* stylelint-disable */
+            /* stylelint-disable */
             input[type="password"],
             input[type="email"] {
                 width: 100%;
@@ -1336,12 +1350,11 @@ option {
                     font-size: .8rem;
                 }
             }
-        /* stylelint-enable */
+            /* stylelint-enable */
         }
         .checkbox-theme {
             border: $sign-in-input-border;
         }
-       
         .fa-layer {
             z-index: 500;
             display: flex;
@@ -1359,7 +1372,7 @@ option {
             top: .8rem;
             left: .4rem;
         }
-        .row > [class^="col-"] {
+        .row>[class^="col-"] {
             padding-bottom: 0;
         }
         .form-control {
@@ -1397,13 +1410,11 @@ option {
     }
 }
 
-
 /* stylelint-disable */
 
 form.dropzone {
     height: 185px;
 }
-
 
 /* stylelint-enable */
 
@@ -1427,7 +1438,6 @@ thead {
     }
 }
 
-
 /* stylelint-disable */
 
 thead.cpl {
@@ -1447,9 +1457,7 @@ thead.cpl {
     }
 }
 
-
 /* stylelint-enable */
-
 
 // tbody {
 //   tr {
@@ -1605,12 +1613,12 @@ thead.cpl {
         background: rgba(0, 0, 0, .45);
         background-clip: border-box;
         border: $card-border-width solid $blue-300;
-        > .list-group:first-child {
+        >.list-group:first-child {
             .list-group-item:first-child {
                 @include border-top-radius($card-border-radius);
             }
         }
-        > .list-group:last-child {
+        >.list-group:last-child {
             .list-group-item:last-child {
                 @include border-bottom-radius($card-border-radius);
             }
@@ -1648,7 +1656,7 @@ thead.cpl {
         @include hover {
             text-decoration: none;
         }
-        + .card-link {
+        +.card-link {
             margin-left: $card-spacer-x;
         }
     }
@@ -1704,7 +1712,7 @@ thead.cpl {
     //   flex: 0 0 100%;
     //   max-width: 100%;
     // }
-    .row > [class^="col-"] {
+    .row>[class^="col-"] {
         flex: 0 0 100%;
         max-width: 100%;
         text-align: center;
@@ -1726,14 +1734,12 @@ thead.cpl {
 //   position: ;
 //   top: 10%;
 // }
-
 /* stylelint-disable */
 
 #importer .modal-body .container-fluid {
     height: 306px;
     overflow-y: scroll;
 }
-
 
 /* stylelint-enable */
 
@@ -1824,7 +1830,7 @@ thead.cpl {
         border: 12px solid $white;
         border-radius: 50%;
     }
-    > span {
+    >span {
         position: absolute;
         top: 0;
         z-index: 1;
@@ -2166,6 +2172,7 @@ thead.cpl {
 .bg-clear-white {
     background: $clear-white;
 }
+
 .bg-clear-white-md {
     background: $clear-white-md;
 }
@@ -2256,7 +2263,6 @@ thead.cpl {
         }
     }
 }
-
 
 // ----------------- nothing below the following class --------------//
 body.scaff .row>[class^="col-"],

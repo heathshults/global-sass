@@ -1,4 +1,4 @@
-'use strict'
+
 
 const path = require('path')
 const JSUnitSaucelabs = require('jsunitsaucelabs')

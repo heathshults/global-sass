@@ -10,7 +10,7 @@
   &:hover,
   &:active {
     color: #fff;
-    background-color: $bd-purple-bright;
+    background: $bd-purple-bright;
     border-color: $bd-purple-bright;
   }
 }
@@ -23,7 +23,7 @@
   &:hover,
   &:active {
     color: $bd-graphite;
-    background-color: $bd-yellow;
+    background: $bd-yellow;
     border-color: $bd-yellow;
   }
 }

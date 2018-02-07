@@ -4,7 +4,7 @@
 .input-group {
   position: relative;
   display: flex;
-  width: 100%;
+  // width: 100%;
   .form-control {
     // Ensure that the input is always above the *appended* addon button for
     // proper border colors.
@@ -64,7 +64,7 @@
   line-height: $input-btn-line-height;
   color: $input-color;
   text-align: center;
-  background-color: $input-group-addon-bg;
+  background: $input-group-addon-bg;
   border: $input-btn-border-width solid $input-group-addon-border-color;
   @include border-radius($input-border-radius); // Sizing
   &.form-control-sm {

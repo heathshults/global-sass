@@ -18,13 +18,45 @@ gulp.task('clean', function() {
     'dist/**/*.css', 
     // 'dist/**/*.js', 
     'dist/**/*.map',
-    '../npdb-usafb-templates/app/css/*.css',
-    '../npdb-usafb-templates/app/css/*.map'
+    '../usafb-ui/app/css/*.css',
+    '../usafb-ui/app/css/*.map'
   ])
   .pipe(clean({force: true}));
  });
 
-// Set the banner content
+// Delete the bs dist directory
+gulp.task('clean-bs', function() {
+  return gulp.src([
+    'dist/bs/css/**/*.css', 
+    // 'dist/**/*.js', 
+    'dist/bs/css/**/*.map'
+  ])
+  .pipe(clean({force: true}));
+});
+ 
+
+// Delete the ussf dist directory
+gulp.task('clean-ussf', function() {
+  return gulp.src([
+    'dist/theme/ussf/css/**/*.css', 
+    // 'dist/**/*.js', 
+    'dist/theme/ussf/css/**/*.map'
+  ])
+  .pipe(clean({force: true}));
+ });
+
+ // Delete the game-officials dist directory
+gulp.task('clean-game-officials', function() {
+  return gulp.src([
+    'dist/theme/game-officials/css/**/*.css', 
+    // 'dist/**/*.js', 
+    'dist/theme/game-officials/css/**/*.map'
+  ])
+  .pipe(clean({force: true}));
+ });
+
+
+ // Set the banner content
 const banner = ['/*!\n',
   ' * Start USAFB - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
   ` * Copyright 2017-${(new Date()).getFullYear()}`, ' <%= pkg.author %>\n',
@@ -32,6 +64,7 @@ const banner = ['/*!\n',
   ' */\n',
   ''
 ].join('')
+
 
 // Compiles SCSS files from /scss into /css
 gulp.task('sass-2-css', () => {
@@ -98,10 +131,10 @@ gulp.task('minify-js', () => {
         }))
 })
 
-// Copy vendor libraries from /node_modules into /vendor
-gulp.task('copy', () => {
+// Copy css and js files to site location
+gulp.task('copy-usafb', () => {
   gulp.src(['dist/css/*.css', 'dist/css/*.map'])
-        .pipe(gulp.dest('../npdb-usafb-templates/app/css'))
+        .pipe(gulp.dest('../usafb-ui/app/css'))
   var emptystuff = [
   // gulp.src(['dist/js/*.js'])
   //       .pipe(gulp.dest('../npdb-usafb-templates/app/js'))
@@ -118,6 +151,46 @@ gulp.task('copy', () => {
   ]
 })
 
+// Copy css and js files to site location
+gulp.task('copy-ussf', () => {
+  gulp.src(['dist/theme/ussf/css/*.css', 'dist/theme/ussf/css/*.map'])
+        .pipe(gulp.dest('../ussf-api-templates/app/css'))
+  var emptystuff = [
+  // gulp.src(['dist/js/*.js'])
+  //       .pipe(gulp.dest('../npdb-usafb-templates/app/js'))
+
+  // gulp.src([
+  //   'node_modules/font-awesome/css/**',
+  //   '!node_modules/font-awesome/**/*.map',
+  //   '!node_modules/font-awesome/.npmignore',
+  //   '!node_modules/font-awesome/*.txt',
+  //   '!node_modules/font-awesome/*.md',
+  //   '!node_modules/font-awesome/*.json'
+  //   ])
+  //   .pipe(gulp.dest('../npdb-usafb-templates/app/css/vendor/font-awesome'))
+  ]
+})
+
+// Copy css and js files to site location
+gulp.task('copy-game-officials', () => {
+  gulp.src(['dist/theme/game-officials/css/*.css', 'dist/theme/game-officials/css/*.map'])
+        .pipe(gulp.dest('../game-officials/src/css'))
+  var emptystuff = [
+  // gulp.src(['dist/js/*.js'])
+  //       .pipe(gulp.dest('../npdb-usafb-templates/src/js'))
+
+  // gulp.src([
+  //   'node_modules/font-awesome/css/**',
+  //   '!node_modules/font-awesome/**/*.map',
+  //   '!node_modules/font-awesome/.npmignore',
+  //   '!node_modules/font-awesome/*.txt',
+  //   '!node_modules/font-awesome/*.md',
+  //   '!node_modules/font-awesome/*.json'
+  //   ])
+  //   .pipe(gulp.dest('../npdb-usafb-templates/src/css/vendor/font-awesome'))
+  ]
+})
+
 // autoprefix vendor browsers where necessary
 gulp.task('autoprefixme', function () {
   return gulp.src('dist/css/*.css')
@@ -127,7 +200,7 @@ gulp.task('autoprefixme', function () {
       .pipe(rename({
         prefix: ''
       }))
-      .pipe(gulp.dest('../npdb-usafb-templates/app/css/'))
+      .pipe(gulp.dest('../usafb-ui/app/css/'))
 })
 
 // in test mode, needs correct directory sset for real use

@@ -4,7 +4,7 @@
  * Copyright 2011 Blue Star Sports
  * Licensed under MIT (http://www.bluestarsports.com/termsofuse.html)
  */
-font-face {
+@font-face {
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 300;
@@ -90,7 +90,7 @@ font-face {
 
 body {
   min-height: 100vh;
-  background-color: #FFF;
+  background: #FFF;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;

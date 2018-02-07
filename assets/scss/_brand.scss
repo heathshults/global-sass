@@ -9,7 +9,7 @@
   margin-bottom: 1rem;
   overflow: hidden;
   color: #563d7c;
-  background-color: #f9f9f9;
+  background: #f9f9f9;
   border-radius: .25rem;
 }
 
@@ -23,7 +23,7 @@
 }
 .bd-brand-logos .inverse {
   color: #fff;
-  background-color: #563d7c;
+  background: #563d7c;
 }
 
 // Heading content within
@@ -47,10 +47,10 @@
 //   border-radius: 50%;
 // }
 // .bd-brand-item .glyphicon-ok {
-//   background-color: #5cb85c;
+//   background: #5cb85c;
 // }
 // .bd-brand-item .glyphicon-remove {
-//   background-color: #d9534f;
+//   background: #d9534f;
 // }
 
 @media (min-width: 768px) {
@@ -94,15 +94,15 @@
 // Docs colors
 .color-swatches {
   .bd-purple {
-    background-color: $bd-purple;
+    background: $bd-purple;
   }
   .bd-purple-light {
-    background-color: $bd-purple-light;
+    background: $bd-purple-light;
   }
   .bd-purple-lighter {
-    background-color: #e5e1ea;
+    background: #e5e1ea;
   }
   .bd-gray {
-    background-color: #f9f9f9;
+    background: #f9f9f9;
   }
 }

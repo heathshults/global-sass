@@ -1,5 +1,0 @@
-
-@mixin width-px-rem($size) {
-  width: $size; //Fallback in px
-  width: calculate-px-to-rem($size);
-}

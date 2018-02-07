@@ -102,6 +102,6 @@
   padding: $tooltip-padding-y $tooltip-padding-x;
   color: $tooltip-color;
   text-align: center;
-  background-color: $tooltip-bg;
+  background: $tooltip-bg;
   @include border-radius($border-radius);
 }

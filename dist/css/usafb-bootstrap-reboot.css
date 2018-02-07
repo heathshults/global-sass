@@ -29,7 +29,7 @@ body {
   font-weight: 300;
   line-height: 1.5;
   color: #212529;
-  background-color: #fff;
+  background: #8ab8e4;
 }
 
 [tabindex="-1"]:focus {
@@ -126,7 +126,7 @@ sup {
 a {
   color: #09254a;
   text-decoration: none;
-  background-color: transparent;
+  background: transparent;
   -webkit-text-decoration-skip: objects;
 }
 

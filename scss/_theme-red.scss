@@ -41,7 +41,7 @@
         position: absolute;
         top: 0px;
         left: 0px;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, .5);
         filter: blur(3px);
     }
 }
@@ -49,8 +49,8 @@
 // top navigation
 .red-theme {
     .top-nav {
-        height: 110px; //background: rgba(0, 0, 0, 0.5);
-        // background: rgba(33,0,4, 0.9);
+        height: 110px; //background: rgba(0, 0, 0, .5);
+        // background: rgba(33,0,4, .9);
         background: linear-gradient(180deg, rgba(33, 0, 4, 1) 12%, rgba(33, 0, 4, 1) 33%, rgba(0, 0, 0, 0) 100%); // filter: blur(13px);
         position: fixed;
     }
@@ -99,12 +99,12 @@
             padding-left: 0;
             color: $xtra-light-pink;
             text-transform: uppercase;
-            font-size: $nav-link-font-size;
+            font-size: rem(13px);
             font-weight: 500;
             letter-spacing: .9px;
             text-align: left;
             text-shadow: $text-shadow-wide-spread;
-            transition: all 0.3s ease-out;
+            transition: all .3s ease-out;
         }
         .nav-link:hover {
             color: $nav-link-hover;
@@ -247,7 +247,14 @@
         .navbar-text {
             color: $navbar-dark-color;
         }
-    } //card red
+    }
+
+    .nav-link.dropdown-item {
+        font-size: $font-size-sm;
+        text-transform: none;
+    }
+
+    //card red
     .card-red-header-special {
         position: absolute;
         top: 0px;
@@ -269,31 +276,39 @@
             display: flex;
             flex-direction: column;
             // word-wrap: break-word;
-            background-clip: border-box;
             color: $white; //@include border-radius($card-border-radius);
+            background-clip: border-box;
+            > .list-group:first-child {
+                .list-group-item:first-child {
+                    @include border-top-radius($card-border-radius);
+                }
+            }
+            > .list-group:last-child {
+                .list-group-item:last-child {
+                    @include border-bottom-radius($card-border-radius);
+                }
+            }
         }
-       
-        
         .card-red-mspacing-top {
             margin-top: 28px;
         }
         .card-red-header-positioning {
             position: absolute;
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            left: 0px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
         }
         .card-red-pspacing-top {
-            padding-top: 0.625rem;
+            padding-top: .625rem;
         }
         .card-red-header {
-            font-size: $font-size-base;
-            text-transform: uppercase;
-            letter-spacing: rem(2px);
-            color: $white;
             padding: $card-spacer-red-top $card-spacer-red-x $card-spacer-red-bottom $card-spacer-red-x;
             margin-bottom: 0; // Removes the default margin-bottom of <hN>
+            font-size: $font-size-base;
+            color: $white;
+            text-transform: uppercase;
+            letter-spacing: rem(2px);
             background: $blue; // border-bottom: $card-border-width solid $card-red-border-color;
             &:first-child {
                 //@include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
@@ -303,7 +318,7 @@
             // Enable `flex-grow: 1` for decks and groups so that card blocks take up
             // as much space as possible, ensuring footers are aligned to the bottom.
             flex: 1 1 auto;
-            background: rgba(0, 0, 0, 0.25); //rgba(76, 4, 8, 0.5);
+            background: rgba(0, 0, 0, .25); //rgba(76, 4, 8, .5);
             padding: $card-spacer-x;
             margin-top: 10px; // border: $card-border-width solid $red-000;
         }
@@ -326,7 +341,7 @@
                 color: lightgoldenrodyellow;
                 text-decoration: none;
             }
-            +.card-red-link {
+            + .card-red-link {
                 margin-left: $card-spacer-x;
             }
         }
@@ -339,7 +354,7 @@
                 color: $white;
                 text-decoration: none;
             }
-            +.card-red-link-inverted {
+            + .card-red-link-inverted {
                 margin-left: $card-spacer-x;
             }
         }
@@ -349,55 +364,54 @@
         }
         div.collapse.indent.show {
             padding-left: 20px;
-            transition: $transition-base;
             visibility: visible;
+            transition: $transition-base;
         }
-        .card-red {
-            >.list-group:first-child {
-                .list-group-item:first-child {
-                    @include border-top-radius($card-border-radius);
-                }
-            }
-            >.list-group:last-child {
-                .list-group-item:last-child {
-                    @include border-bottom-radius($card-border-radius);
-                }
-            }
-            
-        }
+        // .card-red {
+        //     > .list-group:first-child {
+        //         .list-group-item:first-child {
+        //             @include border-top-radius($card-border-radius);
+        //         }
+        //     }
+        //     > .list-group:last-child {
+        //         .list-group-item:last-child {
+        //             @include border-bottom-radius($card-border-radius);
+        //         }
+        //     }
+        // }
     }
     .card-theme-red thead th {
-        background: #5c090c !important;
         text-align: center;
+        background: #5c090c !important;
     }
     .user-avatar-red {
-        background: $user-avatar-bg-color;
         width: $user-avatar-width;
         max-width: 100%;
         margin: $user-avatar-margin;
+        background: $user-avatar-bg-color;
         border: $user-avatar-border-width $border-type-solid $red-100;
         border-radius: $user-avatar-border-radius;
     }
     .user-avatar-red-md {
-        background: $user-avatar-red-md-bg-color;
         width: $user-avatar-md-width;
         max-width: 100%;
         margin: $user-avatar-md-margin;
+        background: $user-avatar-red-md-bg-color;
         border: $user-avatar-md-border-width $border-type-solid $red-100;
         border-radius: $user-avatar-md-border-radius;
     }
     .user-avatar-red-lg {
-        background: $user-avatar-lg-bg-color;
         width: $user-avatar-lg-width;
         width: $user-avatar-lg-height;
         max-width: 100%;
         max-height: 100%;
         margin: $user-avatar-lg-margin;
+        background: $user-avatar-lg-bg-color;
         border: $user-avatar-lg-border-width $border-type-solid $red-100;
         border-radius: $user-avatar-lg-border-radius;
     }
     .player-info {
-        padding-top: 0.625rem;
+        padding-top: .625rem;
         .theme-red-title {
             text-transform: uppercase;
             font-size: $font-size-lg;
@@ -412,9 +426,9 @@
         padding: 10px 20px 20px 20px; // background: $clear-white;
         .title-3 {
             display: inline-flex;
-            color: rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, .75);
             font-weight: 600;
-            background: rgba(76, 4, 8, 0.75);
+            background: rgba(76, 4, 8, .75);
             background-image: $helmet-1-right;
             fill: $clear-white-md;
             background-repeat: no-repeat;
@@ -434,7 +448,7 @@
     .whiteTools-wrapper .col-3 {
         background: $clear-black;
         height: 50px;
-        transition: all 0.2s ease-in-out;
+        transition: all .2s ease-in-out;
         &:hover {
             background: $clear-black-md;
         }
@@ -453,8 +467,8 @@
         display: flex;
         border: solid 1px $red-100;
         background: $red-001;
-        transition: all 0.2s ease, border 0.2s ease;
-        -webkit-transition: all 0.2s ease, border 0.2s ease;
+        transition: all .2s ease, border .2s ease;
+        -webkit-transition: all .2s ease, border .2s ease;
         &:disabled {
             background: transparent;
             border: 1px solid transparent;

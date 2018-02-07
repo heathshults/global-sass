@@ -1,47 +1,47 @@
-// Variables
+// variables
 //
-// Copy settings from this file into the provided `_custom.scss` to override
-// the Bootstrap defaults without modifying key, versioned files.
+// copy settings from this file into the provided `_custom.scss` to override
+// the bootstrap defaults without modifying key, versioned files.
 //
-// Variables should follow the `$component-state-property-size` formula for
-// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+// variables should follow the `$component-state-property-size` formula for
+// consistent naming. ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
-// Table of Contents
+// table of contents
 //
-// Color system
-// Options
-// Spacing
-// Body
-// Links
-// Grid breakpoints
-// Grid containers
-// Grid columns
-// Fonts
-// Components
-// Tables
-// Buttons
-// Forms
-// Dropdowns
-// Z-index master list
-// Navs
-// Navbar
-// Pagination
-// Jumbotron
-// Form states and alerts
-// Cards
-// Tooltips
-// Popovers
-// Badges
-// Modals
-// Alerts
-// Progress bars
-// List group
-// Image thumbnails
-// Figures
-// Breadcrumbs
-// Carousel
-// Close
-// Code
+// color system
+// options
+// spacing
+// body
+// links
+// grid breakpoints
+// grid containers
+// grid columns
+// fonts
+// components
+// tables
+// buttons
+// forms
+// dropdowns
+// z-index master list
+// navs
+// navbar
+// pagination
+// jumbotron
+// form states and alerts
+// cards
+// tooltips
+// popovers
+// badges
+// modals
+// alerts
+// progress bars
+// list group
+// image thumbnails
+// figures
+// breadcrumbs
+// carousel
+// close
+// code
 // layout elements
 // avatar
 // sign in page form
@@ -50,15 +50,15 @@
 
 
 //
-// Color system
+// color system
 //
 
 
-$white:    #fff    !default;
+$white:    #fff !default;
 $gray-00:  #f5f5f5 !default;
 $gray-05:  #ededed !default;
 $gray-10:  #d8d8d8 !default;
-$gray-20:  #ddd    !default;
+$gray-20:  #ddd !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -69,19 +69,19 @@ $gray-650: #767d84 !default;
 $gray-710: #495057 !default;
 $gray-700: #44484b !default;
 $gray-800: #343a40 !default;
-$gray-850: #333    !default;
+$gray-850: #333 !default;
 $gray-900: #212529 !default;
 $gray-950: #151515 !default;
-$black:    #000    !default;
+$black:    #000 !default;
 
 // clear shaders
-$clear-white:           rgba(255, 255, 255, 0.03) !default;
-$clear-white-md:        rgba(255, 255, 255, 0.5) !default;
-$clear-white-dark:      rgba(255, 255, 255, 0.75) !default;
+$clear-white:           rgba(255, 255, 255, .03) !default;
+$clear-white-md:        rgba(255, 255, 255, .15) !default;
+$clear-white-dark:      rgba(255, 255, 255, .75) !default;
 
-$clear-black:           rgba(0, 0, 0, 0.25) !default;
-$clear-black-md:        rgba(0, 0, 0, 0.5) !default;
-$clear-black-dark:      rgba(0, 0, 0, 0.75) !default;
+$clear-black:           rgba(0, 0, 0, .25) !default;
+$clear-black-md:        rgba(0, 0, 0, .5) !default;
+$clear-black-dark:      rgba(0, 0, 0, .75) !default;
 
 $grays: (
   10:  $gray-10,
@@ -101,11 +101,11 @@ $grays: (
 $blue:                  #09254a !default;
 $indigo:                #6610f2 !default;
 $purple:                #6f42c1 !default;
-$purple-dark:           #330033 !default;
+$purple-dark:           #330 !default;
 $pink:                  #e83e8c !default;
 $xtra-light-pink:       #ffd7de !default;
 $light-pink:            #ed687c !default;
-$pink-dark:             #AB0B33 !default;
+$pink-dark:             #ab0b33 !default;
 $red:                   #9e0a0f !default;
 $red-001:               #2c0104 !default;
 $red-000:               #4c0408 !default;
@@ -130,49 +130,50 @@ $light-cyan:            #049dff !default;
 //shades of blue
 $blue--01:              #0d3353 !default;
 $blue-000:              #0d2240 !default;
-$blue-000-50:           rgba(13, 34, 63, 0.86) !default;
+$blue-000-50:           rgba(13, 34, 63, .86) !default;
 $blue-025:              #061b36 !default;
 $blue-200:              #09254a !default;
-$blue-200-50:           rgba(3, 14, 27, 0.85) !default;
+$blue-200-50:           rgba(3, 14, 27, .85) !default;
 $blue-300:              #083660 !default;
 $blue-350:              #113f69 !default;
-$blue-375:              #26579C !default;
+$blue-375:              #26579c !default;
 $blue-400:              #2e69a3 !default;
-$blue-400-50:           rgba(46, 105, 163, 0.6) !default;
+$blue-400-50:           rgba(46, 105, 163, .6) !default;
+$blue-475:              #45517e !default;
+$blue-450-14:           rgba(73, 144, 226, .14) !default;
+$blue-450-50:           rgba(9, 48, 90, .93) !default;
 $blue-450:              #4990e2 !default;
-$blue-450-14:           rgba(73, 144, 226, 0.14) !default;
-$blue-450-50:           rgba(9, 48, 90, 0.93) !default;
-$blue-475:              #529BE0 !default;
-$blue-500:              #8AB8E4 !default;
-$blue-600:              #D6ECFF !default;
+$blue-500:              #8ab8e4 !default;
+$blue-550:              #96cafa !default;
+$blue-600:              #d6ecff !default;
 
 $colors: (
-  blue: $blue,
-  indigo: $indigo,
-  purple: $purple,
-  pink: $pink,
-  red: $red,
-  orange: $orange,
-  yellow: $yellow,
-  lightgoldenrodyellow: $light-yellow,
-  green: $green,
-  teal: $teal,
-  white: $white,
-  gray: $gray-600,
-  gray-dark: $gray-800,
-  blue-dark: $blue-000,
-  blue-medium: $blue-400
+    blue: $blue,
+    indigo: $indigo,
+    purple: $purple,
+    pink: $pink,
+    red: $red,
+    orange: $orange,
+    yellow: $yellow,
+    lightgoldenrodyellow: $light-yellow,
+    green: $green,
+    teal: $teal,
+    white: $white,
+    gray: $gray-600,
+    gray-dark: $gray-800,
+    blue-dark: $blue-000,
+    blue-medium: $blue-400
 ) !default;
 
 $theme-colors: (
-  primary: $blue,
-  secondary: $gray-600,
-  success: $green,
-  info: $cyan,
-  warning: $yellow,
-  danger: $red,
-  light: $gray-100,
-  dark: $gray-800
+    primary: $blue,
+    secondary: $gray-600,
+    success: $green,
+    info: $cyan,
+    warning: $yellow,
+    danger: $red,
+    light: $gray-100,
+    dark: $gray-800,
 ) !default;
 
 // Set a specific jump point for requesting color jumps
@@ -198,9 +199,11 @@ $darkblue-gradient-50:              linear-gradient(to bottom, $blue-200, $blue-
 $darkblue-gradient-reverse-50:      linear-gradient(to bottom, $blue-200-50, $blue-000-50) !default;
 $darkblue-gradient-reverse:         linear-gradient(to bottom, $blue-200, $blue-400) !default;
 $darkblue-button-gradient:          linear-gradient(to bottom, $blue, $blue-200) !default;
-$skew-divider-gradient:             linear-gradient(219deg, $blue-350, $blue--01) !default;
+$skew-divider-gradient:             linear-gradient(180deg, $blue-350, $blue--01) !default;
 $darkred-gradient-reverse:          linear-gradient(to bottom, $red-000, $red) !default;
 $green-gradient-reverse:            linear-gradient(to bottom, $green-00, $green) !default;
+$blue-gradient-pill:                linear-gradient(to bottom, #45517e, $blue) !default;
+$blue-gradient-pill-hover:          linear-gradient(to bottom, darken(#45517e, 5%), darken($blue, 5%)) !default;
 
 
 // Spacing
@@ -211,31 +214,31 @@ $green-gradient-reverse:            linear-gradient(to bottom, $green-00, $green
 
 $spacer: 1rem !default;
 $spacers: (
-  0: 0,
-  1: ($spacer * .25),
-  2: ($spacer * .5),
-  3: $spacer,
-  4: ($spacer * 1.5),
-  5: ($spacer * 3)
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3)
 ) !default;
 
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: (
-  25: 25%,
-  50: 50%,
-  75: 75%,
-  100: 100%
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%
 ) !default;
 
 // Body
 //
 // Settings for the `<body>` element.
 
-$body-bg:       $white !default;
+$body-bg:       $blue-500 !default;
 $body-color:    $gray-900 !default;
 
 // Links
-// 
+//
 // Style anchor elements.
 
 $link-color:            theme-color("primary") !default;
@@ -376,14 +379,14 @@ $text-muted:          $gray-600 !default;
 $blockquote-small-color:  $gray-600 !default;
 $blockquote-font-size:    ($font-size-base * 1.25) !default;
 
-$hr-border-color:     rgba($black,.1) !default;
+$hr-border-color:     rgba($black, .1) !default;
 $hr-border-width:     $border-width !default;
 
 $mark-padding:        .2em !default;
 
 $dt-font-weight: $font-weight-bold !default;
 
-$kbd-box-shadow:         inset 0 -.1rem 0 rgba($black,.25) !default;
+$kbd-box-shadow:         inset 0 -.1rem 0 rgba($black, .25) !default;
 $nested-kbd-font-weight: $font-weight-bold !default;
 
 $list-inline-padding:    5px !default;
@@ -399,8 +402,8 @@ $table-cell-padding:            .75rem !default;
 $table-cell-padding-sm:         .3rem !default;
 
 $table-bg:                      transparent !default;
-$table-accent-bg:               rgba($black,.05) !default;
-$table-hover-bg:                rgba($black,.075) !default;
+$table-accent-bg:               rgba($black, .05) !default;
+$table-hover-bg:                rgba($black, .15) !default;
 $table-active-bg:               $table-hover-bg !default;
 
 $table-border-width:            $border-width !default;
@@ -499,9 +502,9 @@ $btn-green-border-hover:   rem(3px) solid $green !default;
 $btn-green-trans-bgcolor:  background .3s ease-in !default;
 
 $btn-font-weight:                $font-weight-normal !default;
-$btn-box-shadow:                 inset 0 rem(1px) 0 rgba($white,.15), 0 rem(1px) rem(1px) rgba($black,.075) !default;
+$btn-box-shadow:                 inset 0 rem(1px) 0 rgba($white, .15), 0 rem(1px) rem(1px) rgba($black, .075) !default;
 $btn-focus-box-shadow:           0 0 0 rem(3px) rgba(theme-color("primary"), .25) !default;
-$btn-active-box-shadow:          inset 0 rem(3px) rem(5px) rgba($black,.125) !default;
+$btn-active-box-shadow:          inset 0 rem(3px) rem(5px) rgba($black, .125) !default;
 
 $btn-link-disabled-color:        $gray-600 !default;
 
@@ -522,16 +525,15 @@ $alt-dropdown-menu-border-radius:   rem(2px) !default;
 $alt-dropdown-menu-box-shadow:      rem(3px) rem(3px) rem(8px) rem(1px) rgba(0, 0, 0, .175) !default;
 $alt-dropdown-menu-padding:         rem(20px) !default;
 
-
 // Forms
 
 $input-bg:                       $white !default;
 $input-disabled-bg:              $gray-200 !default;
 
 $input-color:                    $gray-700 !default;
-$input-border-color:             rgba($blue,.15) !default;
+$input-border-color:             rgba($blue, .15) !default;
 $input-btn-border-width:         $border-width-md !default; // For form controls and buttons
-$input-box-shadow:               inset 0 1px 1px rgba($black,.075) !default;
+$input-box-shadow:               inset 0 1px 1px rgba($black, .075) !default;
 
 $input-border-radius:            $border-radius !default;
 $input-border-radius-lg:         $border-radius-lg !default;
@@ -580,7 +582,7 @@ $custom-control-spacer-x:         1rem !default;
 $custom-control-indicator-size:       1rem !default;
 $custom-control-indicator-bg:         $gray-20 !default;
 $custom-control-indicator-bg-size:    50% 50% !default;
-$custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba($black,.1) !default;
+$custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba($black, .1) !default;
 
 $custom-control-indicator-disabled-bg:       $gray-200 !default;
 $custom-control-description-disabled-color:  $gray-600 !default;
@@ -645,7 +647,7 @@ $custom-file-bg:            $white !default;
 $custom-file-border-width:  $border-width !default;
 $custom-file-border-color:  $input-border-color !default;
 $custom-file-border-radius: $border-radius !default;
-$custom-file-box-shadow:    inset 0 .2rem .4rem rgba($black,.05) !default;
+$custom-file-box-shadow:    inset 0 .2rem .4rem rgba($black, .05) !default;
 $custom-file-button-color:  $custom-file-color !default;
 $custom-file-button-bg:     $gray-200 !default;
 $custom-file-text: (
@@ -694,6 +696,11 @@ $dropdown-item-padding-y:        .25rem !default;
 $dropdown-item-padding-x:        1.5rem !default;
 
 $dropdown-header-color:          $gray-600 !default;
+
+$dropdown-position-top:          -165px !default;
+$dropup-before-top:              147px !default;
+$dropup-after-top:               145px !default;
+
 
 
 // Z-index master list
@@ -755,19 +762,19 @@ $navbar-toggler-padding-x:           .75rem !default;
 $navbar-toggler-font-size:           $font-size-lg !default;
 $navbar-toggler-border-radius:       $btn-border-radius !default;
 
-$navbar-dark-color:                 rgba($white,.5) !default;
-$navbar-dark-hover-color:           rgba($white,.75) !default;
-$navbar-dark-active-color:          rgba($white,1) !default;
-$navbar-dark-disabled-color:        rgba($white,.25) !default;
+$navbar-dark-color:                 rgba($white, .5) !default;
+$navbar-dark-hover-color:           rgba($white, .75) !default;
+$navbar-dark-active-color:          rgba($white, 1) !default;
+$navbar-dark-disabled-color:        rgba($white, .25) !default;
 $navbar-dark-toggler-icon-bg:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
-$navbar-dark-toggler-border-color:  rgba($white,.1) !default;
+$navbar-dark-toggler-border-color:  rgba($white, .1) !default;
 
-$navbar-light-color:                rgba($black,.5) !default;
-$navbar-light-hover-color:          rgba($black,.7) !default;
-$navbar-light-active-color:         rgba($black,.9) !default;
-$navbar-light-disabled-color:       rgba($black,.3) !default;
+$navbar-light-color:                rgba($black, .5) !default;
+$navbar-light-hover-color:          rgba($black, .7) !default;
+$navbar-light-active-color:         rgba($black, .9) !default;
+$navbar-light-disabled-color:       rgba($black, .3) !default;
 $navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
-$navbar-light-toggler-border-color: rgba($black,.1) !default;
+$navbar-light-toggler-border-color: rgba($black, .1) !default;
 
 // Pagination
 
@@ -805,17 +812,17 @@ $jumbotron-bg:                   $gray-200 !default;
 
 // Cards
 
-$card-spacer-y:               .75rem !default;
+$card-spacer-y:               rem(10px) !default;
 $card-spacer-red-y:           rem(8px) !default;
 $card-spacer-red-top:         rem(8px) !default;
 $card-spacer-red-bottom:      rem(6px) !default;
-$card-spacer-x:               1.25rem !default;
+$card-spacer-x:               rem(20px) !default;
 $card-spacer-red-x:           rem(20px) !default;
 $card-border-width:           1px !default;
 $card-border-radius:          $border-radius !default;
-$card-border-color:           rgba($black,.125) !default;
+$card-border-color:           rgba($black, .125) !default;
 $card-red-border-radius:      $border-radius !default;
-$card-red-border-color:       rgba($black,.125) !default;
+$card-red-border-color:       rgba($black, .125) !default;
 $card-inner-border-radius:    calc(#{$card-border-radius} - #{$card-border-width}) !default;
 $card-cap-bg:                 rgba($black, .03) !default;
 $card-bg:                     $white !default;
@@ -851,8 +858,8 @@ $popover-inner-padding:               1px !default;
 $popover-bg:                          $white !default;
 $popover-max-width:                   276px !default;
 $popover-border-width:                $border-width !default;
-$popover-border-color:                rgba($black,.2) !default;
-$popover-box-shadow:                  0 5px 10px rgba($black,.2) !default;
+$popover-border-color:                rgba($black, .2) !default;
+$popover-box-shadow:                  0 5px 10px rgba($black, .2) !default;
 
 $popover-header-bg:                    darken($popover-bg, 3%) !default;
 $popover-header-color:                 $headings-color !default;
@@ -896,10 +903,10 @@ $modal-dialog-margin-y-sm-up: 30px !default;
 $modal-title-line-height:     $line-height-base !default;
 
 $modal-content-bg:               $white !default;
-$modal-content-border-color:     rgba($black,.2) !default;
+$modal-content-border-color:     rgba($black, .2) !default;
 $modal-content-border-width:     $border-width !default;
-$modal-content-box-shadow-xs:    0 3px 9px rgba($black,.5) !default;
-$modal-content-box-shadow-sm-up: 0 5px 15px rgba($black,.5) !default;
+$modal-content-box-shadow-xs:    0 3px 9px rgba($black, .5) !default;
+$modal-content-box-shadow-sm-up: 0 5px 15px rgba($black, .5) !default;
 
 $modal-backdrop-bg:           $black !default;
 $modal-backdrop-opacity:      .5 !default;
@@ -942,7 +949,7 @@ $progress-height:               1rem !default;
 $progress-font-size:            .75rem !default;
 $progress-bg:                   $gray-200 !default;
 $progress-border-radius:        $border-radius !default;
-$progress-box-shadow:           inset 0 .1rem .1rem rgba($black,.1) !default;
+$progress-box-shadow:           inset 0 .1rem .1rem rgba($black, .1) !default;
 $progress-bar-color:            $white !default;
 $progress-bar-bg:               theme-color("primary") !default;
 $progress-bar-animation-timing: 1s linear infinite !default;
@@ -951,7 +958,7 @@ $progress-bar-transition:       width .6s ease !default;
 // List group
 
 $list-group-bg:                  $white !default;
-$list-group-border-color:        rgba($black,.125) !default;
+$list-group-border-color:        rgba($black, .125) !default;
 $list-group-border-width:        $border-width !default;
 $list-group-border-radius:       $border-radius !default;
 
@@ -980,7 +987,7 @@ $thumbnail-bg:                $body-bg !default;
 $thumbnail-border-width:      $border-width !default;
 $thumbnail-border-color:      $gray-20 !default;
 $thumbnail-border-radius:     $border-radius !default;
-$thumbnail-box-shadow:        0 1px 2px rgba($black,.075) !default;
+$thumbnail-box-shadow:        0 1px 2px rgba($black, .075) !default;
 $thumbnail-transition:        all .2s ease-in-out !default;
 
 
@@ -1066,30 +1073,30 @@ $user-avatar-red-md-bg-color:   $red-20 !default;
 $user-avatar-md-border-width:   .25rem !default;
 $user-avatar-md-border-radius:  50% !default;
 
-$user-avatar-lg-width:          rem(140px) !default; //9.375rem 11.56rem 
-$user-avatar-lg-height:         rem(140px) !default;
-$user-avatar-lg-margin:         .375rem !default;
-$user-avatar-lg-bg-color:       $blue-450 !default;
-$user-avatar-red-lg-bg-color:   $red-20 !default;
-$user-avatar-lg-border-width:   .25rem !default;
-$user-avatar-lg-border-radius:  50% !default;
+$user-avatar-lg-width:                  rem(140px) !default; //9.375rem 11.56rem
+$user-avatar-lg-height:                 rem(140px) !default;
+$user-avatar-lg-margin:                 .375rem !default;
+$user-avatar-lg-bg-color:               $blue-450 !default;
+$user-avatar-red-lg-bg-color:           $red-20 !default;
+$user-avatar-lg-border-width:           .25rem !default;
+$user-avatar-lg-border-radius:          50% !default;
 
 //sign in page form
-$sign-in-input-border:          solid 3px $red !default;
+$sign-in-input-border:                  solid 3px $clear-black-md !default;
 
 // form action buttons
-$btn-save-bg:          $green !default;
-$btn-save-color:       $white !default;
-$btn-save-margin:      15px !default;
+$btn-save-bg:                           $green !default;
+$btn-save-color:                        $white !default;
+$btn-save-margin:                       15px !default;
 
 //box shadows by Heathinscript
-$blur-20:                               -1px -1px 20px 6px rgba(0,0,0,.2) !default;
-$box-shadow-light-off-axis-y:           0 3px 10px 5px rgba(0,0,0,.16) !default;
+$blur-20:                               -1px -1px 20px 6px rgba(0, 0, 0, .2) !default;
+$box-shadow-light-off-axis-y:           0 3px 10px 5px rgba(0, 0, 0, .16) !default;
 
 // text shadows
-$text-shadow-basic:                     -1px 1px 0 rgba(0,0,0,.9) !default;
-$text-shadow-wide-spread:               -1px -1px 28px rgba(0,0,0,.5) !default;
-$text-shadow-outer-glow:                -1px -1px 27px rgba(250,250,210,.3) !default;;
+$text-shadow-basic:                     -1px 1px 0 rgba(0, 0, 0, .9) !default;
+$text-shadow-wide-spread:               -1px -1px 28px rgba(0, 0, 0, .5) !default;
+$text-shadow-outer-glow:                -1px -1px 27px rgba(250, 250, 210, .3) !default;
 
 // charts
 //verticle column chart

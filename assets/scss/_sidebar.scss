@@ -51,7 +51,7 @@
 
 .bd-sidebar {
   order: 0;
-  // background-color: #f5f2f9;
+  // background: #f5f2f9;
   border-bottom: 1px solid rgba(0,0,0,.1);
 
   @include media-breakpoint-up(md) {
@@ -134,7 +134,7 @@
       color: rgba(0,0,0,.85);
 
       &:hover {
-        background-color: transparent;
+        background: transparent;
       }
     }
 
@@ -155,12 +155,12 @@
 .bd-sidebar .nav > li > a:hover {
   color: rgba(0,0,0,.85);
   text-decoration: none;
-  background-color: transparent;
+  background: transparent;
 }
 
 .bd-sidebar .nav > .active > a,
 .bd-sidebar .nav > .active:hover > a {
   font-weight: 500;
   color: rgba(0,0,0,.85);
-  background-color: transparent;
+  background: transparent;
 }

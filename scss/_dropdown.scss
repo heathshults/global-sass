@@ -56,7 +56,7 @@
     color: $body-color;
     text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
     list-style: none;
-    background-color: $dropdown-bg;
+    background: $dropdown-bg;
     background-clip: padding-box;
     border-radius: $border-radius-bottom-lr;
     width: 100%;
@@ -76,7 +76,7 @@
     color: $body-color;
     text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
     list-style: none;
-    background-color: $white;
+    background: $white;
     background-clip: padding-box;
     border-radius: $border-radius-bottom-lr;
     width: 100%;
@@ -104,18 +104,18 @@
     @include hover-focus {
         color: $dropdown-link-hover-color;
         text-decoration: none;
-        background-color: $dropdown-link-hover-bg;
+        background: $dropdown-link-hover-bg;
     }
     &.active,
     &:active {
         color: $dropdown-link-active-color;
         text-decoration: none;
-        background-color: $dropdown-link-active-bg;
+        background: $dropdown-link-active-bg;
     }
     &.disabled,
     &:disabled {
         color: $dropdown-link-disabled-color;
-        background-color: transparent; // Remove CSS gradients if they're enabled
+        background: transparent; // Remove CSS gradients if they're enabled
         @if $enable-gradients {
             background-image: none;
         }
@@ -166,7 +166,7 @@
     // color: $body-color;
     text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
     list-style: none;
-    background-color: $dropdown-bg;
+    background: $dropdown-bg;
     background-clip: padding-box;
     border-radius: $border-radius-bottom-lr;
     width: 100%;

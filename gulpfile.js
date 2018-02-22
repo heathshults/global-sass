@@ -18,8 +18,8 @@ gulp.task('clean', function() {
     'dist/**/*.css', 
     // 'dist/**/*.js', 
     'dist/**/*.map',
-    '../usafb-ui/app/css/*.css',
-    '../usafb-ui/app/css/*.map'
+    '../usafb-ui/src/css/*.css',
+    '../usafb-ui/src/css/*.map'
   ])
   .pipe(clean({force: true}));
  });
@@ -108,7 +108,7 @@ gulp.task('minify-css', ['sass'], () => {
           // prefix: 'usafb-',
           suffix: '.min'
         }))
-        .pipe(gulp.dest('../USAFB/http/css/'))
+        .pipe(gulp.dest('../USAFB/usafb-ui/css/'))
         .pipe(browserSync.reload({
           stream: true
         }))
@@ -134,10 +134,10 @@ gulp.task('minify-js', () => {
 // Copy css and js files to site location
 gulp.task('copy-usafb', () => {
   gulp.src(['dist/css/*.css', 'dist/css/*.map'])
-        .pipe(gulp.dest('../usafb-ui/app/css'))
+        .pipe(gulp.dest('../usafb-ui/src/css', '../usafb-ui/dist/css'))
   var emptystuff = [
   // gulp.src(['dist/js/*.js'])
-  //       .pipe(gulp.dest('../npdb-usafb-templates/app/js'))
+  //       .pipe(gulp.dest('../npdb-usafb-templates/src/js'))
 
   // gulp.src([
   //   'node_modules/font-awesome/css/**',
@@ -147,17 +147,17 @@ gulp.task('copy-usafb', () => {
   //   '!node_modules/font-awesome/*.md',
   //   '!node_modules/font-awesome/*.json'
   //   ])
-  //   .pipe(gulp.dest('../npdb-usafb-templates/app/css/vendor/font-awesome'))
+  //   .pipe(gulp.dest('../npdb-usafb-templates/src/css/vendor/font-awesome'))
   ]
 })
 
 // Copy css and js files to site location
 gulp.task('copy-ussf', () => {
   gulp.src(['dist/theme/ussf/css/*.css', 'dist/theme/ussf/css/*.map'])
-        .pipe(gulp.dest('../ussf-api-templates/app/css'))
+        .pipe(gulp.dest('../ussf-api-templates/src/css'))
   var emptystuff = [
   // gulp.src(['dist/js/*.js'])
-  //       .pipe(gulp.dest('../npdb-usafb-templates/app/js'))
+  //       .pipe(gulp.dest('../npdb-usafb-templates/src/js'))
 
   // gulp.src([
   //   'node_modules/font-awesome/css/**',
@@ -167,7 +167,7 @@ gulp.task('copy-ussf', () => {
   //   '!node_modules/font-awesome/*.md',
   //   '!node_modules/font-awesome/*.json'
   //   ])
-  //   .pipe(gulp.dest('../npdb-usafb-templates/app/css/vendor/font-awesome'))
+  //   .pipe(gulp.dest('../npdb-usafb-templates/src/css/vendor/font-awesome'))
   ]
 })
 
@@ -200,7 +200,7 @@ gulp.task('autoprefixme', function () {
       .pipe(rename({
         prefix: ''
       }))
-      .pipe(gulp.dest('../usafb-ui/app/css/'))
+      .pipe(gulp.dest('../usafb-ui/src/css/'))
 })
 
 // in test mode, needs correct directory sset for real use

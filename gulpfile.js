@@ -134,7 +134,8 @@ gulp.task('minify-js', () => {
 // Copy css and js files to site location
 gulp.task('copy-usafb', () => {
   gulp.src(['dist/css/*.css', 'dist/css/*.map'])
-        .pipe(gulp.dest('../usafb-ui/src/css', '../usafb-ui/dist/css'))
+        .pipe(gulp.dest('../usafb-ui/src/css'))
+        .pipe(gulp.dest('../usafb-ui/dist/css'))
   var emptystuff = [
   // gulp.src(['dist/js/*.js'])
   //       .pipe(gulp.dest('../npdb-usafb-templates/src/js'))
@@ -204,8 +205,8 @@ gulp.task('autoprefixme', function () {
 })
 
 // in test mode, needs correct directory sset for real use
-gulp.task('stylefmt', function () {
-  return gulp.src('scss-test--fix/*.scss') 
+gulp.task('stylefmt', function (filePath) {
+  return gulp.src(filePath+'.scss') 
     .pipe(stylefmt())
     .pipe(gulp.dest('scss-test--fix/test'));
 });

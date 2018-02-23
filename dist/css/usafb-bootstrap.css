@@ -10476,16 +10476,12 @@ button:hover {
 }
 
 .bg-pages-blue {
-  position: absolute;
-  top: 112px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: calc(100vh - 112px);
+  padding-top: 112px;
+  height: 100vh;
   background: rgba(9, 48, 90, 0.93) url("images/bg/usa-fb-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: top center;
+  background-position: 112px center;
   background-size: cover;
   background-blend-mode: multiply;
   object-fit: fill;

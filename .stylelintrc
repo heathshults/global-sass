@@ -234,7 +234,9 @@
     "selector-max-empty-lines": 1,
     "selector-max-id": 2,
     "selector-max-specificity": null,
-    "selector-max-type": 2,
+    "selector-max-type": [4, {
+      "severity": "warning"
+    }],
     "selector-max-universal": 1,
     "selector-no-qualifying-type": null,
     "selector-no-vendor-prefix": true,

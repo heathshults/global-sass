@@ -108,7 +108,7 @@
     "jshint": "^2.9.5",
     "minimatch": "3.0.4",
     "peer": "^0.2.8",
-    "pug": "^2.0.0-rc.4",
+    "pug": "^3.0.1",
     "rubygems": "^1.0.3",
     "sass": "^1.0.0-beta.4",
     "sass-graph": "^2.2.4",
